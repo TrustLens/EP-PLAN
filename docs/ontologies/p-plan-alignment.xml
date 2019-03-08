@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/ep-plan/p-plan-alignment#"
+     xml:base="https://w3id.org/ep-plan/p-plan-alignment"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://w3id.org/ep-plan/p-plan-alignment"/>
+
+
+
+ <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/p-plan#Activity -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#Activity">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#Activity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#Bundle -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#Bundle">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#ExecutionTraceBundle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#Entity -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#Entity">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#Entity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#Plan -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#Plan">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#Plan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#Step -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#Step">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#Step"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#Variable -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#Variable">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#Variable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#correspondsToStep -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#correspondsToStep">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#correspondsToStep"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#correspondsToVariable -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#correspondsToVariable">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#correspondsToVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#hasInputVar -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#hasInputVar">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#hasInputVar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#hasOutputVar -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#hasOutputVar">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#hasOutputVar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#isDecomposedAsPlan -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#isDecomposedAsPlan">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#isDecomposedAsPlan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#isInputVarOf -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#isInputVarOf">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#isInputVarOf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#isOutputVarOf -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#isOutputVarOf">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#isOutputVarOf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#isPrecededBy -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#isPrecededBy">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#isPrecededBy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#isStepOfPlan -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#isStepOfPlan">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#isStepOfPlan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#isSubPlanOfPlan -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#isSubPlanOfPlan">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#isSubPlanOfPlan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/p-plan#isVariableOfPlan -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/p-plan#isVariableOfPlan">
+        <owl:sameAs rdf:resource="https://w3id.org/ep-plan#isVariableOfPlan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/ep-plan#Activity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#Activity"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#Entity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#Entity"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#ExecutionTraceBundle -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#ExecutionTraceBundle"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#Plan -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#Plan"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#Step -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#Step"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#Variable -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#Variable"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#correspondsToStep -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#correspondsToStep"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#correspondsToVariable -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#correspondsToVariable"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#hasInputVar -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#hasInputVar"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#hasOutputVar -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#hasOutputVar"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#isDecomposedAsPlan -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#isDecomposedAsPlan"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#isInputVarOf -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#isInputVarOf"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#isOutputVarOf -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#isOutputVarOf"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#isPrecededBy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#isPrecededBy"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#isStepOfPlan -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#isStepOfPlan"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#isSubPlanOfPlan -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#isSubPlanOfPlan"/>
+    
+
+
+    <!-- https://w3id.org/ep-plan#isVariableOfPlan -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ep-plan#isVariableOfPlan"/>
+    
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
+</rdf:RDF>

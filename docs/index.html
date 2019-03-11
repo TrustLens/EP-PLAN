@@ -92,7 +92,21 @@ pplan: /EP-PLAN/ontologies/p-plan-alignment.xml
      
      <h4> Plan decomposition </h4>
      
+     <h3> Sample Datasets & Competency Questions  </h3>
      
+         <strong>Which agents are allowed to participate in this plan?</strong>
+         
+     <pre><code>
+     Select Distinct ?agent 
+
+Where {
+<PlanURI> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.
+}
+
+     
+     </code></pre>    
+         
+         
   </body>    
       
       

@@ -97,13 +97,11 @@ pplan: /EP-PLAN/ontologies/p-plan-alignment.xml
          <strong>Which agents are allowed to participate in this plan?</strong>
          
      <pre><code>
-     Select Distinct ?agent 
-
-Where {
-<PlanURI> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.
-}
-
+     SELECT DISTINCT ?agent 
      
+     Where {
+       <PlanURI> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.
+     }
      </code></pre>    
          
          

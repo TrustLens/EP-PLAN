@@ -94,16 +94,65 @@ pplan: /EP-PLAN/ontologies/p-plan-alignment.xml
      
      <h3> Sample Datasets & Competency Questions  </h3>
      
-         <strong>Which agents are allowed to participate in this plan?</strong>
+     <strong>Which agents are allowed to participate in this plan?</strong>
          
      <pre><code>
      SELECT DISTINCT ?agent 
      
      Where {
-       &lt;PlanURI> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.
+          &lt;PlanURI> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.
      }
      </code></pre>    
+     * If the identity of agents is not known and the agent's ability to participate in plan execution is based on certain characteristic (e.g. must be at certain location) such restrictions can be modelled as a constraint.   
+     
+     <strong>Which agents are allowed to participate in this plan (search all abstraction layers)?</strong>
          
+     <pre><code>
+     SELECT DISTINCT ?agent 
+     
+     Where {
+     {
+          &lt;PlanURI> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.
+     }
+     Union {
+          ?subPlan ep-plan:isSubPlanOfPlan* &lt;PlanURI>; ep-plan:includesResponsibleAgent ?agent.
+     }
+     }
+     </code></pre>    
+     
+     <strong>Which agents are allowed to participate in this plan (search all abstraction layers)?</strong>
+     <pre><code>
+     SELECT DISTINCT ?agent 
+     
+     Where {
+     {
+          &lt;stepURI> a ep-plan:Step; ep-plan:canBeResponsibilityOf ?agent.
+     }
+     </code></pre>
+         
+     <strong>Which agents are allowed to execute this MultiStep (search all abstraction layers)?</strong>
+     <pre><code>
+     SELECT DISTINCT ?agent 
+
+     Where {
+     {
+          <StepURI> a ep-plan:MultiStep; ep-plan:canBeResponsibilityOf ?agent.
+     }
+     Union
+     {
+          <StepURI> ep-plan:isDecomposedAsPlan ?plan.
+          {
+          ?plan a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.
+          }
+          Union
+          {
+          ?subPlan ep-plan:isSubPlanOfPlan* ?plan; ep-plan:includesResponsibleAgent ?agent.
+          }
+     }
+     }
+
+     </code></pre>
+     
          
   </body>    
       

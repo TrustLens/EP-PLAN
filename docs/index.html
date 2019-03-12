@@ -96,14 +96,14 @@ pplan: /EP-PLAN/ontologies/p-plan-alignment.xml
      
      <h4> Plan decomposition </h4>
      
-     <h3> Sample Datasets & Competency Questions  </h3>
+     <h2> Sample Datasets & Competency Questions  </h2>
      
      <strong>Which agents are allowed to participate in this plan?</strong>
          
      <pre><code>
      SELECT DISTINCT ?agent 
      
-     Where {
+     WHERE {
           &lt;PlanURI> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.
      }
      </code></pre>    
@@ -114,35 +114,35 @@ pplan: /EP-PLAN/ontologies/p-plan-alignment.xml
      <pre><code>
      SELECT DISTINCT ?agent 
      
-     Where {
+     WHERE {
      {
           &lt;PlanURI> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.
      }
-     Union {
+     UNION {
           ?subPlan ep-plan:isSubPlanOfPlan* &lt;PlanURI>; ep-plan:includesResponsibleAgent ?agent.
      }
      }
      </code></pre>    
      
-     <strong>Which agents are allowed to execute this step?</strong>
+     <strong>Which agents are allowed to participate in execution of  this step?</strong>
      <pre><code>
      SELECT DISTINCT ?agent 
      
-     Where {
+     WHERE {
      {
           &lt;stepURI> a ep-plan:Step; ep-plan:canBeResponsibilityOf ?agent.
      }
      </code></pre>
          
-     <strong>Which agents are allowed to execute this MultiStep (search all abstraction layers)?</strong>
+     <strong>Which agents are allowed to participate in execution of this MultiStep (search all abstraction layers)?</strong>
      <pre><code>
      SELECT DISTINCT ?agent 
 
-     Where {
+     WHERE {
      {
           &lt;StepURI> a ep-plan:MultiStep; ep-plan:canBeResponsibilityOf ?agent.
      }
-     Union
+     UNION
      {
           &lt;StepURI> ep-plan:isDecomposedAsPlan ?plan.
           {
@@ -154,9 +154,19 @@ pplan: /EP-PLAN/ontologies/p-plan-alignment.xml
           }
      }
      }
-
      </code></pre>
+          
+     <strong>Which agents that were allowed to participate in execution of this step participated in the actual execution of this step?</strong>
+     <pre><code>
+     SELECT DISTINCT  ?agent 
      
+     WHERE {
+     
+          <stepURI> a ep-plan:Step; ep-plan:canBeResponsibilityOf ?agent.
+          ?agent a ep-plan:ResponsibleAgent; a ep-plan:Agent.
+          ?activity a ep-plan:Activity; ep-plan:correspondsToStep <stepURI>; prov:wasAssociatedWith ?agent.
+     }
+     </code></pre>
          
   </body>    
       

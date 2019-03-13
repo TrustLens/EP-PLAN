@@ -263,9 +263,7 @@ pplan: /EP-PLAN/ontologies/p-plan-alignment.xml
 
           ?senderActivity a ep-plan:Activity; ep-plan:correspondsToStep ?sender.
           ?exchangedData a ep-plan:Entity; prov:wasGeneratedBy ?senderActivity; ep-plan:correspondsToVariable ?variable. 
-          ?recipientActivity a ep-plan:Activity; prov:used ?exchangedData; prov:qualifiedCommunication 
-
-          ?communication;ep-plan:correspondsToStep ?recipient.
+          ?recipientActivity a ep-plan:Activity; prov:used ?exchangedData; prov:qualifiedCommunication ?communication;ep-plan:correspondsToStep ?recipient.
           ?communication a ep-plan:Communication; ep-plan:correspondsToCommsSpec ?commsSpec; prov:activity ?senderActivity.
 
           ?commsSpec ep-plan:hasConstraint ?constraint; a ep-plan:CommsSpec.

@@ -162,12 +162,117 @@ pplan: /EP-PLAN/ontologies/p-plan-alignment.xml
      
      WHERE {
      
-          <stepURI> a ep-plan:Step; ep-plan:canBeResponsibilityOf ?agent.
+          &lt;stepURI> a ep-plan:Step; ep-plan:canBeResponsibilityOf ?agent.
           ?agent a ep-plan:ResponsibleAgent; a ep-plan:Agent.
           ?activity a ep-plan:Activity; ep-plan:correspondsToStep <stepURI>; prov:wasAssociatedWith ?agent.
      }
      </code></pre>
+    
+    <strong>What constraints are associated with the steps of this plan?</strong>
+     <pre><code>
+     SELECT DISTINCT ?constraint ?step 
+
+     WHERE 
+     {
+          &lt;PlanURI> a ep-plan:Plan; ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.
+          ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.
+          ?constraint a ep-plan:Constraint.
+     }
+     </code></pre>
+     
+     <strong>Which executions of this planned step satisfied these constraints?</strong>
+     <pre><code>
+     SELECT DISTINCT ?constraint ?activity 
+
+     WHERE 
+     {
+          &lt;PlanURI> ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.
+          ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.
+          ?constraint a ep-plan:Constraint.
+          ?activity ep-plan:correspondsToStep ?step; a ep-plan:Activity.
+          ?activity ep-plan:satisfied ?constraint.
+          ?execTraceBundle prov:wasDerivedFrom  &lt;PlanURI>; ep-plan:hasTraceElement ?activity.
+     }
+     </code></pre>
+      
+     <strong>What constraints are associated with the steps of this plan?</strong>
+     <pre><code>
+     SELECT DISTINCT ?constraint ?step 
+
+     WHERE 
+     {
+          &lt;PlanURI> a ep-plan:Plan; ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.
+          ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.
+          ?constraint a ep-plan:Constraint.
+     }
+     </code></pre>
+     
+     <p>Note: if there are no more than one plan descriptions present in the graph and the URIs of constraint and step element have not been reused as part of different plans, then first and last line of the query can be omitted.</p>
+     
+     <strong>Which executions of this planned step violated these constraints?</strong>
+     <pre><code>
+     SELECT DISTINCT ?constraint ?activity 
+
+     WHERE 
+     {
+          &lt;PlanURI> ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.
+          ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.
+          ?constraint a ep-plan:Constraint.
+          ?activity ep-plan:correspondsToStep ?step; a ep-plan:Activity.
+          ?activity ep-plan:violated ?constraint.
+          ?execTraceBundle prov:wasDerivedFrom  &lt;PlanURI>; ep-plan:hasTraceElement ?activity.
+     }
+     </code></pre>
+     
+     <strong>What constraints are restricting the exchange of data between steps in this plan?
+</strong>
+     <pre><code>
+     SELECT DISTINCT ?constraint ?commsSpec 
+
+     WHERE 
+     {
+          &lt;PlanURI> a ep-plan:Plan; ep-plan:includesCommsSpec ?commsSpec; ep-plan:includesStep ?step.
+          ?commsSpec ep-plan:hasConstraint ?constraint; a ep-plan:CommsSpec.
+          ?constraint a ep-plan:Constraint.
+     }
+     </code></pre>
          
+     <strong>What constraints are restricting the exchange of which data variable between steps s1 and s2 in this plan?
+</strong>
+     <pre><code>
+    SELECT DISTINCT ?constraint ?variable 
+
+     WHERE 
+     {
+          &lt;PlanURI> a ep-plan:Plan; ep-plan:includesCommsSpec ?commsSpec; ep-plan:includesStep &lt;s1URI>; ep-plan:includesStep &lt;s2URI>; ep-plan:includesVar ?variable.
+          ?commsSpec ep-plan:hasConstraint ?constraint; a ep-plan:CommsSpec.
+          ?constraint a ep-plan:Constraint.
+          ?commsSpec ep-plan:hasSender &lt;s1URI>; ep-plan:hasRecipient &lt;s2URI>; ep-plan:hasPayload ?variable.
+          ?variable a ep-plan:Variable.
+     }
+     </code></pre>
+     
+     <strong>Which step executions satisfied constraints restricting the exchange of data in this plan?
+</strong>
+     <pre><code>
+    SELECT DISTINCT ?constraint ?senderActivity ?recipientActivity ?exchangedData
+
+     WHERE 
+     {
+          &lt;PlanURI> a ep-plan:Plan; ep-plan:includesCommsSpec ?commsSpec; ep-plan:includesStep ?sender; ep-plan:includesStep ?recipient; ep-plan:includesVar ?variable.
+
+          ?senderActivity a ep-plan:Activity; ep-plan:correspondsToStep ?sender.
+          ?exchangedData a ep-plan:Entity; prov:wasGeneratedBy ?senderActivity; ep-plan:correspondsToVariable ?variable. 
+          ?recipientActivity a ep-plan:Activity; prov:used ?exchangedData; prov:qualifiedCommunication 
+
+          ?communication;ep-plan:correspondsToStep ?recipient.
+          ?communication a ep-plan:Communication; ep-plan:correspondsToCommsSpec ?commsSpec; prov:activity ?senderActivity.
+
+          ?commsSpec ep-plan:hasConstraint ?constraint; a ep-plan:CommsSpec.
+          ?commsSpec ep-plan:hasSender ?sender; ep-plan:hasRecipient ?recipient; ep-plan:hasPayload ?variable.
+          ?communication ep-plan:satisfies ?constraint.
+     }
+     </code></pre>
   </body>    
       
       

@@ -97,6 +97,218 @@ pplan: /EP-PLAN/ontologies/p-plan-alignment.xml
      <h4> Plan decomposition </h4>
      
      <h2> Sample Datasets & Competency Questions  </h2>
+          
+          
+          <h3> Plan (general structure)</h3>
+
+          <strong>What steps and variables are part of this plan?</strong>
+<pre><code>
+SELECT DISTINCT ?step ?variable 
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVar ?variable.
+     ?step a ep-plan:Step.
+     ?variable a ep-plan:Variable.
+}
+</pre></code>
+
+<strong>What is the order in which steps of this plan should be executed? </strong>
+
+<pre><code>          
+SELECT DISTINCT ?step ?nextStep 
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesStep ?nextStep.
+     ?step ep-plan:precedes ?nextStep; a ep-plan:Step.
+     ?nextStep a ep-plan:Step.
+}
+</pre></code>
+
+<strong>Which steps use which variables in this plan ?</strong>
+<pre><code>
+SELECT DISTINCT ?step ?variableUsed 
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVar ?variableUsed.
+     ?step a ep-plan:Step; ep-plan:hasInputVar ?variableUsed.
+     ?variableUsed a ep-plan:Variable.
+}
+</pre></code>
+
+<strong>Which steps produce this variable in this plan ?</strong>
+<pre><code>
+SELECT DISTINCT ?step ?variableProduced 
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVar ?variableUsed.
+     ?step a ep-plan:Step; ep-plan:hasOutputVar ?variableUsed.
+     ?variableProduced a ep-plan:Variable.
+}
+</pre></code>
+
+<strong>Which steps and variables of this plan were realised during its executions?</strong>
+<pre><code>
+SELECT DISTINCT ?executionActivity ?entity ?activity
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVar ?variable.
+     ?variable a ep-plan:Variable.
+     ?step a ep-plan:Step.
+
+     ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom &lt;PlanURI>; ep-plan: hasTraceElement ?entity; ep-plan: hasTraceElement ?activity.
+     ?executionActivity a ep-plan:MultiActivity.
+
+     ?entity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable.
+     ?activity a ep-plan:Activity; ep-plan:correspondsToStep ?step.
+
+     FILTER NOT EXISTS {?activity a ep-plan:FailedActivity}
+}
+</pre></code>
+
+<strong>Which steps of this plan failed to execute?</strong>
+<pre><code>
+SELECT DISTINCT ?executionActivity ?failedStep
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?failedStep.
+     ?failedStep a ep-plan:Step.
+
+     ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom &lt;PlanURI>; ep-plan: hasTraceElement ?activity; 
+     ?executionActivity a ep-plan:MultiActivity.
+
+     ?activity a ep-plan:FailedActivity; ep-plan:correspondsToStep ?failedStep.
+}
+</pre></code>
+
+
+          <h3>Decomposition</h3>
+
+<strong>Which steps of this plan are composite steps? </strong>
+<pre><code>
+SELECT DISTINCT ?step 
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step.
+     ?step a ep-plan:MultiStep.
+}
+</pre></code>
+          
+<strong>Which variables of this plan are composite variables?</strong> 
+<pre><code>
+SELECT DISTINCT ?variable 
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesVar ?variable.
+     ?variable a ep-plan:MultiVariable.
+}
+</pre></code>
+          
+<strong>Which sub-plan of this plan describe a composite step in more detail?</strong> 
+<pre><code>
+SELECT DISTINCT ?subPlan 
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step.
+     ?step a ep-plan:MultiStep; ep-plan:isDecomposedAsPlan ?subPlan.
+     ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan &lt;PlanURI>.
+}
+</pre></code>
+          
+<strong>Which variables of a sub-plan of this plan describe a composite variable of this plan in more detail?</strong>
+<pre><code>
+SELECT DISTINCT ?compositeVar ?atomicVar 
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesVar ?compositeVar.
+     ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan &lt;PlanURI>; ep-plan:includesVar ?atomicVar.
+     ?atomicVar a ep-plan:Variable.
+     ?compositeVar a ep-plan:MultiVariable; ep-plan:hasPart ?atomicVar.
+}
+</pre></code>
+
+<strong>Which variables of this plan is also used in a sub-plan of this plan?</strong>
+<pre><code>
+SELECT DISTINCT ?variable ?subplan 
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesVar ?variable.
+     ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan &lt;PlanURI>; ep-plan:includesVar ?variable.
+     ?variable a ep-plan:Variable.
+}
+</pre></code>
+<pre><code>
+<strong>Which realisation of variables of a sub-plan relate to realisations of composite variables of this plan?</strong> 
+
+SELECT DISTINCT ?compositeEntity ?atomicEntity 
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesVar ?compositeVar.
+     ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan &lt;PlanURI>; ep-plan:includesVar ?atomicVar.
+     ?atomicVar a ep-plan:Variable.
+     ?compositeVar a ep-plan:MultiVariable; ep-plan:hasPart ?atomicVar.
+
+     ?mainExecutionTrace a ep-plan:ExecutionTraceBundle; prov:wasDerivedFrom &lt;PlanURI>; ep-plan: hasTraceElement ?compositeEntity; ep-plan: hasTraceElement ?subPlanExecutionTrace; prov:wasDerivedFrom ?subPlan.
+     ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan: hasTraceElement ?atomicEntity.
+
+     ?compositeEntity a ep-plan:EntityCollection; ep-plan:correspondsToVariable ?compositeVar; prov:hadMember ?atomicEntity.
+     ?atomicEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?atomicVar. 
+}
+</pre></code>
+
+
+<strong>Which realisation of variables of this plan also belong to the execution of its sub-plan?</strong> 
+<pre><code>
+SELECT DISTINCT ?mainPlanEntity ?subPlanEntity 
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesVar ?variable.
+     ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan &lt;PlanURI>; ep-plan:includesVar ?variable.
+     ?variable a ep-plan:Variable.
+
+     ?mainExecutionTrace a ep-plan:ExecutionTraceBundle; prov:wasDerivedFrom &lt;PlanURI>; ep-plan: hasTraceElement ?mainPlanEntity; ep-plan: hasTraceElement ?subPlanExecutionTrace.
+     ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan: hasTraceElement ?subPlanEntity; prov:wasDerivedFrom ?subPlan.
+
+     ?mainPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable.
+     ?subPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable; prov:mentionOf mainPlanEntity. 
+}
+</pre></code>
+
+          <h3>Agency</h3>
+
+<strong>Which agent was responsible for the overall execution of this plan?</strong>
+<pre><code>
+SELECT DISTINCT ?agent 
+
+WHERE 
+{
+     &lt;PlanURI> a ep-plan:Plan.
+     ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity.
+     ?executionActivity prov:wasAssociatedWith ?agent; a ep-plan:MultiActivity.
+
+     {
+     ?executionTrace prov:wasDerivedFrom &lt;PlanURI>.
+     }
+     UNION
+     {
+     ?qualAssoc a prov:QualifiedAssociation; prov:hadPlan &lt;PlanURI>; prov:agent ?agent. 
+     ?executionActivity prov:qualifiedAssociation ?qualAssoc.
+     }
+}
+</pre></code>     
+          
      
      <strong>Which agents are allowed to participate in this plan?</strong>
          
@@ -167,6 +379,8 @@ pplan: /EP-PLAN/ontologies/p-plan-alignment.xml
           ?activity a ep-plan:Activity; ep-plan:correspondsToStep <stepURI>; prov:wasAssociatedWith ?agent.
      }
      </code></pre>
+    
+    <h3>Constraints</h3>
     
     <strong>What constraints are associated with the steps of this plan?</strong>
      <pre><code>

@@ -105,20 +105,12 @@ This section provides details for each class and property defined by The EP-Plan
          <dt>is in domain of</dt>
          <dd>
             <a href="#correspondsToStep" title="https://w3id.org/ep-plan#correspondsToStep">correspondsToStep</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#evaluatedAgainst" title="https://w3id.org/ep-plan#evaluatedAgainst">evaluatedAgainst</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#satisfied" title="https://w3id.org/ep-plan#satisfied">satisfied</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#violated" title="https://w3id.org/ep-plan#violated">violated</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#wasEvaluatedActivity" title="https://w3id.org/ep-plan#wasEvaluatedActivity">wasEvaluatedActivity</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#evaluatedActivity" title="https://w3id.org/ep-plan#evaluatedActivity">evaluatedActivity</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#evaluatedFor" title="https://w3id.org/ep-plan#evaluatedFor">evaluatedFor</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasCorrespondingActivity"
+            <a href="#hasCorrespondingActivity"
                title="https://w3id.org/ep-plan#hasCorrespondingActivity">hasCorrespondingActivity</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#satisfiedBy" title="https://w3id.org/ep-plan#satisfiedBy">satisfiedBy</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#violatedBy" title="https://w3id.org/ep-plan#violatedBy">violatedBy</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is same as</dt>
@@ -138,7 +130,7 @@ This section provides details for each class and property defined by The EP-Plan
       <p>
          <strong>IRI:</strong> https://w3id.org/ep-plan#Agent</p>
       <div class="comment">
-         <span class="markdown">A human or computational agent taht can be responsible for the execution of an activity corresponding to a planned step.</span>
+         <span class="markdown">A human or computational agent that can be responsible for the execution of an activity corresponding to a planned step or the overall plan execution.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -194,7 +186,7 @@ This section provides details for each class and property defined by The EP-Plan
       <p>
          <strong>IRI:</strong> https://w3id.org/ep-plan#Communication</p>
       <div class="comment">
-         <span class="markdown">ep-plan:Communication is a type of prov:Communication representing a transfer of an entity between two activities according to some planned specyfication expressed as ep-plan:CommsSpec.</span>
+         <span class="markdown">ep-plan:Communication is a type of prov:Communication representing a transfer of an entity between two activities according to some planned specification expressed as ep-plan:CommsSpec.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -223,7 +215,7 @@ This section provides details for each class and property defined by The EP-Plan
       <p>
          <strong>IRI:</strong> https://w3id.org/ep-plan#Constraint</p>
       <div class="comment">
-         <span class="markdown">A set of restrictions placed on a particular step that are evaluated against an execution trace.</span>
+         <span class="markdown">A restriction placed on a particular step or a plan that is evaluated against an execution trace.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -273,14 +265,15 @@ This section provides details for each class and property defined by The EP-Plan
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#evaluatedActivity" title="https://w3id.org/ep-plan#evaluatedActivity">evaluatedActivity</a>
+            <a href="#evaluatedTraceElement" title="https://w3id.org/ep-plan#evaluatedTraceElement">evaluatedTraceElement</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isQualifiedEvaluationOf" title="https://w3id.org/ep-plan#isQualifiedEvaluationOf">isQualifiedEvaluationOf</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#qualifiedEvaluation" title="https://w3id.org/ep-plan#qualifiedEvaluation">qualifiedEvaluation</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#wasEvaluatedActivity" title="https://w3id.org/ep-plan#wasEvaluatedActivity">wasEvaluatedActivity</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#wasEvaluatedtraceElement"
+               title="https://w3id.org/ep-plan#wasEvaluatedtraceElement">wasEvaluatedTraceElement</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -332,7 +325,7 @@ This section provides details for each class and property defined by The EP-Plan
       <p>
          <strong>IRI:</strong> https://w3id.org/ep-plan#EntityCollection</p>
       <div class="comment">
-         <span class="markdown">A collection of entities corresponding to all variables that are used or produced by activities corresponding to steps of a single plan.  Entity Collection is typically used or generated by  Multi Activity.</span>
+         <span class="markdown">A collection of entities corresponding to ep-plan:MultiVariable. ep-pla:Entity contained in such collection corresponds to ep-plan:Variable that is linked to ep-plan:MultiVariable and defined in the subplan of a plan that the  ep-plan:MultiVariable is defined in.  Entity Collection is typically used or generated by  Multi Activity.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -384,7 +377,7 @@ This section provides details for each class and property defined by The EP-Plan
       <p>
          <strong>IRI:</strong> https://w3id.org/ep-plan#FailedActivity</p>
       <div class="comment">
-         <span class="markdown">A concept representing an activity that was not executed in full, for example, due to constraint violation. Such activity usually marks the point when the plan execution was interrupted due to some problem.</span>
+         <span class="markdown">A concept representing an activity that was not executed in full, for example, due to constraint violation. Such an activity usually marks the point when the plan execution was interrupted due to some problem.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -402,7 +395,7 @@ This section provides details for each class and property defined by The EP-Plan
       <p>
          <strong>IRI:</strong> https://w3id.org/ep-plan#MultiActivity</p>
       <div class="comment">
-         <span class="markdown">An activity that typically corresponds to a MultiStep which is decomposed as a Plan.</span>
+         <span class="markdown">An activity that typically corresponds to a MultiStep which is decomposed as a Plan or the main execution activity that executed the plan. ep-plan:MultiActivity typically generates ep-plan:ExecutionTraceBundle.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -517,6 +510,8 @@ This section provides details for each class and property defined by The EP-Plan
             <sup class="type-op" title="object property">op</sup>, <a href="#includesObjective" title="https://w3id.org/ep-plan#includesObjective">includesObjective</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#includesPlanElement" title="https://w3id.org/ep-plan#includesPlanElement">includesPlanElement</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#includesPolicy" title="https://w3id.org/ep-plan#includesPolicy">includesPolicy</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#includesResponsibleAgent"
+               title="https://w3id.org/ep-plan#includesResponsibleAgent">includesResponsibleAgent</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#includesStep" title="https://w3id.org/ep-plan#includesStep">includesStep</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#includesSubPlan" title="https://w3id.org/ep-plan#includesSubPlan">includesSubPlan</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#includesVar" title="https://w3id.org/ep-plan#includesVar">includesVar</a>
@@ -532,6 +527,8 @@ This section provides details for each class and property defined by The EP-Plan
             <sup class="type-op" title="object property">op</sup>, <a href="#isElementOfPlan" title="https://w3id.org/ep-plan#isElementOfPlan">isElementOfPlan</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isObjectiveOfPlan" title="https://w3id.org/ep-plan#isObjectiveOfPlan">isObjectiveOfPlan</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isPolicyOfPlan" title="https://w3id.org/ep-plan#isPolicyOfPlan">isPolicyOfPlan</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isResponsibleAgentOfPlan"
+               title="https://w3id.org/ep-plan#isResponsibleAgentOfPlan">isResponsibleAgentOfPlan</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isStepOfPlan" title="https://w3id.org/ep-plan#isStepOfPlan">isStepOfPlan</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isSubPlanOfPlan" title="https://w3id.org/ep-plan#isSubPlanOfPlan">isSubPlanOfPlan</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isVariableOfPlan" title="https://w3id.org/ep-plan#isVariableOfPlan">isVariableOfPlan</a>
@@ -618,7 +615,7 @@ This section provides details for each class and property defined by The EP-Plan
       <p>
          <strong>IRI:</strong> https://w3id.org/ep-plan#Rationale</p>
       <div class="comment">
-         <span class="markdown">A generic concept describing a specific justification of a plan or an individual plan element. For example, a plan describing a scientific experiment might be linked to a description of a problem that the experiment is addressing and is the reason why the plan was designed. A data anonymisation step might be included in the plan to protect personal information as a result of a data protection policy associated with a plan (i.e. the reason for including such a step in a plan). Similarly, a data protection policy associated with a plan can be linked to a description of the General Data Protection Regulation (GDPR) which provides the reason why such policy was implemented.</span>
+         <span class="markdown">A generic concept describing a specific justification of a plan or an individual plan element. For example, a  data anonymisation step might be included in the plan to protect personal information as a result of a data protection policy associated with a plan (i.e. the reason for including such a step in a plan). Similarly, a data protection policy associated with a plan can be linked to a description of the General Data Protection Regulation (GDPR) which provides the reason why such policy was implemented.</span>
       </div>
       <dl class="description">
          <dt>is in domain of</dt>
@@ -652,11 +649,15 @@ This section provides details for each class and property defined by The EP-Plan
          <dt>is in domain of</dt>
          <dd>
             <a href="#canBeResponsibleFor" title="https://w3id.org/ep-plan#canBeResponsibleFor">canBeResponsibleFor</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isResponsibleAgentOfPlan"
+               title="https://w3id.org/ep-plan#isResponsibleAgentOfPlan">isResponsibleAgentOfPlan</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#canBeResponsibilityOf" title="https://w3id.org/ep-plan#canBeResponsibilityOf">canBeResponsibilityOf</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#includesResponsibleAgent"
+               title="https://w3id.org/ep-plan#includesResponsibleAgent">includesResponsibleAgent</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -681,9 +682,7 @@ This section provides details for each class and property defined by The EP-Plan
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#canBeResponsibilityOf" title="https://w3id.org/ep-plan#canBeResponsibilityOf">canBeResponsibilityOf</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasConstraint" title="https://w3id.org/ep-plan#hasConstraint">hasConstraint</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasCorrespondingActivity"
+            <a href="#hasCorrespondingActivity"
                title="https://w3id.org/ep-plan#hasCorrespondingActivity">hasCorrespondingActivity</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasInputVar" title="https://w3id.org/ep-plan#hasInputVar">hasInputVar</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasOutputVar" title="https://w3id.org/ep-plan#hasOutputVar">hasOutputVar</a>
@@ -691,21 +690,19 @@ This section provides details for each class and property defined by The EP-Plan
             <sup class="type-op" title="object property">op</sup>, <a href="#isRecipientIn" title="https://w3id.org/ep-plan#isRecipientIn">isRecipientIn</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isSenderIn" title="https://w3id.org/ep-plan#isSenderIn">isSenderIn</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isStepOfPlan" title="https://w3id.org/ep-plan#isStepOfPlan">isStepOfPlan</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#preceds" title="https://w3id.org/ep-plan#preceds">preceds</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#precedes" title="https://w3id.org/ep-plan#precedes">precedes</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#canBeResponsibleFor" title="https://w3id.org/ep-plan#canBeResponsibleFor">canBeResponsibleFor</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#constrains" title="https://w3id.org/ep-plan#constrains">constrains</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#correspondsToStep" title="https://w3id.org/ep-plan#correspondsToStep">correspondsToStep</a>
+            <a href="#correspondsToStep" title="https://w3id.org/ep-plan#correspondsToStep">correspondsToStep</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasRecipient" title="https://w3id.org/ep-plan#hasRecipient">hasRecipient</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasSender" title="https://w3id.org/ep-plan#hasSender">hasSender</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#includesStep" title="https://w3id.org/ep-plan#includesStep">includesStep</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isInputVarOf" title="https://w3id.org/ep-plan#isInputVarOf">isInputVarOf</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isOutputVarOf" title="https://w3id.org/ep-plan#isOutputVarOf">isOutputVarOf</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isPrecededBy" title="https://w3id.org/ep-plan#isPrecededBy">isPrecededBy</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#preceds" title="https://w3id.org/ep-plan#preceds">preceds</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#precedes" title="https://w3id.org/ep-plan#precedes">precedes</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is same as</dt>
@@ -834,23 +831,13 @@ This section provides details for each class and property defined by The EP-Plan
          <a href="#decomposesMultiStep" title="https://w3id.org/ep-plan#decomposesMultiStep">decomposesMultiStep</a>
       </li>
       <li>
-         <a href="#evaluatedActivity" title="https://w3id.org/ep-plan#evaluatedActivity">evaluatedActivity</a>
-      </li>
-      <li>
          <a href="#evaluatedAgainst" title="https://w3id.org/ep-plan#evaluatedAgainst">evaluatedAgainst</a>
       </li>
       <li>
          <a href="#evaluatedFor" title="https://w3id.org/ep-plan#evaluatedFor">evaluatedFor</a>
       </li>
       <li>
-         <a href="#http://purl.org/net/p-plan#hasInputVar" title="http://purl.org/net/p-plan#hasInputVar">
-            <span>has input var</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://purl.org/net/p-plan#hasOutputVar" title="http://purl.org/net/p-plan#hasOutputVar">
-            <span>has output var</span>
-         </a>
+         <a href="#evaluatedTraceElement" title="https://w3id.org/ep-plan#evaluatedTraceElement">evaluatedTraceElement</a>
       </li>
       <li>
          <a href="#hasConstraint" title="https://w3id.org/ep-plan#hasConstraint">hasConstraint</a>
@@ -911,6 +898,10 @@ This section provides details for each class and property defined by The EP-Plan
       </li>
       <li>
          <a href="#includesPolicy" title="https://w3id.org/ep-plan#includesPolicy">includesPolicy</a>
+      </li>
+      <li>
+         <a href="#includesResponsibleAgent"
+            title="https://w3id.org/ep-plan#includesResponsibleAgent">includesResponsibleAgent</a>
       </li>
       <li>
          <a href="#includesStep" title="https://w3id.org/ep-plan#includesStep">includesStep</a>
@@ -978,6 +969,10 @@ This section provides details for each class and property defined by The EP-Plan
          <a href="#isRecipientIn" title="https://w3id.org/ep-plan#isRecipientIn">isRecipientIn</a>
       </li>
       <li>
+         <a href="#isResponsibleAgentOfPlan"
+            title="https://w3id.org/ep-plan#isResponsibleAgentOfPlan">isResponsibleAgentOfPlan</a>
+      </li>
+      <li>
          <a href="#isSenderIn" title="https://w3id.org/ep-plan#isSenderIn">isSenderIn</a>
       </li>
       <li>
@@ -996,7 +991,7 @@ This section provides details for each class and property defined by The EP-Plan
          </a>
       </li>
       <li>
-         <a href="#preceds" title="https://w3id.org/ep-plan#preceds">preceds</a>
+         <a href="#precedes" title="https://w3id.org/ep-plan#precedes">precedes</a>
       </li>
       <li>
          <a href="#qualifiedEvaluation" title="https://w3id.org/ep-plan#qualifiedEvaluation">qualifiedEvaluation</a>
@@ -1014,7 +1009,8 @@ This section provides details for each class and property defined by The EP-Plan
          <a href="#violatedBy" title="https://w3id.org/ep-plan#violatedBy">violatedBy</a>
       </li>
       <li>
-         <a href="#wasEvaluatedActivity" title="https://w3id.org/ep-plan#wasEvaluatedActivity">wasEvaluatedActivity</a>
+         <a href="#wasEvaluatedtraceElement"
+            title="https://w3id.org/ep-plan#wasEvaluatedtraceElement">wasEvaluatedTraceElement</a>
       </li>
    </ul>
    <div class="entity" id="canBeResponsibilityOf">
@@ -1031,6 +1027,9 @@ This section provides details for each class and property defined by The EP-Plan
          <dl>
             <dt>has domain</dt>
             <dd>
+               <a href="#Plan" title="https://w3id.org/ep-plan#Plan">Plan</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
                <a href="#Step" title="https://w3id.org/ep-plan#Step">Step</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
@@ -1055,7 +1054,7 @@ This section provides details for each class and property defined by The EP-Plan
       <p>
          <strong>IRI:</strong> https://w3id.org/ep-plan#canBeResponsibleFor</p>
       <div class="comment">
-         <span class="markdown">ep-plan:canBeResponsibleFor links a ep-plan:ResponsibleAgent to a planned ep-plan:Step fro which it can assume some form of responsibility during the execution. Please note that not all linked ep-plan:ResponsibleAgent(s) must also appear in the execution trace as ep-plan:Agent. ep-plan:canBeResponsibleFor relationship merely indicates that it is possible for this agent to asssume some responsibility diring the execution.</span>
+         <span class="markdown">ep-plan:canBeResponsibleFor links an ep-plan:ResponsibleAgent to a planned ep-plan:Step or the overall ep-plan:Plan for which the agent can assume some form of responsibility during the execution. Please note that not all linked ep-plan:ResponsibleAgent(s) must also appear in the execution trace as ep-plan:Agent. ep-plan:canBeResponsibleFor relationship merely indicates that it is possible for this agent to asssume some responsibility diring the execution.</span>
       </div>
       <div class="description">
          <dl>
@@ -1066,6 +1065,9 @@ This section provides details for each class and property defined by The EP-Plan
             </dd>
             <dt>has range</dt>
             <dd>
+               <a href="#Plan" title="https://w3id.org/ep-plan#Plan">Plan</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
                <a href="#Step" title="https://w3id.org/ep-plan#Step">Step</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
@@ -1096,6 +1098,12 @@ This section provides details for each class and property defined by The EP-Plan
             </dd>
             <dt>has range</dt>
             <dd>
+               <a href="#CommsSpec" title="https://w3id.org/ep-plan#CommsSpec">CommsSpec</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Plan" title="https://w3id.org/ep-plan#Plan">Plan</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
                <a href="#Step" title="https://w3id.org/ep-plan#Step">Step</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
@@ -1241,36 +1249,6 @@ This section provides details for each class and property defined by The EP-Plan
          </dl>
       </div>
    </div>
-   <div class="entity" id="evaluatedActivity">
-      <h3>evaluatedActivity<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/ep-plan#evaluatedActivity</p>
-      <div class="comment">
-         <span class="markdown">ep-plan:activity links ep-plan:ConstriantEvaluation to a p-plan:Activity that was evaluated against a ep-plan:Constraint defined in the plan</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#ConstraintEvaluation" title="https://w3id.org/ep-plan#ConstraintEvaluation">Constraint Evaluation</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Activity" title="https://w3id.org/ep-plan#Activity">Activity</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#wasEvaluatedActivity" title="https://w3id.org/ep-plan#wasEvaluatedActivity">wasEvaluatedActivity</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="evaluatedAgainst">
       <h3>evaluatedAgainst<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -1279,7 +1257,7 @@ This section provides details for each class and property defined by The EP-Plan
       <p>
          <strong>IRI:</strong> https://w3id.org/ep-plan#evaluatedAgainst</p>
       <div class="comment">
-         <span class="markdown">ep-plan:evaluatedAgainst links ep-plan:Activity to a p-plan:Constraint that was associated with an ep-plan:Step that the activity corresponds to. The use of subproperties of ep-plan:evaluatedAgainst is encouraged to indicate whether the activity satisfied the constraint.</span>
+         <span class="markdown">ep-plan:evaluatedAgainst links ep-plan:Activity or ep-plan:Communication to an ep-plan:Constraint. The use of subproperties of ep-plan:evaluatedAgainst is encouraged to indicate whether the execution trace element satisfied the constraint.</span>
       </div>
       <div class="description">
          <dl>
@@ -1291,7 +1269,10 @@ This section provides details for each class and property defined by The EP-Plan
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Activity" title="https://w3id.org/ep-plan#Activity">Activity</a>
+               <span class="dotted" title="http://purl.org/net/p-plan#Activity">activity</span>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Communication" title="https://w3id.org/ep-plan#Communication">Communication</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1332,7 +1313,10 @@ This section provides details for each class and property defined by The EP-Plan
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#Activity" title="https://w3id.org/ep-plan#Activity">Activity</a>
+               <span class="dotted" title="http://purl.org/net/p-plan#Activity">activity</span>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Communication" title="https://w3id.org/ep-plan#Communication">Communication</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -1343,54 +1327,36 @@ This section provides details for each class and property defined by The EP-Plan
          </dl>
       </div>
    </div>
-   <div class="entity" id="http://purl.org/net/p-plan#hasInputVar">
-      <h3>has input var<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="evaluatedTraceElement">
+      <h3>evaluatedTraceElement<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://purl.org/net/p-plan#hasInputVar</p>
-      <div class="description">
-         <dl>
-            <dt>has equivalent properties</dt>
-            <dd>
-               <a href="#hasInputVar" title="https://w3id.org/ep-plan#hasInputVar">hasInputVar</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>is same as</dt>
-            <dd>
-               <a href="#hasInputVar" title="https://w3id.org/ep-plan#hasInputVar">hasInputVar</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>is also defined as</dt>
-            <dd>
-               <a href="#http://purl.org/net/p-plan#hasInputVar">named individual</a>
-            </dd>
-         </dl>
+         <strong>IRI:</strong> https://w3id.org/ep-plan#evaluatedTraceElement</p>
+      <div class="comment">
+         <span class="markdown">ep-plan:evaluatedTraceElement links ep-plan:ConstriantEvaluation to a ep-plan:Activity or ep-plan:Communication that were evaluated against a ep-plan:Constraint defined in the plan.</span>
       </div>
-   </div>
-   <div class="entity" id="http://purl.org/net/p-plan#hasOutputVar">
-      <h3>has output var<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://purl.org/net/p-plan#hasOutputVar</p>
       <div class="description">
          <dl>
-            <dt>has equivalent properties</dt>
+            <dt>has domain</dt>
             <dd>
-               <a href="#hasOutputVar" title="https://w3id.org/ep-plan#hasOutputVar">hasOutputVar</a>
-               <sup class="type-op" title="object property">op</sup>
+               <a href="#ConstraintEvaluation" title="https://w3id.org/ep-plan#ConstraintEvaluation">Constraint Evaluation</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
-            <dt>is same as</dt>
+            <dt>has range</dt>
             <dd>
-               <a href="#hasOutputVar" title="https://w3id.org/ep-plan#hasOutputVar">hasOutputVar</a>
-               <sup class="type-op" title="object property">op</sup>
+               <a href="#Activity" title="https://w3id.org/ep-plan#Activity">Activity</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Communication" title="https://w3id.org/ep-plan#Communication">Communication</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
-            <dt>is also defined as</dt>
+            <dt>is inverse of</dt>
             <dd>
-               <a href="#http://purl.org/net/p-plan#hasOutputVar">named individual</a>
+               <a href="#wasEvaluatedtraceElement"
+                  title="https://w3id.org/ep-plan#wasEvaluatedtraceElement">wasEvaluatedTraceElement</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -1403,12 +1369,18 @@ This section provides details for each class and property defined by The EP-Plan
       <p>
          <strong>IRI:</strong> https://w3id.org/ep-plan#hasConstraint</p>
       <div class="comment">
-         <span class="markdown">ep-plan:hasConstraint links ep-plan:Steo to a p-plan:Constraint. It  indicates that ep-plan:Activities that will correspond to this step should be evaluated against this constraint. Please note, that we do not stipulate that this constriant must be strictly satisfied before the plan can continue. This is to enable inclusions of constraints defined by policies which can be violated under certain conditions and to also enable capture of incorrect behaviour of a system (e.g. a plan ignored a constriant).</span>
+         <span class="markdown">ep-plan:hasConstraint links ep-plan:Step, ep-plan:CommunicationSpec or ep-plan:Plan to a ep-plan:Constraint. Please note, that we do not stipulate that this constriant must be strictly satisfied before the plan can continue. This is to enable inclusions of constraints defined by policies which can be violated under certain conditions and to also enable capture of incorrect behaviour of a system (e.g. a plan ignored a constriant).</span>
       </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
+               <a href="#CommsSpec" title="https://w3id.org/ep-plan#CommsSpec">CommsSpec</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Plan" title="https://w3id.org/ep-plan#Plan">Plan</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
                <a href="#Step" title="https://w3id.org/ep-plan#Step">Step</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
@@ -1554,11 +1526,6 @@ This section provides details for each class and property defined by The EP-Plan
          <strong>IRI:</strong> https://w3id.org/ep-plan#hasInputVar</p>
       <div class="description">
          <dl>
-            <dt>has equivalent properties</dt>
-            <dd>
-               <a href="#http://purl.org/net/p-plan#hasInputVar" title="http://purl.org/net/p-plan#hasInputVar">has input var</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#Step" title="https://w3id.org/ep-plan#Step">Step</a>
@@ -1576,7 +1543,7 @@ This section provides details for each class and property defined by The EP-Plan
             </dd>
             <dt>is same as</dt>
             <dd>
-               <a href="#http://purl.org/net/p-plan#hasInputVar" title="http://purl.org/net/p-plan#hasInputVar">has input var</a>
+               <span class="dotted" title="http://purl.org/net/p-plan#hasInputVar">has input var</span>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>is also defined as</dt>
@@ -1593,11 +1560,6 @@ This section provides details for each class and property defined by The EP-Plan
          <strong>IRI:</strong> https://w3id.org/ep-plan#hasOutputVar</p>
       <div class="description">
          <dl>
-            <dt>has equivalent properties</dt>
-            <dd>
-               <a href="#http://purl.org/net/p-plan#hasOutputVar" title="http://purl.org/net/p-plan#hasOutputVar">has output var</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#Step" title="https://w3id.org/ep-plan#Step">Step</a>
@@ -1615,7 +1577,7 @@ This section provides details for each class and property defined by The EP-Plan
             </dd>
             <dt>is same as</dt>
             <dd>
-               <a href="#http://purl.org/net/p-plan#hasOutputVar" title="http://purl.org/net/p-plan#hasOutputVar">has output var</a>
+               <span class="dotted" title="http://purl.org/net/p-plan#hasOutputVar">has output var</span>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>is also defined as</dt>
@@ -1926,6 +1888,8 @@ This section provides details for each class and property defined by The EP-Plan
                <sup class="type-op" title="object property">op</sup>, <a href="#includesConstraint" title="https://w3id.org/ep-plan#includesConstraint">includesConstraint</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#includesObjective" title="https://w3id.org/ep-plan#includesObjective">includesObjective</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#includesPolicy" title="https://w3id.org/ep-plan#includesPolicy">includesPolicy</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#includesResponsibleAgent"
+                  title="https://w3id.org/ep-plan#includesResponsibleAgent">includesResponsibleAgent</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#includesStep" title="https://w3id.org/ep-plan#includesStep">includesStep</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#includesSubPlan" title="https://w3id.org/ep-plan#includesSubPlan">includesSubPlan</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#includesVar" title="https://w3id.org/ep-plan#includesVar">includesVar</a>
@@ -1984,6 +1948,42 @@ This section provides details for each class and property defined by The EP-Plan
          </dl>
       </div>
    </div>
+   <div class="entity" id="includesResponsibleAgent">
+      <h3>includesResponsibleAgent<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/ep-plan#includesResponsibleAgent</p>
+      <div class="comment">
+         <span class="markdown">Inverse of ep-plan:isResponsibleAgentOfPlan.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#includesPlanElement" title="https://w3id.org/ep-plan#includesPlanElement">includesPlanElement</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Plan" title="https://w3id.org/ep-plan#Plan">Plan</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ResponsibleAgent" title="https://w3id.org/ep-plan#ResponsibleAgent">Responsible Agent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isResponsibleAgentOfPlan"
+                  title="https://w3id.org/ep-plan#isResponsibleAgentOfPlan">isResponsibleAgentOfPlan</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="includesStep">
       <h3>includesStep<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -2027,7 +2027,7 @@ This section provides details for each class and property defined by The EP-Plan
       <p>
          <strong>IRI:</strong> https://w3id.org/ep-plan#includesSubPlan</p>
       <div class="comment">
-         <span class="markdown">Inverse of isSubPlanOf.</span>
+         <span class="markdown">Inverse of ep-plan:isSubPlanOf.</span>
       </div>
       <div class="description">
          <p>
@@ -2099,7 +2099,7 @@ This section provides details for each class and property defined by The EP-Plan
       <p>
          <strong>IRI:</strong> https://w3id.org/ep-plan#isCommsSpecOfPlan</p>
       <div class="comment">
-         <span class="markdown">p-plan:isCommsSpecOfPlan binds a ep-plan:CommsSpec to the ep-plan:Plan it corresponds to.</span>
+         <span class="markdown">ep-plan:isCommsSpecOfPlan binds a ep-plan:CommsSpec to the ep-plan:Plan it corresponds to.</span>
       </div>
       <div class="description">
          <dl>
@@ -2212,6 +2212,8 @@ This section provides details for each class and property defined by The EP-Plan
                <sup class="type-op" title="object property">op</sup>, <a href="#isConstraintOfPlan" title="https://w3id.org/ep-plan#isConstraintOfPlan">isConstraintOfPlan</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#isObjectiveOfPlan" title="https://w3id.org/ep-plan#isObjectiveOfPlan">isObjectiveOfPlan</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#isPolicyOfPlan" title="https://w3id.org/ep-plan#isPolicyOfPlan">isPolicyOfPlan</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#isResponsibleAgentOfPlan"
+                  title="https://w3id.org/ep-plan#isResponsibleAgentOfPlan">isResponsibleAgentOfPlan</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#isStepOfPlan" title="https://w3id.org/ep-plan#isStepOfPlan">isStepOfPlan</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#isSubPlanOfPlan" title="https://w3id.org/ep-plan#isSubPlanOfPlan">isSubPlanOfPlan</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#isVariableOfPlan" title="https://w3id.org/ep-plan#isVariableOfPlan">isVariableOfPlan</a>
@@ -2518,7 +2520,7 @@ This section provides details for each class and property defined by The EP-Plan
             </dd>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#preceds" title="https://w3id.org/ep-plan#preceds">preceds</a>
+               <a href="#precedes" title="https://w3id.org/ep-plan#precedes">precedes</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>is same as</dt>
@@ -2615,6 +2617,42 @@ This section provides details for each class and property defined by The EP-Plan
             <dt>is inverse of</dt>
             <dd>
                <a href="#hasRecipient" title="https://w3id.org/ep-plan#hasRecipient">hasRecipient</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isResponsibleAgentOfPlan">
+      <h3>isResponsibleAgentOfPlan<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/ep-plan#isResponsibleAgentOfPlan</p>
+      <div class="comment">
+         <span class="markdown">ep-plan:isResponsibleAgentOfPlan binds a ep-plan:ResponsibleAgent to the ep-plan:Plan it corresponds to.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#isElementOfPlan" title="https://w3id.org/ep-plan#isElementOfPlan">isElementOfPlan</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ResponsibleAgent" title="https://w3id.org/ep-plan#ResponsibleAgent">Responsible Agent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Plan" title="https://w3id.org/ep-plan#Plan">Plan</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#includesResponsibleAgent"
+                  title="https://w3id.org/ep-plan#includesResponsibleAgent">includesResponsibleAgent</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -2766,13 +2804,13 @@ This section provides details for each class and property defined by The EP-Plan
          </dl>
       </div>
    </div>
-   <div class="entity" id="preceds">
-      <h3>preceds<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="precedes">
+      <h3>precedes<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/ep-plan#preceds</p>
+         <strong>IRI:</strong> https://w3id.org/ep-plan#precedes</p>
       <div class="comment">
          <span class="markdown">Inverse of ep-plan:isPrecededBy.</span>
       </div>
@@ -2836,7 +2874,7 @@ This section provides details for each class and property defined by The EP-Plan
       <p>
          <strong>IRI:</strong> https://w3id.org/ep-plan#satisfied</p>
       <div class="comment">
-         <span class="markdown">ep-plan:satisfied links ep-plan:Activity to a p-plan:Constraint that was associated with a ep-plan:Step that the activity corresponds to. The property indicates that the activity satisfied the constraint.</span>
+         <span class="markdown">ep-plan:satisfied links ep-plan:Activity or ep-plan:Communication to a ep-plan:Constraint. The property indicates that the execution trace element satisfied the constraint.</span>
       </div>
       <div class="description">
          <dl>
@@ -2847,7 +2885,10 @@ This section provides details for each class and property defined by The EP-Plan
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Activity" title="https://w3id.org/ep-plan#Activity">Activity</a>
+               <span class="dotted" title="http://purl.org/net/p-plan#Activity">activity</span>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Communication" title="https://w3id.org/ep-plan#Communication">Communication</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -2887,7 +2928,10 @@ This section provides details for each class and property defined by The EP-Plan
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#Activity" title="https://w3id.org/ep-plan#Activity">Activity</a>
+               <span class="dotted" title="http://purl.org/net/p-plan#Activity">activity</span>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Communication" title="https://w3id.org/ep-plan#Communication">Communication</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -2906,7 +2950,7 @@ This section provides details for each class and property defined by The EP-Plan
       <p>
          <strong>IRI:</strong> https://w3id.org/ep-plan#violated</p>
       <div class="comment">
-         <span class="markdown">ep-plan:violated links ep-plan:Activity to a p-plan:Constraint that was associated with a ep-plan:Step that the activity corresponds to. The property indicates that the activity did not satisfy the constraint.</span>
+         <span class="markdown">ep-plan:satisfied links ep-plan:Activity or ep-plan:Communication to a ep-plan:Constraint. The property indicates that the execution trace element did not satisfy the constraint.</span>
       </div>
       <div class="description">
          <dl>
@@ -2917,7 +2961,10 @@ This section provides details for each class and property defined by The EP-Plan
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Activity" title="https://w3id.org/ep-plan#Activity">Activity</a>
+               <span class="dotted" title="http://purl.org/net/p-plan#Activity">activity</span>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Communication" title="https://w3id.org/ep-plan#Communication">Communication</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -2957,7 +3004,10 @@ This section provides details for each class and property defined by The EP-Plan
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#Activity" title="https://w3id.org/ep-plan#Activity">Activity</a>
+               <span class="dotted" title="http://purl.org/net/p-plan#Activity">activity</span>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Communication" title="https://w3id.org/ep-plan#Communication">Communication</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -2968,21 +3018,24 @@ This section provides details for each class and property defined by The EP-Plan
          </dl>
       </div>
    </div>
-   <div class="entity" id="wasEvaluatedActivity">
-      <h3>wasEvaluatedActivity<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="wasEvaluatedtraceElement">
+      <h3>wasEvaluatedTraceElement<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/ep-plan#wasEvaluatedActivity</p>
+         <strong>IRI:</strong> https://w3id.org/ep-plan#wasEvaluatedtraceElement</p>
       <div class="comment">
-         <span class="markdown">Inverse of ep-plan:activity.</span>
+         <span class="markdown">Inverse of ep-plan:evaluatedTraceElement.</span>
       </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
                <a href="#Activity" title="https://w3id.org/ep-plan#Activity">Activity</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Communication" title="https://w3id.org/ep-plan#Communication">Communication</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -2992,7 +3045,7 @@ This section provides details for each class and property defined by The EP-Plan
             </dd>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#evaluatedActivity" title="https://w3id.org/ep-plan#evaluatedActivity">evaluatedActivity</a>
+               <a href="#evaluatedTraceElement" title="https://w3id.org/ep-plan#evaluatedTraceElement">evaluatedTraceElement</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -3177,9 +3230,7 @@ This section provides details for each class and property defined by The EP-Plan
             <a href="#hasInputVar" title="https://w3id.org/ep-plan#hasInputVar">hasInputVar</a>
          </dd>
          <dt>is also defined as</dt>
-         <dd>
-            <a href="#http://purl.org/net/p-plan#hasInputVar">object property</a>
-         </dd>
+         <dd>object property</dd>
       </dl>
    </div>
    <div class="entity" id="http://purl.org/net/p-plan#hasOutputVar">
@@ -3195,9 +3246,7 @@ This section provides details for each class and property defined by The EP-Plan
             <a href="#hasOutputVar" title="https://w3id.org/ep-plan#hasOutputVar">hasOutputVar</a>
          </dd>
          <dt>is also defined as</dt>
-         <dd>
-            <a href="#http://purl.org/net/p-plan#hasOutputVar">object property</a>
-         </dd>
+         <dd>object property</dd>
       </dl>
    </div>
    <div class="entity" id="http://purl.org/net/p-plan#isDecomposedAsPlan">

@@ -101,7 +101,14 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#canBeResponsibilityOf">
         <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#canBeResponsibleFor"/>
-        <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Step"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Plan"/>
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Step"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#ResponsibleAgent"/>
         <rdfs:comment>Inverse of ep-plan:canBeResponsibleFor.</rdfs:comment>
         <rdfs:label>canBeResponsibilityOf</rdfs:label>
@@ -114,8 +121,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#canBeResponsibleFor">
         <rdfs:domain rdf:resource="https://w3id.org/ep-plan#ResponsibleAgent"/>
-        <rdfs:range rdf:resource="https://w3id.org/ep-plan#Step"/>
-        <rdfs:comment>ep-plan:canBeResponsibleFor links a ep-plan:ResponsibleAgent to a planned ep-plan:Step fro which it can assume some form of responsibility during the execution. Please note that not all linked ep-plan:ResponsibleAgent(s) must also appear in the execution trace as ep-plan:Agent. ep-plan:canBeResponsibleFor relationship merely indicates that it is possible for this agent to asssume some responsibility diring the execution.</rdfs:comment>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Plan"/>
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Step"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment>ep-plan:canBeResponsibleFor links an ep-plan:ResponsibleAgent to a planned ep-plan:Step or the overall ep-plan:Plan for which the agent can assume some form of responsibility during the execution. Please note that not all linked ep-plan:ResponsibleAgent(s) must also appear in the execution trace as ep-plan:Agent. ep-plan:canBeResponsibleFor relationship merely indicates that it is possible for this agent to asssume some responsibility diring the execution.</rdfs:comment>
         <rdfs:label>canBeResponsibleFor</rdfs:label>
     </owl:ObjectProperty>
     
@@ -127,7 +141,15 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#constrains">
         <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#hasConstraint"/>
         <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Constraint"/>
-        <rdfs:range rdf:resource="https://w3id.org/ep-plan#Step"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#CommsSpec"/>
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Plan"/>
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Step"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:comment>Inverse of ep-plan:hasConstraint.</rdfs:comment>
         <rdfs:label>constrains</rdfs:label>
     </owl:ObjectProperty>
@@ -189,27 +211,21 @@
     
 
 
-    <!-- https://w3id.org/ep-plan#evaluatedActivity -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#evaluatedActivity">
-        <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#wasEvaluatedActivity"/>
-        <rdfs:domain rdf:resource="https://w3id.org/ep-plan#ConstraintEvaluation"/>
-        <rdfs:range rdf:resource="https://w3id.org/ep-plan#Activity"/>
-        <rdfs:comment>ep-plan:activity links ep-plan:ConstriantEvaluation to a p-plan:Activity that was evaluated against a ep-plan:Constraint defined in the plan</rdfs:comment>
-        <rdfs:label>evaluatedActivity</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/ep-plan#evaluatedAgainst -->
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#evaluatedAgainst">
         <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#evaluatedFor"/>
-        <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Activity"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Communication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#Constraint"/>
-        <rdfs:comment>ep-plan:evaluatedAgainst links ep-plan:Activity to a p-plan:Constraint that was associated with an ep-plan:Step that the activity corresponds to. The use of subproperties of ep-plan:evaluatedAgainst is encouraged to indicate whether the activity satisfied the constraint.</rdfs:comment>
+        <rdfs:comment>ep-plan:evaluatedAgainst links ep-plan:Activity or ep-plan:Communication to an ep-plan:Constraint. The use of subproperties of ep-plan:evaluatedAgainst is encouraged to indicate whether the execution trace element satisfied the constraint.</rdfs:comment>
         <rdfs:label>evaluatedAgainst</rdfs:label>
     </owl:ObjectProperty>
     
@@ -220,9 +236,36 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#evaluatedFor">
         <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Constraint"/>
-        <rdfs:range rdf:resource="https://w3id.org/ep-plan#Activity"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Communication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:comment>Inverse of ep-plan:evaluatedAgainst.</rdfs:comment>
         <rdfs:label>evaluatedFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ep-plan#evaluatedTraceElement -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#evaluatedTraceElement">
+        <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#wasEvaluatedtraceElement"/>
+        <rdfs:domain rdf:resource="https://w3id.org/ep-plan#ConstraintEvaluation"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Communication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment>ep-plan:evaluatedTraceElement links ep-plan:ConstriantEvaluation to a ep-plan:Activity or ep-plan:Communication that were evaluated against a ep-plan:Constraint defined in the plan.</rdfs:comment>
+        <rdfs:label>evaluatedTraceElement</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -231,9 +274,17 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#hasConstraint">
-        <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Step"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#CommsSpec"/>
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Plan"/>
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Step"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#Constraint"/>
-        <rdfs:comment>ep-plan:hasConstraint links ep-plan:Steo to a p-plan:Constraint. It  indicates that ep-plan:Activities that will correspond to this step should be evaluated against this constraint. Please note, that we do not stipulate that this constriant must be strictly satisfied before the plan can continue. This is to enable inclusions of constraints defined by policies which can be violated under certain conditions and to also enable capture of incorrect behaviour of a system (e.g. a plan ignored a constriant).</rdfs:comment>
+        <rdfs:comment>ep-plan:hasConstraint links ep-plan:Step, ep-plan:CommunicationSpec or ep-plan:Plan to a ep-plan:Constraint. Please note, that we do not stipulate that this constriant must be strictly satisfied before the plan can continue. This is to enable inclusions of constraints defined by policies which can be violated under certain conditions and to also enable capture of incorrect behaviour of a system (e.g. a plan ignored a constriant).</rdfs:comment>
         <rdfs:label>hasConstraint</rdfs:label>
     </owl:ObjectProperty>
     
@@ -461,6 +512,20 @@
     
 
 
+    <!-- https://w3id.org/ep-plan#includesResponsibleAgent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#includesResponsibleAgent">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ep-plan#includesPlanElement"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#isResponsibleAgentOfPlan"/>
+        <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Plan"/>
+        <rdfs:range rdf:resource="https://w3id.org/ep-plan#ResponsibleAgent"/>
+        <rdfs:comment>Inverse of ep-plan:isResponsibleAgentOfPlan.</rdfs:comment>
+        <rdfs:label>includesResponsibleAgent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/ep-plan#includesStep -->
 
 
@@ -484,7 +549,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Plan"/>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#Plan"/>
-        <rdfs:comment>Inverse of isSubPlanOf.</rdfs:comment>
+        <rdfs:comment>Inverse of ep-plan:isSubPlanOf.</rdfs:comment>
         <rdfs:label>includesSubPlan</rdfs:label>
     </owl:ObjectProperty>
     
@@ -511,7 +576,7 @@
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/ep-plan#isElementOfPlan"/>
         <rdfs:domain rdf:resource="https://w3id.org/ep-plan#CommsSpec"/>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#Plan"/>
-        <rdfs:comment>p-plan:isCommsSpecOfPlan binds a ep-plan:CommsSpec to the ep-plan:Plan it corresponds to.</rdfs:comment>
+        <rdfs:comment>ep-plan:isCommsSpecOfPlan binds a ep-plan:CommsSpec to the ep-plan:Plan it corresponds to.</rdfs:comment>
         <rdfs:label>isCommsSpecOfPlan</rdfs:label>
     </owl:ObjectProperty>
     
@@ -657,7 +722,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#isPrecededBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#preceds"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#precedes"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Step"/>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#Step"/>
@@ -700,6 +765,19 @@
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#CommsSpec"/>
         <rdfs:comment>Inverse of ep-plan:hasRecipient.</rdfs:comment>
         <rdfs:label>isRecipientIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ep-plan#isResponsibleAgentOfPlan -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#isResponsibleAgentOfPlan">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ep-plan#isElementOfPlan"/>
+        <rdfs:domain rdf:resource="https://w3id.org/ep-plan#ResponsibleAgent"/>
+        <rdfs:range rdf:resource="https://w3id.org/ep-plan#Plan"/>
+        <rdfs:comment>ep-plan:isResponsibleAgentOfPlan binds a ep-plan:ResponsibleAgent to the ep-plan:Plan it corresponds to.</rdfs:comment>
+        <rdfs:label>isResposibleAgentOfPlan</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -756,15 +834,15 @@
     
 
 
-    <!-- https://w3id.org/ep-plan#preceds -->
+    <!-- https://w3id.org/ep-plan#precedes -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#preceds">
+    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#precedes">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Step"/>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#Step"/>
         <rdfs:comment>Inverse of ep-plan:isPrecededBy.</rdfs:comment>
-        <rdfs:label>preceds</rdfs:label>
+        <rdfs:label>precedes</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -787,9 +865,16 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#satisfied">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/ep-plan#evaluatedAgainst"/>
         <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#satisfiedBy"/>
-        <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Activity"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Communication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#Constraint"/>
-        <rdfs:comment>ep-plan:satisfied links ep-plan:Activity to a p-plan:Constraint that was associated with a ep-plan:Step that the activity corresponds to. The property indicates that the activity satisfied the constraint.</rdfs:comment>
+        <rdfs:comment>ep-plan:satisfied links ep-plan:Activity or ep-plan:Communication to a ep-plan:Constraint. The property indicates that the execution trace element satisfied the constraint.</rdfs:comment>
         <rdfs:label>satisfied</rdfs:label>
     </owl:ObjectProperty>
     
@@ -801,7 +886,14 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#satisfiedBy">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/ep-plan#evaluatedFor"/>
         <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Constraint"/>
-        <rdfs:range rdf:resource="https://w3id.org/ep-plan#Activity"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Communication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:comment>Inverse of ep-plan:satisfied.</rdfs:comment>
         <rdfs:label>satisfiedBy</rdfs:label>
     </owl:ObjectProperty>
@@ -814,9 +906,16 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#violated">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/ep-plan#evaluatedAgainst"/>
         <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#violatedBy"/>
-        <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Activity"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Communication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#Constraint"/>
-        <rdfs:comment>ep-plan:violated links ep-plan:Activity to a p-plan:Constraint that was associated with a ep-plan:Step that the activity corresponds to. The property indicates that the activity did not satisfy the constraint.</rdfs:comment>
+        <rdfs:comment>ep-plan:satisfied links ep-plan:Activity or ep-plan:Communication to a ep-plan:Constraint. The property indicates that the execution trace element did not satisfy the constraint.</rdfs:comment>
         <rdfs:label>violated</rdfs:label>
     </owl:ObjectProperty>
     
@@ -828,21 +927,35 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#violatedBy">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/ep-plan#evaluatedFor"/>
         <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Constraint"/>
-        <rdfs:range rdf:resource="https://w3id.org/ep-plan#Activity"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Communication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:comment>Inverse of ep-plan:violated.</rdfs:comment>
         <rdfs:label>violatedBy</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/ep-plan#wasEvaluatedActivity -->
+    <!-- https://w3id.org/ep-plan#wasEvaluatedtraceElement -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#wasEvaluatedActivity">
-        <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Activity"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#wasEvaluatedtraceElement">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Communication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#ConstraintEvaluation"/>
-        <rdfs:comment>Inverse of ep-plan:activity.</rdfs:comment>
-        <rdfs:label>wasEvaluatedActivity</rdfs:label>
+        <rdfs:comment>Inverse of ep-plan:evaluatedTraceElement.</rdfs:comment>
+        <rdfs:label>wasEvaluatedTraceElement</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -882,7 +995,7 @@
 
     <owl:Class rdf:about="https://w3id.org/ep-plan#Agent">
         <rdfs:subClassOf rdf:resource="https://w3id.org/ep-plan#TraceElement"/>
-        <rdfs:comment>A human or computational agent taht can be responsible for the execution of an activity corresponding to a planned step.</rdfs:comment>
+        <rdfs:comment>A human or computational agent that can be responsible for the execution of an activity corresponding to a planned step or the overall plan execution.</rdfs:comment>
         <rdfs:label>Agent</rdfs:label>
     </owl:Class>
     
@@ -913,7 +1026,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/ep-plan#Communication">
-        <rdfs:comment>ep-plan:Communication is a type of prov:Communication representing a transfer of an entity between two activities according to some planned specyfication expressed as ep-plan:CommsSpec.</rdfs:comment>
+        <rdfs:comment>ep-plan:Communication is a type of prov:Communication representing a transfer of an entity between two activities according to some planned specification expressed as ep-plan:CommsSpec.</rdfs:comment>
         <rdfs:label>Communication</rdfs:label>
     </owl:Class>
     
@@ -934,7 +1047,7 @@
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
-        <rdfs:comment>A set of restrictions placed on a particular step that are evaluated against an execution trace.</rdfs:comment>
+        <rdfs:comment>A restriction placed on a particular step or a plan that is evaluated against an execution trace.</rdfs:comment>
         <rdfs:label>Constraint</rdfs:label>
     </owl:Class>
     
@@ -967,7 +1080,7 @@
 
     <owl:Class rdf:about="https://w3id.org/ep-plan#EntityCollection">
         <rdfs:subClassOf rdf:resource="https://w3id.org/ep-plan#Entity"/>
-        <rdfs:comment>A collection of entities corresponding to all variables that are used or produced by activities corresponding to steps of a single plan.  Entity Collection is typically used or generated by  Multi Activity.</rdfs:comment>
+        <rdfs:comment>A collection of entities corresponding to ep-plan:MultiVariable. ep-pla:Entity contained in such collection corresponds to ep-plan:Variable that is linked to ep-plan:MultiVariable and defined in the subplan of a plan that the  ep-plan:MultiVariable is defined in.  Entity Collection is typically used or generated by  Multi Activity.</rdfs:comment>
         <rdfs:label>Entity Collection</rdfs:label>
     </owl:Class>
     
@@ -989,7 +1102,7 @@
 
     <owl:Class rdf:about="https://w3id.org/ep-plan#FailedActivity">
         <rdfs:subClassOf rdf:resource="https://w3id.org/ep-plan#Activity"/>
-        <rdfs:comment>A concept representing an activity that was not executed in full, for example, due to constraint violation. Such activity usually marks the point when the plan execution was interrupted due to some problem.</rdfs:comment>
+        <rdfs:comment>A concept representing an activity that was not executed in full, for example, due to constraint violation. Such an activity usually marks the point when the plan execution was interrupted due to some problem.</rdfs:comment>
         <rdfs:label>Failed Activity</rdfs:label>
     </owl:Class>
     
@@ -1000,7 +1113,7 @@
 
     <owl:Class rdf:about="https://w3id.org/ep-plan#MultiActivity">
         <rdfs:subClassOf rdf:resource="https://w3id.org/ep-plan#Activity"/>
-        <rdfs:comment>An activity that typically corresponds to a MultiStep which is decomposed as a Plan.</rdfs:comment>
+        <rdfs:comment>An activity that typically corresponds to a MultiStep which is decomposed as a Plan or the main execution activity that executed the plan. ep-plan:MultiActivity typically generates ep-plan:ExecutionTraceBundle.</rdfs:comment>
         <rdfs:label>Multi Activity</rdfs:label>
     </owl:Class>
     
@@ -1043,7 +1156,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/ep-plan#Plan">
-        <rdfs:comment>An ep-plan:Plan is a specific type of prov:Plan. It is composed of smaller steps that use and produce Variables.</rdfs:comment>
+        <rdfs:comment>An ep-plan:Plan is a specific type of prov:Plan. It is composed of smaller steps that use and produce variables.</rdfs:comment>
         <rdfs:label>Plan</rdfs:label>
     </owl:Class>
     
@@ -1084,7 +1197,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/ep-plan#Rationale">
-        <rdfs:comment>A generic concept describing a specific justification of a plan or an individual plan element. For example, a plan describing a scientific experiment might be linked to a description of a problem that the experiment is addressing and is the reason why the plan was designed. A data anonymisation step might be included in the plan to protect personal information as a result of a data protection policy associated with a plan (i.e. the reason for including such a step in a plan). Similarly, a data protection policy associated with a plan can be linked to a description of the General Data Protection Regulation (GDPR) which provides the reason why such policy was implemented.</rdfs:comment>
+        <rdfs:comment>A generic concept describing a specific justification of a plan or an individual plan element. For example, a  data anonymisation step might be included in the plan to protect personal information as a result of a data protection policy associated with a plan (i.e. the reason for including such a step in a plan). Similarly, a data protection policy associated with a plan can be linked to a description of the General Data Protection Regulation (GDPR) which provides the reason why such policy was implemented.</rdfs:comment>
         <rdfs:label>Rationale</rdfs:label>
     </owl:Class>
     

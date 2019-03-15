@@ -497,6 +497,59 @@ WHERE
           ?communication ep-plan:satisfies ?constraint.
      }
      </code></pre>
+     
+      <h3>Policies</h3>
+     
+     <strong>What are the policies associated with this plan?</strong>
+     <pre><code>
+     SELECT DISTINCT ?policy
+
+     WHERE 
+     {
+          &lt;PlanURI> a ep-plan:Plan; ep-plan:includesPolicy ?policy; 
+          ?policy a ep-plan:Policy.
+     }
+     </code></pre>
+     
+     <strong>Which plan elements were included in this plan as a result of a policy?
+</strong>
+     <pre><code>
+     SELECT DISTINCT ?policy ?planElement
+
+     WHERE 
+     {
+          &lt;PlanURI> a ep-plan:Plan; ep-plan:includesPolicy ?policy; ep-plan:includesPlanElement ?planElement; 
+          ?policy a ep-plan:Policy; a ep-plan:Rationale.
+          ?planElement a ep-plan:PlanElement; ep-plan:hasRationale ?policy.
+     }
+     </code></pre>
+     
+     <h3>Rationale & Objectives</h3>
+     
+     <strong>Why was this policy associated with this plan?
+</strong>
+     <pre><code>
+     SELECT DISTINCT ?policyRationale
+
+     WHERE 
+     {
+          &lt;PlanURI> a ep-plan:Plan; ep-plan:includesPolicy &lt;PolicyURI>.
+          &lt;PolicyURI> a ep-plan:Policy; ep-plan: hasRationale ?policyRationale. 
+          ?policyRationale a ep-plan:Rationale. 
+     }
+     </code></pre>
+     <strong>What are the objectives of this plan?
+</strong>
+     <pre><code>
+     SELECT DISTINCT ?objective
+
+     WHERE 
+     {
+          &lt;PlanURI> a ep-plan:Plan; ep-plan:includesObjective ?objective.
+          ?objective a ep-plan:Objective. 
+     }
+     </code></pre>
+     
   </body>    
       
       

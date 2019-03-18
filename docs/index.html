@@ -154,14 +154,14 @@ WHERE
 }
 </pre></code>
 
-<strong>Which steps produce this variable in this plan ?</strong>
+<strong>Which steps produce which variable in this plan ?</strong>
 <pre><code>
 SELECT DISTINCT ?step ?variableProduced 
 
 WHERE
 {
-     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVar ?variableUsed.
-     ?step a ep-plan:Step; ep-plan:hasOutputVar ?variableUsed.
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVar ?variableProduced.
+     ?step a ep-plan:Step; ep-plan:hasOutputVar ?variableProduced.
      ?variableProduced a ep-plan:Variable.
 }
 </pre></code>

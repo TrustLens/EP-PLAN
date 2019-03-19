@@ -10,7 +10,7 @@
 @base <http://trustlens.org/test_dataset1> .
 
 <http://trustlens.org/test_dataset1> rdf:type owl:Ontology ;
-                                      owl:imports <http://w3id.org/ep-plan/prov-alignment> ,
+                                      owl:imports <https://trustlens.github.io/EP-PLAN/ontologies/prov-alignment.xml> ,
                                                   <http://www.w3.org/ns/prov-o-20130430> ,
                                                   <https://trustlens.github.io/EP-PLAN/ontologies/ep-plan.ttl> .
 

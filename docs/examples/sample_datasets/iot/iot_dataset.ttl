@@ -1,0 +1,570 @@
+@prefix : <http://trustlens.org/test_dataset1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix ep-plan: <https://w3id.org/ep-plan#> .
+@base <http://trustlens.org/test_dataset1> .
+
+<http://trustlens.org/test_dataset1> rdf:type owl:Ontology ;
+                                      owl:imports <http://w3id.org/ep-plan/prov-alignment> ,
+                                                  <http://www.w3.org/ns/prov-o-20130430> ,
+                                                  <https://w3id.org/ep-plan> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://openscience.adaptcentre.ie/ontologies/GDPRtEXT/deliverables/gdpr.ttl#article32-1-a
+<http://openscience.adaptcentre.ie/ontologies/GDPRtEXT/deliverables/gdpr.ttl#article32-1-a> rdf:type owl:NamedIndividual ,
+                                                                                                     ep-plan:Rationale .
+
+
+###  http://trustlens.org/test_dataset1#Aberdeen
+:Aberdeen rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/ns/prov#Location> .
+
+
+###  http://trustlens.org/test_dataset1#AnonymisedDataSet
+:AnonymisedDataSet rdf:type owl:NamedIndividual ,
+                            ep-plan:Objective ,
+                            ep-plan:Variable ;
+                   ep-plan:hasRationale :CityCouncilSmartCityAgenda ;
+                   ep-plan:isObjectiveOfPlan :HomeMonitoringHighLevelPlan ;
+                   ep-plan:isVariableOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#AnonymisedDatasetEntity
+:AnonymisedDatasetEntity rdf:type owl:NamedIndividual ,
+                                  ep-plan:Entity ;
+                         <http://www.w3.org/ns/prov#wasGeneratedBy> :DataAnonymisationActivity ;
+                         ep-plan:correspondsToVariable :AnonymisedDataSet ;
+                         ep-plan:isElementOfTrace :ExecutionMainPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#BinTechLtd
+:BinTechLtd rdf:type owl:NamedIndividual ,
+                     ep-plan:Agent ,
+                     ep-plan:ResponsibleAgent ;
+            ep-plan:canBeResponsibleFor :UploadCo2 ,
+                                        :UploadTemp ;
+            ep-plan:isElementOfTrace :ExecutionSubPlan1 ;
+            ep-plan:isResponsibleAgentOfPlan :IoTCollectorPlan ;
+            rdfs:comment "BinTech LTD is fictional company that manufactures IoT devices for measuring temperature and Co2. IoT devices communicate with other services on the Web via a cloud proxy managed by BinTech." .
+
+
+###  http://trustlens.org/test_dataset1#CO2SensorAgent
+:CO2SensorAgent rdf:type owl:NamedIndividual ,
+                         ep-plan:Agent ,
+                         ep-plan:ResponsibleAgent ;
+                ep-plan:canBeResponsibleFor :CollectCo2 ;
+                ep-plan:isElementOfTrace :ExecutionSubPlan1 ;
+                ep-plan:isResponsibleAgentOfPlan :IoTCollectorPlan .
+
+
+###  http://trustlens.org/test_dataset1#CityCouncil
+:CityCouncil rdf:type owl:NamedIndividual ,
+                      ep-plan:Agent ,
+                      ep-plan:ResponsibleAgent ;
+             ep-plan:canBeResponsibleFor :DataAnonymisation ,
+                                         :HomeMonitoringHighLevelPlan ,
+                                         :Storage ;
+             ep-plan:isElementOfTrace :ExecutionMainPlan1 ,
+                                      :ExecutionMainPlan2 ;
+             ep-plan:isResponsibleAgentOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#CityCouncilSmartCityAgenda
+:CityCouncilSmartCityAgenda rdf:type owl:NamedIndividual ,
+                                     ep-plan:Rationale .
+
+
+###  http://trustlens.org/test_dataset1#Co2Data
+:Co2Data rdf:type owl:NamedIndividual ,
+                  ep-plan:Variable ;
+         ep-plan:isVariableOfPlan :IoTCollectorPlan .
+
+
+###  http://trustlens.org/test_dataset1#Co2Entity
+:Co2Entity rdf:type owl:NamedIndividual ,
+                    ep-plan:Entity ;
+           <http://www.w3.org/ns/prov#wasGeneratedBy> :CollectCo2Activity1 ;
+           ep-plan:correspondsToVariable :Co2Data ;
+           ep-plan:isElementOfTrace :ExecutionSubPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#CollectAtLocationAberdeen
+:CollectAtLocationAberdeen rdf:type owl:NamedIndividual ,
+                                    ep-plan:Constraint ;
+                           ep-plan:hasRationale :ExecutionPolicy ;
+                           ep-plan:isConstraintOfPlan :HomeMonitoringHighLevelPlan ;
+                           rdfs:comment "Data collection has to be performed in  Aberdeen" .
+
+
+###  http://trustlens.org/test_dataset1#CollectCo2
+:CollectCo2 rdf:type owl:NamedIndividual ,
+                     ep-plan:Step ;
+            ep-plan:hasOutputVar :Co2Data ;
+            ep-plan:isStepOfPlan :IoTCollectorPlan .
+
+
+###  http://trustlens.org/test_dataset1#CollectCo2Activity1
+:CollectCo2Activity1 rdf:type owl:NamedIndividual ,
+                              ep-plan:Activity ;
+                     ep-plan:correspondsToStep :CollectCo2 ;
+                     ep-plan:isElementOfTrace :ExecutionSubPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#CollectCo2Activity2
+:CollectCo2Activity2 rdf:type owl:NamedIndividual ,
+                              ep-plan:FailedActivity ;
+                     <http://www.w3.org/ns/prov#atLocation> :London ;
+                     <http://www.w3.org/ns/prov#wasAssociatedWith> :CO2SensorAgent ;
+                     ep-plan:correspondsToStep :CollectCo2 ;
+                     ep-plan:isElementOfTrace :ExecutionSubPlan2 .
+
+
+###  http://trustlens.org/test_dataset1#CollectData
+:CollectData rdf:type owl:NamedIndividual ,
+                      ep-plan:MultiStep ;
+             ep-plan:hasConstraint :CollectAtLocationAberdeen ;
+             ep-plan:isDecomposedAsPlan :IoTCollectorPlan ;
+             ep-plan:isStepOfPlan :HomeMonitoringHighLevelPlan ;
+             ep-plan:precedes :DataProcessing .
+
+
+###  http://trustlens.org/test_dataset1#CollectDataActivity1
+:CollectDataActivity1 rdf:type owl:NamedIndividual ,
+                               ep-plan:MultiActivity ;
+                      <http://www.w3.org/ns/prov#atLocation> :Aberdeen ;
+                      <http://www.w3.org/ns/prov#wasAssociatedWith> :IoTDeviceAgent ;
+                      ep-plan:correspondsToStep :CollectData ;
+                      ep-plan:isElementOfTrace :ExecutionMainPlan1 ;
+                      ep-plan:satisfied :CollectAtLocationAberdeen .
+
+
+###  http://trustlens.org/test_dataset1#CollectDataActivity2
+:CollectDataActivity2 rdf:type owl:NamedIndividual ,
+                               ep-plan:FailedActivity ,
+                               ep-plan:MultiActivity ;
+                      <http://www.w3.org/ns/prov#atLocation> :London ;
+                      <http://www.w3.org/ns/prov#wasAssociatedWith> :IoTDeviceAgent ;
+                      ep-plan:correspondsToStep :CollectData ;
+                      ep-plan:isElementOfTrace :ExecutionMainPlan2 ;
+                      ep-plan:violated :CollectAtLocationAberdeen .
+
+
+###  http://trustlens.org/test_dataset1#CollectTempActivity1
+:CollectTempActivity1 rdf:type owl:NamedIndividual ,
+                               ep-plan:Activity ;
+                      ep-plan:correspondsToStep :CollectTemperature ;
+                      ep-plan:isElementOfTrace :ExecutionSubPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#CollectTempActivity2
+:CollectTempActivity2 rdf:type owl:NamedIndividual ,
+                               ep-plan:FailedActivity ;
+                      <http://www.w3.org/ns/prov#atLocation> :London ;
+                      <http://www.w3.org/ns/prov#wasAssociatedWith> :TempSensorAgent ;
+                      ep-plan:correspondsToStep :CollectTemperature ;
+                      ep-plan:isElementOfTrace :ExecutionSubPlan2 .
+
+
+###  http://trustlens.org/test_dataset1#CollectTemperature
+:CollectTemperature rdf:type owl:NamedIndividual ,
+                             ep-plan:Step ;
+                    ep-plan:hasOutputVar :TempData ;
+                    ep-plan:isStepOfPlan :IoTCollectorPlan .
+
+
+###  http://trustlens.org/test_dataset1#CollectedData
+:CollectedData rdf:type owl:NamedIndividual ,
+                        ep-plan:MultiVariable ;
+               ep-plan:isOutputVarOf :CollectData ;
+               ep-plan:isVariableOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#Communication1
+:Communication1 rdf:type owl:NamedIndividual ,
+                         ep-plan:Communication ;
+                <http://www.w3.org/ns/prov#activity> :CollectDataActivity1 ;
+                ep-plan:correspondsToCommsSpec :DataUploadOfCollectedData ;
+                ep-plan:isElementOfTrace :ExecutionMainPlan1 ;
+                ep-plan:satisfied :UseEncryption .
+
+
+###  http://trustlens.org/test_dataset1#DashBoardEntity
+:DashBoardEntity rdf:type owl:NamedIndividual ,
+                          ep-plan:Entity ;
+                 <http://www.w3.org/ns/prov#wasGeneratedBy> :DataVisualisationActivity ;
+                 ep-plan:correspondsToVariable :DataDashboard ;
+                 ep-plan:isElementOfTrace :ExecutionMainPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#DataAnonymisation
+:DataAnonymisation rdf:type owl:NamedIndividual ,
+                            ep-plan:Step ;
+                   ep-plan:hasInputVar :UpdatedDatabase ;
+                   ep-plan:isStepOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#DataAnonymisationActivity
+:DataAnonymisationActivity rdf:type owl:NamedIndividual ,
+                                    ep-plan:Activity ;
+                           <http://www.w3.org/ns/prov#used> :UpdatedDatabaseEntity ;
+                           <http://www.w3.org/ns/prov#wasAssociatedWith> :CityCouncil ,
+                                                                         :IoTSystemAgent ;
+                           ep-plan:correspondsToStep :DataAnonymisation ;
+                           ep-plan:isElementOfTrace :ExecutionMainPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#DataDashboard
+:DataDashboard rdf:type owl:NamedIndividual ,
+                        ep-plan:Objective ,
+                        ep-plan:Variable ;
+               ep-plan:hasRationale :CityCouncilSmartCityAgenda ;
+               ep-plan:isObjectiveOfPlan :HomeMonitoringHighLevelPlan ;
+               ep-plan:isVariableOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#DataEntry
+:DataEntry rdf:type owl:NamedIndividual ,
+                    ep-plan:Variable ;
+           ep-plan:isVariableOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#DataEntryEntity
+:DataEntryEntity rdf:type owl:NamedIndividual ,
+                          ep-plan:Entity ;
+                 <http://www.w3.org/ns/prov#wasGeneratedBy> :DataProcessingActivity ;
+                 ep-plan:correspondsToVariable :DataEntry ;
+                 ep-plan:isElementOfTrace :ExecutionMainPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#DataProcessing
+:DataProcessing rdf:type owl:NamedIndividual ,
+                         ep-plan:Step ;
+                ep-plan:hasInputVar :CollectedData ;
+                ep-plan:hasOutputVar :DataEntry ;
+                ep-plan:isStepOfPlan :HomeMonitoringHighLevelPlan ;
+                ep-plan:precedes :Storage .
+
+
+###  http://trustlens.org/test_dataset1#DataProcessingActivity
+:DataProcessingActivity rdf:type owl:NamedIndividual ,
+                                 ep-plan:Activity ;
+                        <http://www.w3.org/ns/prov#qualifiedCommunication> :Communication1 ;
+                        <http://www.w3.org/ns/prov#used> :DataReadingsCollection ;
+                        <http://www.w3.org/ns/prov#wasAssociatedWith> :CityCouncil ,
+                                                                      :IoTSystemAgent ;
+                        ep-plan:correspondsToStep :DataProcessing ;
+                        ep-plan:isElementOfTrace :ExecutionMainPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#DataProtectionPolicy
+:DataProtectionPolicy rdf:type owl:NamedIndividual ,
+                               ep-plan:Policy ,
+                               ep-plan:Rationale ;
+                      ep-plan:hasRationale <http://openscience.adaptcentre.ie/ontologies/GDPRtEXT/deliverables/gdpr.ttl#article32-1-a> ;
+                      ep-plan:isPolicyOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#DataReadingsCollection
+:DataReadingsCollection rdf:type owl:NamedIndividual ,
+                                 ep-plan:EntityCollection ;
+                        <http://www.w3.org/ns/prov#hadMember> :UploadedCo2Entity ,
+                                                              :UploadedTempEntity ;
+                        <http://www.w3.org/ns/prov#wasGeneratedBy> :CollectDataActivity1 ;
+                        ep-plan:correspondsToVariable :CollectedData ;
+                        ep-plan:isElementOfTrace :ExecutionMainPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#DataUploadOfCollectedData
+:DataUploadOfCollectedData rdf:type owl:NamedIndividual ,
+                                    ep-plan:CommsSpec ;
+                           ep-plan:hasConstraint :UseEncryption ;
+                           ep-plan:hasPayload :CollectedData ;
+                           ep-plan:hasRecipient :DataProcessing ;
+                           ep-plan:hasSender :CollectData ;
+                           ep-plan:isCommsSpecOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#DataVisualisation
+:DataVisualisation rdf:type owl:NamedIndividual ,
+                            ep-plan:Step ;
+                   ep-plan:hasInputVar :UpdatedDatabase ;
+                   ep-plan:hasOutputVar :DataDashboard ;
+                   ep-plan:isStepOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#DataVisualisationActivity
+:DataVisualisationActivity rdf:type owl:NamedIndividual ,
+                                    ep-plan:Activity ;
+                           <http://www.w3.org/ns/prov#used> :UpdatedDatabaseEntity ;
+                           <http://www.w3.org/ns/prov#wasAssociatedWith> :VisTechLtd ;
+                           ep-plan:correspondsToStep :DataVisualisation ;
+                           ep-plan:isElementOfTrace :ExecutionMainPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#Database
+:Database rdf:type owl:NamedIndividual ,
+                   ep-plan:Variable ;
+          ep-plan:isVariableOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#DatabaseEntity
+:DatabaseEntity rdf:type owl:NamedIndividual ,
+                         ep-plan:Entity ;
+                ep-plan:correspondsToVariable :Database ;
+                ep-plan:isElementOfTrace :ExecutionMainPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#ExecutionMainPlan1
+:ExecutionMainPlan1 rdf:type owl:NamedIndividual ,
+                             ep-plan:ExecutionTraceBundle ;
+                    <http://www.w3.org/ns/prov#wasDerivedFrom> :HomeMonitoringHighLevelPlan ;
+                    <http://www.w3.org/ns/prov#wasGeneratedBy> :MainPlanExecutionActivity1 .
+
+
+###  http://trustlens.org/test_dataset1#ExecutionMainPlan2
+:ExecutionMainPlan2 rdf:type owl:NamedIndividual ,
+                             ep-plan:ExecutionTraceBundle ;
+                    <http://www.w3.org/ns/prov#wasDerivedFrom> :HomeMonitoringHighLevelPlan ;
+                    <http://www.w3.org/ns/prov#wasGeneratedBy> :MainPlanExecutionActivity2 .
+
+
+###  http://trustlens.org/test_dataset1#ExecutionPolicy
+:ExecutionPolicy rdf:type owl:NamedIndividual ,
+                          ep-plan:Policy ,
+                          ep-plan:Rationale ;
+                 ep-plan:isPolicyOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#ExecutionSubPlan1
+:ExecutionSubPlan1 rdf:type owl:NamedIndividual ,
+                            ep-plan:ExecutionTraceBundle ;
+                   <http://www.w3.org/ns/prov#wasDerivedFrom> :IoTCollectorPlan ;
+                   <http://www.w3.org/ns/prov#wasGeneratedBy> :CollectDataActivity1 ;
+                   ep-plan:isElementOfTrace :ExecutionMainPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#ExecutionSubPlan2
+:ExecutionSubPlan2 rdf:type owl:NamedIndividual ,
+                            ep-plan:ExecutionTraceBundle ;
+                   <http://www.w3.org/ns/prov#wasDerivedFrom> :IoTCollectorPlan ;
+                   <http://www.w3.org/ns/prov#wasGeneratedBy> :CollectDataActivity2 ;
+                   ep-plan:isElementOfTrace :ExecutionMainPlan2 .
+
+
+###  http://trustlens.org/test_dataset1#GoogleCloud
+:GoogleCloud rdf:type owl:NamedIndividual ,
+                      ep-plan:Agent ,
+                      ep-plan:ResponsibleAgent ;
+             ep-plan:canBeResponsibleFor :Storage ;
+             ep-plan:isElementOfTrace :ExecutionMainPlan1 ;
+             ep-plan:isResponsibleAgentOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan
+:HomeMonitoringHighLevelPlan rdf:type owl:NamedIndividual ,
+                                      ep-plan:Plan .
+
+
+###  http://trustlens.org/test_dataset1#IoTCollectorPlan
+:IoTCollectorPlan rdf:type owl:NamedIndividual ,
+                           ep-plan:Plan ;
+                  ep-plan:isSubPlanOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#IoTDeviceAgent
+:IoTDeviceAgent rdf:type owl:NamedIndividual ,
+                         ep-plan:Agent ,
+                         ep-plan:ResponsibleAgent ;
+                ep-plan:canBeResponsibleFor :CollectData ,
+                                            :IoTCollectorPlan ,
+                                            :UploadCo2 ,
+                                            :UploadTemp ;
+                ep-plan:isElementOfTrace :ExecutionMainPlan1 ,
+                                         :ExecutionMainPlan2 ,
+                                         :ExecutionSubPlan1 ,
+                                         :ExecutionSubPlan2 ;
+                ep-plan:isResponsibleAgentOfPlan :IoTCollectorPlan .
+
+
+###  http://trustlens.org/test_dataset1#IoTSystemAgent
+:IoTSystemAgent rdf:type owl:NamedIndividual ,
+                         ep-plan:Agent ,
+                         ep-plan:ResponsibleAgent ;
+                ep-plan:canBeResponsibleFor :DataAnonymisation ,
+                                            :DataProcessing ,
+                                            :HomeMonitoringHighLevelPlan ;
+                ep-plan:isElementOfTrace :ExecutionMainPlan1 ,
+                                         :ExecutionMainPlan2 ;
+                ep-plan:isResponsibleAgentOfPlan :HomeMonitoringHighLevelPlan ;
+                rdfs:comment "An agent that oversees the overal execution of the deployed IoT system and performs some custom built scripts such as those for dat aprocessing and data anonymisation." .
+
+
+###  http://trustlens.org/test_dataset1#London
+:London rdf:type owl:NamedIndividual ,
+                 <http://www.w3.org/ns/prov#Location> .
+
+
+###  http://trustlens.org/test_dataset1#MainPlanExecutionActivity1
+:MainPlanExecutionActivity1 rdf:type owl:NamedIndividual ,
+                                     ep-plan:MultiActivity ;
+                            <http://www.w3.org/ns/prov#wasAssociatedWith> :CityCouncil ,
+                                                                          :IoTSystemAgent .
+
+
+###  http://trustlens.org/test_dataset1#MainPlanExecutionActivity2
+:MainPlanExecutionActivity2 rdf:type owl:NamedIndividual ,
+                                     ep-plan:MultiActivity ;
+                            <http://www.w3.org/ns/prov#wasAssociatedWith> :CityCouncil ,
+                                                                          :IoTSystemAgent .
+
+
+###  http://trustlens.org/test_dataset1#Storage
+:Storage rdf:type owl:NamedIndividual ,
+                  ep-plan:Step ;
+         ep-plan:hasInputVar :DataEntry ,
+                             :Database ;
+         ep-plan:hasOutputVar :UpdatedDatabase ;
+         ep-plan:isStepOfPlan :HomeMonitoringHighLevelPlan ;
+         ep-plan:precedes :DataAnonymisation ,
+                          :DataVisualisation .
+
+
+###  http://trustlens.org/test_dataset1#StorageActivity
+:StorageActivity rdf:type owl:NamedIndividual ,
+                          ep-plan:Activity ;
+                 <http://www.w3.org/ns/prov#used> :DataDashboard ,
+                                                  :DataEntryEntity ;
+                 <http://www.w3.org/ns/prov#wasAssociatedWith> :GoogleCloud ;
+                 ep-plan:correspondsToStep :Storage ;
+                 ep-plan:isElementOfTrace :ExecutionMainPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#TempData
+:TempData rdf:type owl:NamedIndividual ,
+                   ep-plan:Variable ;
+          ep-plan:isVariableOfPlan :IoTCollectorPlan .
+
+
+###  http://trustlens.org/test_dataset1#TempEntity
+:TempEntity rdf:type owl:NamedIndividual ,
+                     ep-plan:Entity ;
+            <http://www.w3.org/ns/prov#wasGeneratedBy> :CollectTempActivity1 ;
+            ep-plan:correspondsToVariable :TempData ;
+            ep-plan:isElementOfTrace :ExecutionSubPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#TempSensorAgent
+:TempSensorAgent rdf:type owl:NamedIndividual ,
+                          ep-plan:Agent ,
+                          ep-plan:ResponsibleAgent ;
+                 ep-plan:canBeResponsibleFor :CollectTemperature ;
+                 ep-plan:isElementOfTrace :ExecutionSubPlan1 ;
+                 ep-plan:isResponsibleAgentOfPlan :IoTCollectorPlan .
+
+
+###  http://trustlens.org/test_dataset1#UpdatedDatabase
+:UpdatedDatabase rdf:type owl:NamedIndividual ,
+                          ep-plan:Variable ;
+                 ep-plan:isVariableOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#UpdatedDatabaseEntity
+:UpdatedDatabaseEntity rdf:type owl:NamedIndividual ,
+                                ep-plan:Entity ;
+                       <http://www.w3.org/ns/prov#wasGeneratedBy> :StorageActivity ;
+                       ep-plan:correspondsToVariable :UpdatedDatabase ;
+                       ep-plan:isElementOfTrace :ExecutionMainPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#UploadCo2
+:UploadCo2 rdf:type owl:NamedIndividual ,
+                    ep-plan:Step ;
+           ep-plan:hasInputVar :Co2Data ;
+           ep-plan:hasOutputVar :UploadedCo2Data ;
+           ep-plan:isPrecededBy :CollectCo2 ;
+           ep-plan:isStepOfPlan :IoTCollectorPlan .
+
+
+###  http://trustlens.org/test_dataset1#UploadCo2Activity
+:UploadCo2Activity rdf:type owl:NamedIndividual ,
+                            ep-plan:Activity ;
+                   <http://www.w3.org/ns/prov#used> :Co2Entity ;
+                   <http://www.w3.org/ns/prov#wasAssociatedWith> :CO2SensorAgent ;
+                   ep-plan:isElementOfTrace :ExecutionSubPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#UploadTemp
+:UploadTemp rdf:type owl:NamedIndividual ,
+                     ep-plan:Step ;
+            ep-plan:hasInputVar :TempData ;
+            ep-plan:hasOutputVar :UploadedTempData ;
+            ep-plan:isPrecededBy :CollectTemperature ;
+            ep-plan:isStepOfPlan :IoTCollectorPlan .
+
+
+###  http://trustlens.org/test_dataset1#UploadTempActivity
+:UploadTempActivity rdf:type owl:NamedIndividual ,
+                             ep-plan:Activity ;
+                    <http://www.w3.org/ns/prov#used> :TempEntity ;
+                    <http://www.w3.org/ns/prov#wasAssociatedWith> :TempSensorAgent ;
+                    ep-plan:isElementOfTrace :ExecutionSubPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#UploadedCo2Data
+:UploadedCo2Data rdf:type owl:NamedIndividual ,
+                          ep-plan:Objective ,
+                          ep-plan:Variable ;
+                 ep-plan:isObjectiveOfPlan :IoTCollectorPlan ;
+                 ep-plan:isPartOf :CollectedData ;
+                 ep-plan:isVariableOfPlan :IoTCollectorPlan .
+
+
+###  http://trustlens.org/test_dataset1#UploadedCo2Entity
+:UploadedCo2Entity rdf:type owl:NamedIndividual ,
+                            ep-plan:Entity ;
+                   ep-plan:correspondsToVariable :UploadedCo2Data ;
+                   ep-plan:isElementOfTrace :ExecutionSubPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#UploadedTempData
+:UploadedTempData rdf:type owl:NamedIndividual ,
+                           ep-plan:Objective ,
+                           ep-plan:Variable ;
+                  ep-plan:isObjectiveOfPlan :IoTCollectorPlan ;
+                  ep-plan:isPartOf :CollectedData ;
+                  ep-plan:isVariableOfPlan :IoTCollectorPlan .
+
+
+###  http://trustlens.org/test_dataset1#UploadedTempEntity
+:UploadedTempEntity rdf:type owl:NamedIndividual ,
+                             ep-plan:Entity ;
+                    ep-plan:correspondsToVariable :UploadedTempData ;
+                    ep-plan:isElementOfTrace :ExecutionSubPlan1 .
+
+
+###  http://trustlens.org/test_dataset1#UseEncryption
+:UseEncryption rdf:type owl:NamedIndividual ,
+                        ep-plan:Constraint ;
+               ep-plan:hasRationale :DataProtectionPolicy ;
+               ep-plan:isConstraintOfPlan :HomeMonitoringHighLevelPlan .
+
+
+###  http://trustlens.org/test_dataset1#VisTechLtd
+:VisTechLtd rdf:type owl:NamedIndividual ,
+                     ep-plan:Agent ,
+                     ep-plan:ResponsibleAgent ;
+            ep-plan:canBeResponsibleFor :DataVisualisation ;
+            ep-plan:isElementOfTrace :ExecutionMainPlan1 ;
+            ep-plan:isResponsibleAgentOfPlan :HomeMonitoringHighLevelPlan ;
+            rdfs:comment "VisTech LTD is a fictional company that provides on-demand data visualisation services" .
+
+
+###  Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi

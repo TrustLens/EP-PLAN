@@ -12,7 +12,7 @@
 <http://trustlens.org/test_dataset1> rdf:type owl:Ontology ;
                                       owl:imports <http://w3id.org/ep-plan/prov-alignment> ,
                                                   <http://www.w3.org/ns/prov-o-20130430> ,
-                                                  <https://w3id.org/ep-plan> .
+                                                  <https://trustlens.github.io/EP-PLAN/ontologies/ep-plan.ttl> .
 
 #################################################################
 #    Individuals

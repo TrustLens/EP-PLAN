@@ -9,10 +9,7 @@
 @prefix ep-plan: <https://w3id.org/ep-plan#> .
 @base <http://trustlens.org/test_dataset1> .
 
-<http://trustlens.org/test_dataset1> rdf:type owl:Ontology ;
-                                      owl:imports <https://raw.githubusercontent.com/TrustLens/EP-PLAN/master/docs/ontologies/prov-alignment.xml> ,
-                                                  <http://www.w3.org/ns/prov-o-20130430> ,
-                                                  <https://trustlens.github.io/EP-PLAN/ontologies/ep-plan.ttl> .
+<http://trustlens.org/test_dataset1> rdf:type owl:Ontology.
 
 #################################################################
 #    Individuals

@@ -117,18 +117,30 @@ pplan: /EP-PLAN/ontologies/p-plan-alignment.xml
           
           <h3> Plan (general structure)</h3>
 
-          <strong>What steps and variables are part of this plan?</strong>
+          <strong>What steps  are part of this plan?</strong>
 <pre><code>
-SELECT DISTINCT ?step ?variable 
+SELECT DISTINCT ?step  
 
 WHERE
 {
-     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVar ?variable.
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step.
      ?step a ep-plan:Step.
-     ?variable a ep-plan:Variable.
+    
 }
 </pre></code>
 
+ <strong>What variables are part of this plan?</strong>
+<pre><code>
+SELECT DISTINCT  ?variable 
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesVar ?variable.
+     
+     ?variable a ep-plan:Variable.
+}
+</pre></code>          
+          
 <strong>What is the order in which steps of this plan should be executed? </strong>
 
 <pre><code>          
@@ -166,26 +178,41 @@ WHERE
 }
 </pre></code>
 
-<strong>Which steps and variables of this plan were realised during its executions?</strong>
+<strong>Which variables of this plan were realised during its executions?</strong>
 <pre><code>
-SELECT DISTINCT ?executionActivity ?entity ?activity
+SELECT DISTINCT ?executionActivity ?entity 
 
 WHERE
 {
-     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVar ?variable.
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesVar ?variable.
      ?variable a ep-plan:Variable.
-     ?step a ep-plan:Step.
 
-     ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom &lt;PlanURI>; ep-plan: hasTraceElement ?entity; ep-plan: hasTraceElement ?activity.
+     ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom &lt;PlanURI>; ep-plan:hasTraceElement ?entity.
      ?executionActivity a ep-plan:MultiActivity.
 
      ?entity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable.
-     ?activity a ep-plan:Activity; ep-plan:correspondsToStep ?step.
-
-     FILTER NOT EXISTS {?activity a ep-plan:FailedActivity}
 }
 </pre></code>
 
+
+<strong>Which variables of this plan were realised during its executions?</strong>
+<pre><code>
+SELECT DISTINCT ?executionActivity ?step 
+
+WHERE
+{
+     &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?failedStep.
+     ?failedStep a ep-plan:Step.
+
+     ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom &lt;PlanURI>; ep-plan:hasTraceElement ?activity. 
+     ?executionActivity a ep-plan:MultiActivity.
+
+     ?activity a ep-plan:Activity; ep-plan:correspondsToStep ?step.
+}
+</pre></code>          
+          
+          
+          
 <strong>Which steps of this plan failed to execute?</strong>
 <pre><code>
 SELECT DISTINCT ?executionActivity ?failedStep
@@ -195,7 +222,7 @@ WHERE
      &lt;PlanURI> a ep-plan:Plan; ep-plan:includesStep ?failedStep.
      ?failedStep a ep-plan:Step.
 
-     ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom &lt;PlanURI>; ep-plan: hasTraceElement ?activity; 
+     ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom &lt;PlanURI>; ep-plan:hasTraceElement ?activity.
      ?executionActivity a ep-plan:MultiActivity.
 
      ?activity a ep-plan:FailedActivity; ep-plan:correspondsToStep ?failedStep.
@@ -227,9 +254,9 @@ WHERE
 }
 </pre></code>
           
-<strong>Which sub-plan of this plan describe a composite step in more detail?</strong> 
+<strong>Which sub-plan of this plan describe which composite step in more detail?</strong> 
 <pre><code>
-SELECT DISTINCT ?subPlan 
+SELECT DISTINCT ?subPlan ?step
 
 WHERE
 {
@@ -239,7 +266,7 @@ WHERE
 }
 </pre></code>
           
-<strong>Which variables of a sub-plan of this plan describe a composite variable of this plan in more detail?</strong>
+<strong>Which variable of a sub-plan of this plan describe a composite variable of this plan in more detail?</strong>
 <pre><code>
 SELECT DISTINCT ?compositeVar ?atomicVar 
 
@@ -275,8 +302,8 @@ WHERE
      ?atomicVar a ep-plan:Variable.
      ?compositeVar a ep-plan:MultiVariable; ep-plan:hasPart ?atomicVar.
 
-     ?mainExecutionTrace a ep-plan:ExecutionTraceBundle; prov:wasDerivedFrom &lt;PlanURI>; ep-plan: hasTraceElement ?compositeEntity; ep-plan: hasTraceElement ?subPlanExecutionTrace; prov:wasDerivedFrom ?subPlan.
-     ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan: hasTraceElement ?atomicEntity.
+     ?mainExecutionTrace a ep-plan:ExecutionTraceBundle; prov:wasDerivedFrom &lt;PlanURI>; ep-plan:hasTraceElement ?compositeEntity; ep-plan:hasTraceElement ?subPlanExecutionTrace.
+     ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan:hasTraceElement ?atomicEntity; prov:wasDerivedFrom ?subPlan.
 
      ?compositeEntity a ep-plan:EntityCollection; ep-plan:correspondsToVariable ?compositeVar; prov:hadMember ?atomicEntity.
      ?atomicEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?atomicVar. 
@@ -294,8 +321,8 @@ WHERE
      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan &lt;PlanURI>; ep-plan:includesVar ?variable.
      ?variable a ep-plan:Variable.
 
-     ?mainExecutionTrace a ep-plan:ExecutionTraceBundle; prov:wasDerivedFrom &lt;PlanURI>; ep-plan: hasTraceElement ?mainPlanEntity; ep-plan: hasTraceElement ?subPlanExecutionTrace.
-     ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan: hasTraceElement ?subPlanEntity; prov:wasDerivedFrom ?subPlan.
+     ?mainExecutionTrace a ep-plan:ExecutionTraceBundle; prov:wasDerivedFrom &lt;PlanURI>; ep-plan:hasTraceElement ?mainPlanEntity; ep-plan:hasTraceElement ?subPlanExecutionTrace.
+     ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan:hasTraceElement ?subPlanEntity; prov:wasDerivedFrom ?subPlan.
 
      ?mainPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable.
      ?subPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable; prov:mentionOf mainPlanEntity. 
@@ -304,9 +331,9 @@ WHERE
 
           <h3>Agency</h3>
 
-<strong>Which agent was responsible for the overall execution of this plan?</strong>
+<strong>Which agent was responsible for the overall execution of this plan that generated which execution trace?</strong>
 <pre><code>
-SELECT DISTINCT ?agent 
+SELECT DISTINCT ?agent ?executionTrace
 
 WHERE 
 {
@@ -314,14 +341,8 @@ WHERE
      ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity.
      ?executionActivity prov:wasAssociatedWith ?agent; a ep-plan:MultiActivity.
 
-     {
      ?executionTrace prov:wasDerivedFrom &lt;PlanURI>.
-     }
-     UNION
-     {
-     ?qualAssoc a prov:QualifiedAssociation; prov:hadPlan &lt;PlanURI>; prov:agent ?agent. 
-     ?executionActivity prov:qualifiedAssociation ?qualAssoc.
-     }
+     
 }
 </pre></code>     
           

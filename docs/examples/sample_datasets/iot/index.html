@@ -17,7 +17,7 @@ Competency questions were first checked manually in Protege with the help of FAC
 
 The following results were produced by Jena.
 
-<pre>
+<pre><code>
 PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> SELECT DISTINCT ?step  WHERE { <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step. ?step a ep-plan:Step.  } 
 ----------------------------------------------------------
 | step                                                   |
@@ -258,4 +258,4 @@ PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/pro
 | <http://trustlens.org/test_dataset1#DataDashboard>     |
 | <http://trustlens.org/test_dataset1#AnonymisedDataSet> |
 ----------------------------------------------------------
-</pre>
+</code></pre>

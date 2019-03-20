@@ -491,16 +491,16 @@ WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHig
 -----------------------------------------------------------------------------------------------
 
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
-SELECT DISTINCT ?objective       
+SELECT DISTINCT ?objective ?rationale      
 WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesObjective ?objective. 
           ?objective a ep-plan:Objective. 
            OPTIONAL {           ?rationale a ep-plan:Rationale; ep-plan:isRationaleOf  ?objective. 
           } 
      }
-----------------------------------------------------------
-| objective                                              |
-==========================================================
-| &lt;http://trustlens.org/test_dataset1#DataDashboard>     |
-| &lt;http://trustlens.org/test_dataset1#AnonymisedDataSet> |
-----------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+| objective                                              | rationale                                                       |
+============================================================================================================================
+| <http://trustlens.org/test_dataset1#DataDashboard>     | <http://trustlens.org/test_dataset1#CityCouncilSmartCityAgenda> |
+| <http://trustlens.org/test_dataset1#AnonymisedDataSet> | <http://trustlens.org/test_dataset1#CityCouncilSmartCityAgenda> |
+----------------------------------------------------------------------------------------------------------------------------
 </code></pre>

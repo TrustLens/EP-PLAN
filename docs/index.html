@@ -332,7 +332,7 @@ WHERE
      ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan:hasTraceElement ?subPlanEntity; prov:wasDerivedFrom ?subPlan.
 
      ?mainPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable.
-     ?subPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable; prov:mentionOf mainPlanEntity. 
+     ?subPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable; prov:mentionOf ?mainPlanEntity. 
 }
 </pre></code>
 
@@ -420,7 +420,7 @@ WHERE
      
           &lt;stepURI> a ep-plan:Step; ep-plan:canBeResponsibilityOf ?agent.
           ?agent a ep-plan:ResponsibleAgent; a ep-plan:Agent.
-          ?activity a ep-plan:Activity; ep-plan:correspondsToStep <stepURI>; prov:wasAssociatedWith ?agent.
+          ?activity a ep-plan:Activity; ep-plan:correspondsToStep &lt;stepURI>; prov:wasAssociatedWith ?agent.
      }
      </code></pre>
     

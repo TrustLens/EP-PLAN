@@ -33,6 +33,7 @@ WHERE { &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep
 | &lt;http://trustlens.org/test_dataset1#DataProcessing>    |
 | &lt;http://trustlens.org/test_dataset1#CollectData>       |
 ----------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT  ?variable   
 WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVar ?variable. 
@@ -49,6 +50,7 @@ WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>
 | &lt;http://trustlens.org/test_dataset1#CollectedData>     |
 | &lt;http://trustlens.org/test_dataset1#DataDashboard>     |
 ----------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?step ?nextStep   
 WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesStep ?nextStep. 
@@ -69,6 +71,7 @@ WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>
 | &lt;http://trustlens.org/test_dataset1#CollectData>    | &lt;http://trustlens.org/test_dataset1#DataAnonymisation> |
 | &lt;http://trustlens.org/test_dataset1#CollectData>    | &lt;http://trustlens.org/test_dataset1#DataProcessing>    |
 ----------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?step ?variableUsed   
 WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVar ?variableUsed. 
@@ -85,6 +88,7 @@ WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>
 | &lt;http://trustlens.org/test_dataset1#DataAnonymisation> | &lt;http://trustlens.org/test_dataset1#UpdatedDatabase> |
 | &lt;http://trustlens.org/test_dataset1#DataProcessing>    | &lt;http://trustlens.org/test_dataset1#CollectedData>   |
 -----------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?step ?variableProduced   
 WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVar ?variableProduced. 
@@ -100,6 +104,7 @@ WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>
 | &lt;http://trustlens.org/test_dataset1#DataProcessing>    | &lt;http://trustlens.org/test_dataset1#DataEntry>       |
 | &lt;http://trustlens.org/test_dataset1#CollectData>       | &lt;http://trustlens.org/test_dataset1#CollectedData>   |
 -----------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?executionActivity ?entity   
 WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVar ?variable. 
@@ -119,6 +124,7 @@ WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>
 | &lt;http://trustlens.org/test_dataset1#MainPlanExecutionActivity1> | &lt;http://trustlens.org/test_dataset1#DataReadingsCollection>  |
 | &lt;http://trustlens.org/test_dataset1#MainPlanExecutionActivity1> | &lt;http://trustlens.org/test_dataset1#DashBoardEntity>         |
 ----------------------------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?executionActivity ?step   
 WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?failedStep. 
@@ -138,6 +144,7 @@ WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>
 | &lt;http://trustlens.org/test_dataset1#MainPlanExecutionActivity1> | &lt;http://trustlens.org/test_dataset1#DataVisualisation> |
 | &lt;http://trustlens.org/test_dataset1#MainPlanExecutionActivity1> | &lt;http://trustlens.org/test_dataset1#CollectData>       |
 ----------------------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?executionActivity ?failedStep  
 WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?failedStep. 
@@ -152,6 +159,7 @@ WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>
 ======================================================================================================================
 | &lt;http://trustlens.org/test_dataset1#MainPlanExecutionActivity2> | &lt;http://trustlens.org/test_dataset1#CollectData> |
 ----------------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?step   
 WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step. 
@@ -163,6 +171,7 @@ WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>
 ====================================================
 | &lt;http://trustlens.org/test_dataset1#CollectData> |
 ----------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?variable   
 WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVar ?variable. 
@@ -174,6 +183,7 @@ WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>
 ======================================================
 | &lt;http://trustlens.org/test_dataset1#CollectedData> |
 ------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?subPlan ?step  
 WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step. 
@@ -186,6 +196,7 @@ WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>
 ============================================================================================================
 | &lt;http://trustlens.org/test_dataset1#IoTCollectorPlan> | &lt;http://trustlens.org/test_dataset1#CollectData> |
 ------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?compositeVar ?atomicVar   
 WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVar ?compositeVar. 
@@ -200,6 +211,7 @@ WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>
 | &lt;http://trustlens.org/test_dataset1#CollectedData> | &lt;http://trustlens.org/test_dataset1#UploadedTempData> |
 | &lt;http://trustlens.org/test_dataset1#CollectedData> | &lt;http://trustlens.org/test_dataset1#UploadedCo2Data>  |
 --------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?variable ?subplan   
 WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVar ?variable. 
@@ -211,6 +223,7 @@ WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>
 | variable | subplan |
 ======================
 ----------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?compositeEntity ?atomicEntity   
 WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVar ?compositeVar. 
@@ -229,6 +242,7 @@ WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>
 | &lt;http://trustlens.org/test_dataset1#DataReadingsCollection> | &lt;http://trustlens.org/test_dataset1#UploadedTempEntity> |
 | &lt;http://trustlens.org/test_dataset1#DataReadingsCollection> | &lt;http://trustlens.org/test_dataset1#UploadedCo2Entity>  |
 -------------------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?mainPlanEntity ?subPlanEntity   
 WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVar ?variable. 
@@ -244,6 +258,7 @@ WHERE {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>
 | mainPlanEntity | subPlanEntity |
 ==================================
 ----------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?agent ?executionTrace  
 WHERE  {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan. 
@@ -260,6 +275,7 @@ WHERE  {      &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan
 | &lt;http://trustlens.org/test_dataset1#IoTSystemAgent> | &lt;http://trustlens.org/test_dataset1#ExecutionMainPlan1> |
 | &lt;http://trustlens.org/test_dataset1#CityCouncil>    | &lt;http://trustlens.org/test_dataset1#ExecutionMainPlan1> |
 -----------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?agent             
 WHERE {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent. 
@@ -273,6 +289,7 @@ WHERE {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevel
 | &lt;http://trustlens.org/test_dataset1#GoogleCloud>    |
 | &lt;http://trustlens.org/test_dataset1#CityCouncil>    |
 -------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?agent             
 WHERE {      {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent. 
@@ -293,6 +310,7 @@ WHERE {      {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHi
 | &lt;http://trustlens.org/test_dataset1#CO2SensorAgent>  |
 | &lt;http://trustlens.org/test_dataset1#BinTechLtd>      |
 --------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?agent             
 WHERE {                 &lt;http://trustlens.org/test_dataset1#CollectData> a ep-plan:Step; ep-plan:canBeResponsibilityOf ?agent. 
@@ -303,6 +321,7 @@ WHERE {                 &lt;http://trustlens.org/test_dataset1#CollectData> a ep
 =======================================================
 | &lt;http://trustlens.org/test_dataset1#IoTDeviceAgent> |
 -------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?agent        
 WHERE {      {           &lt;http://trustlens.org/test_dataset1#CollectData> a ep-plan:MultiStep; ep-plan:canBeResponsibilityOf ?agent. 
@@ -323,6 +342,7 @@ WHERE {      {           &lt;http://trustlens.org/test_dataset1#CollectData> a e
 | &lt;http://trustlens.org/test_dataset1#CO2SensorAgent>  |
 | &lt;http://trustlens.org/test_dataset1#BinTechLtd>      |
 --------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT  ?agent ?activity            
 WHERE {                 &lt;http://trustlens.org/test_dataset1#CollectData> a ep-plan:Step; ep-plan:canBeResponsibilityOf ?agent. 
@@ -336,6 +356,7 @@ WHERE {                 &lt;http://trustlens.org/test_dataset1#CollectData> a ep
 | &lt;http://trustlens.org/test_dataset1#IoTDeviceAgent> | &lt;http://trustlens.org/test_dataset1#CollectDataActivity2> |
 | &lt;http://trustlens.org/test_dataset1#IoTDeviceAgent> | &lt;http://trustlens.org/test_dataset1#CollectDataActivity1> |
 -------------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?constraint ?step        
 WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step. 
@@ -348,6 +369,7 @@ WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHig
 =====================================================================================================================
 | &lt;http://trustlens.org/test_dataset1#CollectAtLocationAberdeen> | &lt;http://trustlens.org/test_dataset1#CollectData> |
 ---------------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?constraint ?activity        
 WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step. 
@@ -363,6 +385,7 @@ WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHig
 ==============================================================================================================================
 | &lt;http://trustlens.org/test_dataset1#CollectAtLocationAberdeen> | &lt;http://trustlens.org/test_dataset1#CollectDataActivity1> |
 ------------------------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?constraint ?activity        
 WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step. 
@@ -378,6 +401,7 @@ WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHig
 ==============================================================================================================================
 | &lt;http://trustlens.org/test_dataset1#CollectAtLocationAberdeen> | &lt;http://trustlens.org/test_dataset1#CollectDataActivity2> |
 ------------------------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?constraint ?commsSpec        
 WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesCommsSpec ?commsSpec; ep-plan:includesStep ?step. 
@@ -390,6 +414,7 @@ WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHig
 =======================================================================================================================
 | &lt;http://trustlens.org/test_dataset1#UseEncryption> | &lt;http://trustlens.org/test_dataset1#DataUploadOfCollectedData> |
 -----------------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?constraint ?variable        
 WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>  a ep-plan:Plan; ep-plan:includesCommsSpec ?commsSpec; ep-plan:includesStep ?step1; ep-plan:includesStep ?step2; ep-plan:includesVar ?variable. 
@@ -406,6 +431,7 @@ WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHig
 ===========================================================================================================
 | &lt;http://trustlens.org/test_dataset1#UseEncryption> | &lt;http://trustlens.org/test_dataset1#CollectedData> |
 -----------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?constraint ?senderActivity ?recipientActivity ?exchangedData       
 WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesCommsSpec ?commsSpec; ep-plan:includesStep ?sender; ep-plan:includesStep ?recipient; ep-plan:includesVar ?variable. 
@@ -423,6 +449,7 @@ WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHig
 ==============================================================================================================================================================================================================================================
 | &lt;http://trustlens.org/test_dataset1#UseEncryption> | &lt;http://trustlens.org/test_dataset1#CollectDataActivity1> | &lt;http://trustlens.org/test_dataset1#DataProcessingActivity> | &lt;http://trustlens.org/test_dataset1#DataReadingsCollection> |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?policy       
 WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesPolicy ?policy. 
@@ -435,6 +462,7 @@ WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHig
 | &lt;http://trustlens.org/test_dataset1#ExecutionPolicy>      |
 | &lt;http://trustlens.org/test_dataset1#DataProtectionPolicy> |
 -------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?policy ?planElement       
 WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesPolicy ?policy; ep-plan:includesPlanElement ?planElement. 
@@ -448,6 +476,7 @@ WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHig
 | &lt;http://trustlens.org/test_dataset1#ExecutionPolicy>      | &lt;http://trustlens.org/test_dataset1#CollectAtLocationAberdeen> |
 | &lt;http://trustlens.org/test_dataset1#DataProtectionPolicy> | &lt;http://trustlens.org/test_dataset1#UseEncryption>             |
 ------------------------------------------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?policyRationale       
 WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesPolicy &lt;http://trustlens.org/test_dataset1#DataProtectionPolicy>. 
@@ -460,6 +489,7 @@ WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHig
 ===============================================================================================
 | &lt;http://openscience.adaptcentre.ie/ontologies/GDPRtEXT/deliverables/gdpr.ttl#article32-1-a> |
 -----------------------------------------------------------------------------------------------
+
 PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/ns/prov#>  
 SELECT DISTINCT ?objective       
 WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesObjective ?objective. 

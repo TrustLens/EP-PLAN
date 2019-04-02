@@ -4,7 +4,7 @@ Get the datatset from here: <a href="/EP-PLAN/examples/sample_datasets/iot/iot_d
 </p>
 
 <p>
-To run inferences import EP-PLAN, PROV-O and PROV-O alignments. Note: At the moment, Protege doesn't resolve URIs from w3id.org properly so link directly to download locations on GITHUB for EP-PLAN and PROV-O alignments. 
+To run inferences import EP-PLAN and PROV-O. Note: At the moment, Protege doesn't resolve URIs from w3id.org properly so link directly to download locations on GITHUB for EP-PLAN and PROV-O alignments. 
 </p>
 
 <h2>Competency Questions results</h2>
@@ -467,7 +467,7 @@ PREFIX ep-plan:&lt;https://w3id.org/ep-plan#> PREFIX prov:&lt;http://www.w3.org/
 SELECT DISTINCT ?policy ?planElement       
 WHERE       {           &lt;http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesPolicy ?policy; ep-plan:includesPlanElement ?planElement. 
            ?policy a ep-plan:Policy; a ep-plan:Rationale. 
-          ?planElement a ep-plan:PlanElement; ep-plan:hasRationale ?policy. 
+          ?planElement  ep-plan:hasRationale ?policy. 
      } 
 
 ------------------------------------------------------------------------------------------------------------------------------

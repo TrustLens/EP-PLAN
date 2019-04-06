@@ -205,7 +205,6 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://w3id.org/ep-plan#CommunicationSpecification"/>
                     <rdf:Description rdf:about="https://w3id.org/ep-plan#Constraint"/>
-                    <rdf:Description rdf:about="https://w3id.org/ep-plan#Objective"/>
                     <rdf:Description rdf:about="https://w3id.org/ep-plan#Plan"/>
                     <rdf:Description rdf:about="https://w3id.org/ep-plan#ResponsibleAgent"/>
                     <rdf:Description rdf:about="https://w3id.org/ep-plan#Step"/>

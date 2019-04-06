@@ -115,7 +115,6 @@
           rdfs:domain [ rdf:type owl:Class ;
                         owl:unionOf ( :CommunicationSpecification
                                       :Constraint
-                                      :Objective
                                       :Plan
                                       :ResponsibleAgent
                                       :Step

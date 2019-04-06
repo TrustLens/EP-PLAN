@@ -54,29 +54,77 @@
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/ep-plan#canBeResponsibilityOf
-:canBeResponsibilityOf rdf:type owl:ObjectProperty ;
-                       owl:inverseOf :canBeResponsibleFor ;
-                       rdfs:domain [ rdf:type owl:Class ;
-                                     owl:unionOf ( :Plan
-                                                   :Step
-                                                 )
-                                   ] ;
-                       rdfs:range :ResponsibleAgent ;
-                       rdfs:comment "Inverse of ep-plan:canBeResponsibleFor." ;
-                       rdfs:label "canBeResponsibilityOf" .
+###  http://purl.org/net/p-plan#correspondsToStep
+<http://purl.org/net/p-plan#correspondsToStep> rdf:type owl:ObjectProperty ;
+                                               owl:equivalentProperty :correspondsToStep .
 
 
-###  https://w3id.org/ep-plan#canBeResponsibleFor
-:canBeResponsibleFor rdf:type owl:ObjectProperty ;
-                     rdfs:domain :ResponsibleAgent ;
-                     rdfs:range [ rdf:type owl:Class ;
-                                  owl:unionOf ( :Plan
-                                                :Step
-                                              )
-                                ] ;
-                     rdfs:comment "ep-plan:canBeResponsibleFor links an ep-plan:ResponsibleAgent to a planned ep-plan:Step or the overall ep-plan:Plan for which the agent can assume some form of responsibility during the execution. Please note that not all linked ep-plan:ResponsibleAgent(s) must also appear in the execution trace as ep-plan:Agent. ep-plan:canBeResponsibleFor relationship merely indicates that it is possible for this agent to asssume some responsibility diring the execution." ;
-                     rdfs:label "canBeResponsibleFor" .
+###  http://purl.org/net/p-plan#correspondsToVariable
+<http://purl.org/net/p-plan#correspondsToVariable> rdf:type owl:ObjectProperty ;
+                                                   owl:equivalentProperty :correspondsToVariable .
+
+
+###  http://purl.org/net/p-plan#hasInputVar
+<http://purl.org/net/p-plan#hasInputVar> rdf:type owl:ObjectProperty ;
+                                         owl:equivalentProperty :hasInputVariable .
+
+
+###  http://purl.org/net/p-plan#hasOutputVar
+<http://purl.org/net/p-plan#hasOutputVar> rdf:type owl:ObjectProperty ;
+                                          owl:equivalentProperty :hasOutputVariable .
+
+
+###  http://purl.org/net/p-plan#isDecomposedAsPlan
+<http://purl.org/net/p-plan#isDecomposedAsPlan> rdf:type owl:ObjectProperty ;
+                                                owl:equivalentProperty :isDecomposedAsPlan .
+
+
+###  http://purl.org/net/p-plan#isInputVarOf
+<http://purl.org/net/p-plan#isInputVarOf> rdf:type owl:ObjectProperty ;
+                                          owl:equivalentProperty :isInputVariableOf .
+
+
+###  http://purl.org/net/p-plan#isOutputVarOf
+<http://purl.org/net/p-plan#isOutputVarOf> rdf:type owl:ObjectProperty ;
+                                           owl:equivalentProperty :isOutputVariableOf .
+
+
+###  http://purl.org/net/p-plan#isPrecededBy
+<http://purl.org/net/p-plan#isPrecededBy> rdf:type owl:ObjectProperty ;
+                                          owl:equivalentProperty :isPrecededBy .
+
+
+###  http://purl.org/net/p-plan#isStepOfPlan
+<http://purl.org/net/p-plan#isStepOfPlan> rdf:type owl:ObjectProperty ;
+                                          owl:equivalentProperty :isStepOfPlan .
+
+
+###  http://purl.org/net/p-plan#isSubPlanOfPlan
+<http://purl.org/net/p-plan#isSubPlanOfPlan> rdf:type owl:ObjectProperty ;
+                                             owl:equivalentProperty :isSubPlanOfPlan .
+
+
+###  http://purl.org/net/p-plan#isVariableOfPlan
+<http://purl.org/net/p-plan#isVariableOfPlan> rdf:type owl:ObjectProperty ;
+                                              owl:equivalentProperty :isVariableOfPlan .
+
+
+###  https://w3id.org/ep-plan#achieves
+:achieves rdf:type owl:ObjectProperty ;
+          owl:inverseOf :isAchievedBy ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :CommunicationSpecification
+                                      :Constraint
+                                      :Objective
+                                      :Plan
+                                      :ResponsibleAgent
+                                      :Step
+                                      :Variable
+                                    )
+                      ] ;
+          rdfs:range :Objective ;
+          rdfs:comment "Inverse of ep-plan:isAchievedBy." ;
+          rdfs:label "achieves" .
 
 
 ###  https://w3id.org/ep-plan#constrains
@@ -183,6 +231,15 @@
                rdfs:label "hasConstraint" .
 
 
+###  https://w3id.org/ep-plan#hasConstraintImplementation
+:hasConstraintImplementation rdf:type owl:ObjectProperty ;
+                             owl:inverseOf :isConstraintImplementationOf ;
+                             rdfs:domain :Constraint ;
+                             rdfs:range rdfs:Resource ;
+                             rdfs:comment "ep-plan:hasConstraintImplementation links ep-plan:Constraint to any resource that provides details on how such constraint is implemented (e.g. a rule, script, etc.)." ;
+                             rdfs:label "hasConstraintImplementation" .
+
+
 ###  https://w3id.org/ep-plan#hasCorrespondingActivity
 :hasCorrespondingActivity rdf:type owl:ObjectProperty ;
                           rdfs:domain :Step ;
@@ -207,18 +264,9 @@
                         rdfs:label "hasCorrespondingEntity" .
 
 
-###  https://w3id.org/ep-plan#hasImplementation
-:hasImplementation rdf:type owl:ObjectProperty ;
-                   owl:inverseOf :isImplementationOf ;
-                   rdfs:domain :Constraint ;
-                   rdfs:range rdfs:Resource ;
-                   rdfs:comment "ep-plan:hasImplementation links ep-plan:Constraint to any resource that provides details on how such constraint is implemented (e.g. a rule, script, etc.)." ;
-                   rdfs:label "hasImplementation" .
-
-
 ###  https://w3id.org/ep-plan#hasInputVariable
 :hasInputVariable rdf:type owl:ObjectProperty ;
-                  owl:inverseOf :isInputVarOf ;
+                  owl:inverseOf :isInputVariableOf ;
                   rdfs:domain :Step ;
                   rdfs:range :Variable ;
                   rdfs:comment "ep-plan:hasInputVariable binds a ep-plan:Step to the ep-plan:Variable that takes as input for the planned execution." ;
@@ -227,7 +275,7 @@
 
 ###  https://w3id.org/ep-plan#hasOutputVariable
 :hasOutputVariable rdf:type owl:ObjectProperty ;
-                   owl:inverseOf :isOutputVarOf ;
+                   owl:inverseOf :isOutputVariableOf ;
                    rdfs:domain :Step ;
                    rdfs:range :Variable ;
                    rdfs:comment "ep-plan:hasOutputVariable binds a ep-plan:Step to the ep-plan:Variable that will be produced as output in the planned execution" ;
@@ -250,6 +298,19 @@
             rdfs:range :Variable ;
             rdfs:comment "ep-plan:hasPayload links an ep-plan:Variable to an ep-plan:CommsSpec and identyfies the variable that will be transferred according to the ep-plan:CommsSpec." ;
             rdfs:label "hasPayload" .
+
+
+###  https://w3id.org/ep-plan#hasPermittedAgent
+:hasPermittedAgent rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :isPermittedAgentFor ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Plan
+                                               :Step
+                                             )
+                               ] ;
+                   rdfs:range :ResponsibleAgent ;
+                   rdfs:comment "ep-plan:hasPermittedAgent links ep-plan:Step or the overall ep-plan:Plan to an ep-plan:ResponsibleAgent denoting that  the agent is allowed to assume some form of responsibility during the execution. Please note that not all linked ep-plan:ResponsibleAgent(s) must also appear in the execution trace as ep-plan:Agent. ep-plan:hasPermittedAgent relationship merely indicates that it is possible for this agent to asssume some responsibility during the execution." ;
+                   rdfs:label "hasPermittedAgent" .
 
 
 ###  https://w3id.org/ep-plan#hasRationale
@@ -402,6 +463,22 @@
              rdfs:label "includesVar" .
 
 
+###  https://w3id.org/ep-plan#isAchievedBy
+:isAchievedBy rdf:type owl:ObjectProperty ;
+              rdfs:domain :Objective ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( :CommunicationSpecification
+                                         :Constraint
+                                         :Plan
+                                         :ResponsibleAgent
+                                         :Step
+                                         :Variable
+                                       )
+                         ] ;
+              rdfs:comment "ep-plan:isAchievedBy links ep-plan:Objective to a plan or individual plan element that is expected to achieve the objective specified by ep-plan:Objective." ;
+              rdfs:label "isAchievedBy" .
+
+
 ###  https://w3id.org/ep-plan#isCommsSpecOfPlan
 :isCommsSpecOfPlan rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf :isElementOfPlan ;
@@ -409,6 +486,14 @@
                    rdfs:range :Plan ;
                    rdfs:comment "ep-plan:isCommsSpecOfPlan binds a ep-plan:CommsSpec to the ep-plan:Plan it corresponds to." ;
                    rdfs:label "isCommsSpecOfPlan" .
+
+
+###  https://w3id.org/ep-plan#isConstraintImplementationOf
+:isConstraintImplementationOf rdf:type owl:ObjectProperty ;
+                              rdfs:domain rdfs:Resource ;
+                              rdfs:range :Constraint ;
+                              rdfs:comment "Inverse of ep-plan:hasConstraintImplementation." ;
+                              rdfs:label "isConstraintImplementationOf" .
 
 
 ###  https://w3id.org/ep-plan#isConstraintOfPlan
@@ -459,20 +544,12 @@
                   rdfs:label "isElementOfTrace" .
 
 
-###  https://w3id.org/ep-plan#isImplementationOf
-:isImplementationOf rdf:type owl:ObjectProperty ;
-                    rdfs:domain rdfs:Resource ;
-                    rdfs:range :Constraint ;
-                    rdfs:comment "Inverse of ep-plan:hasImplementation." ;
-                    rdfs:label "isImplementationOf" .
-
-
-###  https://w3id.org/ep-plan#isInputVarOf
-:isInputVarOf rdf:type owl:ObjectProperty ;
-              rdfs:domain :Variable ;
-              rdfs:range :Step ;
-              rdfs:comment "Inverse of ep-plan:hasInputVar" ;
-              rdfs:label "isInputVarOf" .
+###  https://w3id.org/ep-plan#isInputVariableOf
+:isInputVariableOf rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Variable ;
+                   rdfs:range :Step ;
+                   rdfs:comment "Inverse of ep-plan:hasInputVariable" ;
+                   rdfs:label "isInputVariableOf" .
 
 
 ###  https://w3id.org/ep-plan#isObjectiveOfPlan
@@ -484,12 +561,12 @@
                    rdfs:label "isObjectiveOfPlan" .
 
 
-###  https://w3id.org/ep-plan#isOutputVarOf
-:isOutputVarOf rdf:type owl:ObjectProperty ;
-               rdfs:domain :Variable ;
-               rdfs:range :Step ;
-               rdfs:comment "Inverse of p-plan:hasOutputVar." ;
-               rdfs:label "isOutputVarOf" .
+###  https://w3id.org/ep-plan#isOutputVariableOf
+:isOutputVariableOf rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Variable ;
+                    rdfs:range :Step ;
+                    rdfs:comment "Inverse of p-plan:hasOutputVariable." ;
+                    rdfs:label "isOutputVariableOf" .
 
 
 ###  https://w3id.org/ep-plan#isPartOf
@@ -506,6 +583,18 @@
              rdfs:range :CommunicationSpecification ;
              rdfs:comment "Inverse of ep-plan:hasPayload." ;
              rdfs:label "isPayloadIn" .
+
+
+###  https://w3id.org/ep-plan#isPermittedAgentFor
+:isPermittedAgentFor rdf:type owl:ObjectProperty ;
+                     rdfs:domain :ResponsibleAgent ;
+                     rdfs:range [ rdf:type owl:Class ;
+                                  owl:unionOf ( :Plan
+                                                :Step
+                                              )
+                                ] ;
+                     rdfs:comment "Inverse of ep-plan:hasPermittedAgent." ;
+                     rdfs:label "isPermittedAgentFor" .
 
 
 ###  https://w3id.org/ep-plan#isPolicyOfPlan
@@ -693,6 +782,41 @@
 #################################################################
 #    Classes
 #################################################################
+
+###  http://purl.org/net/p-plan#Activity
+<http://purl.org/net/p-plan#Activity> rdf:type owl:Class ;
+                                      owl:equivalentClass :Activity .
+
+
+###  http://purl.org/net/p-plan#Bundle
+<http://purl.org/net/p-plan#Bundle> rdf:type owl:Class ;
+                                    owl:equivalentClass :ExecutionTraceBundle .
+
+
+###  http://purl.org/net/p-plan#Entity
+<http://purl.org/net/p-plan#Entity> rdf:type owl:Class ;
+                                    owl:equivalentClass :Entity .
+
+
+###  http://purl.org/net/p-plan#MultiStep
+<http://purl.org/net/p-plan#MultiStep> rdf:type owl:Class ;
+                                       owl:equivalentClass :MultiStep .
+
+
+###  http://purl.org/net/p-plan#Plan
+<http://purl.org/net/p-plan#Plan> rdf:type owl:Class ;
+                                  owl:equivalentClass :Plan .
+
+
+###  http://purl.org/net/p-plan#Step
+<http://purl.org/net/p-plan#Step> rdf:type owl:Class ;
+                                  owl:equivalentClass :Step .
+
+
+###  http://purl.org/net/p-plan#Variable
+<http://purl.org/net/p-plan#Variable> rdf:type owl:Class ;
+                                      owl:equivalentClass :Variable .
+
 
 ###  http://www.w3.org/2000/01/rdf-schema#Resource
 rdfs:Resource rdf:type owl:Class .

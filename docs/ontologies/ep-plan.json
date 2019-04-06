@@ -3,58 +3,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/ep-plan#Plan"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Step"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid11",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/ep-plan#Activity"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Communication"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid14",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/ep-plan#Activity"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Communication"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid17",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/ep-plan#Activity"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Communication"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid20",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Plan"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Step"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid24",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
       "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
     }, {
       "@id" : "https://w3id.org/ep-plan#Constraint"
@@ -71,17 +19,117 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid32",
+  "@id" : "_:genid101",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Policy"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#ResponsibleAgent"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Step"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid106",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Constraint"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#ResponsibleAgent"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Step"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid111",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Constraint"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Policy"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Step"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid13",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
       "@id" : "https://w3id.org/ep-plan#Activity"
     }, {
-      "@id" : "https://w3id.org/ep-plan#Agent"
+      "@id" : "https://w3id.org/ep-plan#Communication"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid16",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/ep-plan#Activity"
     }, {
       "@id" : "https://w3id.org/ep-plan#Communication"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid19",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/ep-plan#Activity"
     }, {
-      "@id" : "https://w3id.org/ep-plan#Entity"
+      "@id" : "https://w3id.org/ep-plan#Communication"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid22",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Plan"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Step"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid26",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/ep-plan#Plan"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Step"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid29",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Constraint"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Objective"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Plan"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#ResponsibleAgent"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Step"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Variable"
     } ]
   } ]
 }, {
@@ -89,33 +137,17 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
+      "@id" : "https://w3id.org/ep-plan#Activity"
     }, {
-      "@id" : "https://w3id.org/ep-plan#Constraint"
+      "@id" : "https://w3id.org/ep-plan#Agent"
     }, {
-      "@id" : "https://w3id.org/ep-plan#Objective"
+      "@id" : "https://w3id.org/ep-plan#Communication"
     }, {
-      "@id" : "https://w3id.org/ep-plan#Plan"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#ResponsibleAgent"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Step"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Variable"
+      "@id" : "https://w3id.org/ep-plan#Entity"
     } ]
   } ]
 }, {
-  "@id" : "_:genid4",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/ep-plan#Plan"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Step"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid45",
+  "@id" : "_:genid42",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -135,7 +167,45 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid53",
+  "@id" : "_:genid50",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Constraint"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Plan"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#ResponsibleAgent"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Step"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Variable"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid57",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Constraint"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Objective"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Plan"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#ResponsibleAgent"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Step"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Variable"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid65",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -149,7 +219,17 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid58",
+  "@id" : "_:genid70",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/ep-plan#Plan"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Step"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid73",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -169,7 +249,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid66",
+  "@id" : "_:genid81",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -179,7 +259,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid69",
+  "@id" : "_:genid84",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -189,7 +269,17 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid7",
+  "@id" : "_:genid87",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/ep-plan#Activity"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#Communication"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid9",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -201,7 +291,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid72",
+  "@id" : "_:genid90",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -211,65 +301,13 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid75",
+  "@id" : "_:genid93",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
       "@id" : "https://w3id.org/ep-plan#Activity"
     }, {
       "@id" : "https://w3id.org/ep-plan#Communication"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid78",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/ep-plan#Activity"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Communication"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid81",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/ep-plan#Constraint"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Policy"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#ResponsibleAgent"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Step"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid86",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Policy"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#ResponsibleAgent"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Step"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid91",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Constraint"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#ResponsibleAgent"
-    }, {
-      "@id" : "https://w3id.org/ep-plan#Step"
     } ]
   } ]
 }, {
@@ -277,11 +315,11 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
-    }, {
       "@id" : "https://w3id.org/ep-plan#Constraint"
     }, {
       "@id" : "https://w3id.org/ep-plan#Policy"
+    }, {
+      "@id" : "https://w3id.org/ep-plan#ResponsibleAgent"
     }, {
       "@id" : "https://w3id.org/ep-plan#Step"
     } ]
@@ -301,6 +339,114 @@
 }, {
   "@id" : "http://purl.org/dc/terms/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#Activity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/ep-plan#Activity"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#Bundle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/ep-plan#ExecutionTraceBundle"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#Entity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/ep-plan#Entity"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#MultiStep",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/ep-plan#MultiStep"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#Plan",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/ep-plan#Plan"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#Step",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/ep-plan#Step"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#Variable",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/ep-plan#Variable"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#correspondsToStep",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://w3id.org/ep-plan#correspondsToStep"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#correspondsToVariable",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://w3id.org/ep-plan#correspondsToVariable"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#hasInputVar",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://w3id.org/ep-plan#hasInputVariable"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#hasOutputVar",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://w3id.org/ep-plan#hasOutputVariable"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#isDecomposedAsPlan",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://w3id.org/ep-plan#isDecomposedAsPlan"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#isInputVarOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://w3id.org/ep-plan#isInputVariableOf"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#isOutputVarOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://w3id.org/ep-plan#isOutputVariableOf"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#isPrecededBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://w3id.org/ep-plan#isPrecededBy"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#isStepOfPlan",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://w3id.org/ep-plan#isStepOfPlan"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#isSubPlanOfPlan",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://w3id.org/ep-plan#isSubPlanOfPlan"
+  } ]
+}, {
+  "@id" : "http://purl.org/net/p-plan#isVariableOfPlan",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "https://w3id.org/ep-plan#isVariableOfPlan"
+  } ]
 }, {
   "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
@@ -414,7 +560,7 @@
     "@value" : "CommunicationSpecification"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
-    "@id" : "_:genid81"
+    "@id" : "_:genid96"
   } ]
 }, {
   "@id" : "https://w3id.org/ep-plan#Constraint",
@@ -426,7 +572,7 @@
     "@value" : "Constraint"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
-    "@id" : "_:genid86"
+    "@id" : "_:genid101"
   } ]
 }, {
   "@id" : "https://w3id.org/ep-plan#ConstraintEvaluation",
@@ -556,7 +702,7 @@
     "@value" : "Policy"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
-    "@id" : "_:genid91"
+    "@id" : "_:genid106"
   } ]
 }, {
   "@id" : "https://w3id.org/ep-plan#Rationale",
@@ -577,7 +723,7 @@
     "@value" : "ResponsibleAgent"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
-    "@id" : "_:genid96"
+    "@id" : "_:genid111"
   } ]
 }, {
   "@id" : "https://w3id.org/ep-plan#Step",
@@ -601,37 +747,22 @@
     "@value" : "Variable"
   } ]
 }, {
-  "@id" : "https://w3id.org/ep-plan#canBeResponsibilityOf",
+  "@id" : "https://w3id.org/ep-plan#achieves",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Inverse of ep-plan:canBeResponsibleFor."
+    "@value" : "Inverse of ep-plan:isAchievedBy."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid1"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "canBeResponsibilityOf"
+    "@value" : "achieves"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/ep-plan#ResponsibleAgent"
+    "@id" : "https://w3id.org/ep-plan#Objective"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/ep-plan#canBeResponsibleFor"
-  } ]
-}, {
-  "@id" : "https://w3id.org/ep-plan#canBeResponsibleFor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "ep-plan:canBeResponsibleFor links an ep-plan:ResponsibleAgent to a planned ep-plan:Step or the overall ep-plan:Plan for which the agent can assume some form of responsibility during the execution. Please note that not all linked ep-plan:ResponsibleAgent(s) must also appear in the execution trace as ep-plan:Agent. ep-plan:canBeResponsibleFor relationship merely indicates that it is possible for this agent to asssume some responsibility diring the execution."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/ep-plan#ResponsibleAgent"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "canBeResponsibleFor"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid4"
+    "@id" : "https://w3id.org/ep-plan#isAchievedBy"
   } ]
 }, {
   "@id" : "https://w3id.org/ep-plan#constrains",
@@ -646,7 +777,7 @@
     "@value" : "constrains"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid7"
+    "@id" : "_:genid9"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/ep-plan#hasConstraint"
@@ -730,7 +861,7 @@
     "@value" : "ep-plan:evaluatedAgainst links ep-plan:Activity or ep-plan:Communication to an ep-plan:Constraint. The use of subproperties of ep-plan:evaluatedAgainst is encouraged to indicate whether the execution trace element satisfied the constraint."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid11"
+    "@id" : "_:genid13"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "evaluatedAgainst"
@@ -754,7 +885,7 @@
     "@value" : "evaluatedFor"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid14"
+    "@id" : "_:genid16"
   } ]
 }, {
   "@id" : "https://w3id.org/ep-plan#evaluatedTraceElement",
@@ -769,7 +900,7 @@
     "@value" : "evaluatedTraceElement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid17"
+    "@id" : "_:genid19"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/ep-plan#wasEvaluatedtraceElement"
@@ -781,13 +912,31 @@
     "@value" : "ep-plan:hasConstraint links ep-plan:Step, ep-plan:CommunicationSpec or ep-plan:Plan to a ep-plan:Constraint. Please note, that we do not stipulate that this constriant must be strictly satisfied before the plan can continue. This is to enable inclusions of constraints defined by policies which can be violated under certain conditions and to also enable capture of incorrect behaviour of a system (e.g. a plan ignored a constriant)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid20"
+    "@id" : "_:genid22"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasConstraint"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/ep-plan#Constraint"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ep-plan#hasConstraintImplementation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "ep-plan:hasConstraintImplementation links ep-plan:Constraint to any resource that provides details on how such constraint is implemented (e.g. a rule, script, etc.)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ep-plan#Constraint"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "hasConstraintImplementation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/ep-plan#isConstraintImplementationOf"
   } ]
 }, {
   "@id" : "https://w3id.org/ep-plan#hasCorrespondingActivity",
@@ -835,24 +984,6 @@
     "@id" : "https://w3id.org/ep-plan#Entity"
   } ]
 }, {
-  "@id" : "https://w3id.org/ep-plan#hasImplementation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "ep-plan:hasImplementation links ep-plan:Constraint to any resource that provides details on how such constraint is implemented (e.g. a rule, script, etc.)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/ep-plan#Constraint"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "hasImplementation"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
-  } ],
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/ep-plan#isImplementationOf"
-  } ]
-}, {
   "@id" : "https://w3id.org/ep-plan#hasInputVariable",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -868,7 +999,7 @@
     "@id" : "https://w3id.org/ep-plan#Variable"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/ep-plan#isInputVarOf"
+    "@id" : "https://w3id.org/ep-plan#isInputVariableOf"
   } ]
 }, {
   "@id" : "https://w3id.org/ep-plan#hasOutputVariable",
@@ -886,7 +1017,7 @@
     "@id" : "https://w3id.org/ep-plan#Variable"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/ep-plan#isOutputVarOf"
+    "@id" : "https://w3id.org/ep-plan#isOutputVariableOf"
   } ]
 }, {
   "@id" : "https://w3id.org/ep-plan#hasPart",
@@ -925,13 +1056,31 @@
     "@id" : "https://w3id.org/ep-plan#isPayloadIn"
   } ]
 }, {
+  "@id" : "https://w3id.org/ep-plan#hasPermittedAgent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "ep-plan:hasPermittedAgent links ep-plan:Step or the overall ep-plan:Plan to an ep-plan:ResponsibleAgent denoting that  the agent is allowed to assume some form of responsibility during the execution. Please note that not all linked ep-plan:ResponsibleAgent(s) must also appear in the execution trace as ep-plan:Agent. ep-plan:hasPermittedAgent relationship merely indicates that it is possible for this agent to asssume some responsibility during the execution."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid26"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "hasPermittedAgent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/ep-plan#ResponsibleAgent"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/ep-plan#isPermittedAgentFor"
+  } ]
+}, {
   "@id" : "https://w3id.org/ep-plan#hasRationale",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A property linking a plan element to the description of a rationale which provides some information on why such element was included in a plan."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid24"
+    "@id" : "_:genid29"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasRationale"
@@ -991,7 +1140,7 @@
     "@value" : "hasTraceElement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid32"
+    "@id" : "_:genid37"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/ep-plan#isElementOfTrace"
@@ -1072,7 +1221,7 @@
     "@value" : "includesPlanElement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid37"
+    "@id" : "_:genid42"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/ep-plan#isElementOfPlan"
@@ -1183,6 +1332,21 @@
     "@id" : "https://w3id.org/ep-plan#isVariableOfPlan"
   } ]
 }, {
+  "@id" : "https://w3id.org/ep-plan#isAchievedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "ep-plan:isAchievedBy links ep-plan:Objective to a plan or individual plan element that is expected to achieve the objective specified by ep-plan:Objective."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ep-plan#Objective"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "isAchievedBy"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid50"
+  } ]
+}, {
   "@id" : "https://w3id.org/ep-plan#isCommsSpecOfPlan",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1199,6 +1363,21 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/ep-plan#isElementOfPlan"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ep-plan#isConstraintImplementationOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Inverse of ep-plan:hasConstraintImplementation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "isConstraintImplementationOf"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/ep-plan#Constraint"
   } ]
 }, {
   "@id" : "https://w3id.org/ep-plan#isConstraintOfPlan",
@@ -1240,7 +1419,7 @@
     "@value" : "ep-plan:isElementOfPlan binds a ep-plan:PlanElement to the ep-plan:Plan it corresponds to."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid45"
+    "@id" : "_:genid57"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "isElementOfPlan"
@@ -1255,7 +1434,7 @@
     "@value" : "Inverse of ep-plan:hasTraceElement."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid53"
+    "@id" : "_:genid65"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "isElementOfTrace"
@@ -1264,31 +1443,16 @@
     "@id" : "https://w3id.org/ep-plan#ExecutionTraceBundle"
   } ]
 }, {
-  "@id" : "https://w3id.org/ep-plan#isImplementationOf",
+  "@id" : "https://w3id.org/ep-plan#isInputVariableOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Inverse of ep-plan:hasImplementation."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "isImplementationOf"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/ep-plan#Constraint"
-  } ]
-}, {
-  "@id" : "https://w3id.org/ep-plan#isInputVarOf",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Inverse of ep-plan:hasInputVar"
+    "@value" : "Inverse of ep-plan:hasInputVariable"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/ep-plan#Variable"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "isInputVarOf"
+    "@value" : "isInputVariableOf"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/ep-plan#Step"
@@ -1312,16 +1476,16 @@
     "@id" : "https://w3id.org/ep-plan#isElementOfPlan"
   } ]
 }, {
-  "@id" : "https://w3id.org/ep-plan#isOutputVarOf",
+  "@id" : "https://w3id.org/ep-plan#isOutputVariableOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Inverse of p-plan:hasOutputVar."
+    "@value" : "Inverse of p-plan:hasOutputVariable."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/ep-plan#Variable"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "isOutputVarOf"
+    "@value" : "isOutputVariableOf"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/ep-plan#Step"
@@ -1355,6 +1519,21 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ep-plan#isPermittedAgentFor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Inverse of ep-plan:hasPermittedAgent."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ep-plan#ResponsibleAgent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "isPermittedAgentFor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid70"
   } ]
 }, {
   "@id" : "https://w3id.org/ep-plan#isPolicyOfPlan",
@@ -1426,7 +1605,7 @@
     "@value" : "isRationaleOf"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid58"
+    "@id" : "_:genid73"
   } ]
 }, {
   "@id" : "https://w3id.org/ep-plan#isRecipientIn",
@@ -1567,7 +1746,7 @@
     "@value" : "ep-plan:satisfied links ep-plan:Activity or ep-plan:Communication to a ep-plan:Constraint. The property indicates that the execution trace element satisfied the constraint."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid66"
+    "@id" : "_:genid81"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "satisfied"
@@ -1594,7 +1773,7 @@
     "@value" : "satisfiedBy"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid69"
+    "@id" : "_:genid84"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/ep-plan#evaluatedFor"
@@ -1606,7 +1785,7 @@
     "@value" : "ep-plan:satisfied links ep-plan:Activity or ep-plan:Communication to a ep-plan:Constraint. The property indicates that the execution trace element did not satisfy the constraint."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid72"
+    "@id" : "_:genid87"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "violated"
@@ -1633,7 +1812,7 @@
     "@value" : "violatedBy"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid75"
+    "@id" : "_:genid90"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/ep-plan#evaluatedFor"
@@ -1645,7 +1824,7 @@
     "@value" : "Inverse of ep-plan:evaluatedTraceElement."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid78"
+    "@id" : "_:genid93"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "wasEvaluatedTraceElement"

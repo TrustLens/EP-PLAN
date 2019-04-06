@@ -2,7 +2,7 @@
   "_comment" : "Created with OWL2VOWL (version 0.3.4), http://vowl.visualdataweb.org",
   "header" : {
     "languages" : [ "en", "undefined" ],
-    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/ep-plan", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/ns/prov", "http://www.w3.org/2001/XMLSchema" ],
+    "baseIris" : [ "http://purl.org/net/p-plan", "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/ep-plan", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/ns/prov", "http://www.w3.org/2001/XMLSchema" ],
     "title" : {
       "en" : "The EP-Plan ontology"
     },
@@ -45,16 +45,16 @@
         "value" : "ep-plan",
         "type" : "label"
       } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "https://w3id.org/ep-plan",
-        "type" : "label"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
         "value" : "1.0",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ep-plan",
         "type" : "label"
       } ],
       "title" : [ {
@@ -67,56 +67,50 @@
   },
   "namespace" : [ ],
   "metrics" : {
-    "classCount" : 28,
-    "objectPropertyCount" : 61,
+    "classCount" : 35,
+    "objectPropertyCount" : 74,
     "datatypePropertyCount" : 0,
     "individualCount" : 0
   },
   "class" : [ {
-    "id" : "11",
+    "id" : "15",
     "type" : "owl:Class"
   }, {
-    "id" : "13",
+    "id" : "6",
     "type" : "owl:Class"
   }, {
-    "id" : "14",
+    "id" : "19",
     "type" : "owl:Class"
   }, {
-    "id" : "22",
+    "id" : "24",
     "type" : "owl:Class"
   }, {
-    "id" : "1",
-    "type" : "owl:Class"
+    "id" : "35",
+    "type" : "owl:Thing"
   }, {
-    "id" : "63",
+    "id" : "49",
     "type" : "owl:unionOf"
   }, {
-    "id" : "42",
+    "id" : "1",
     "type" : "owl:Class"
   }, {
     "id" : "64",
     "type" : "owl:unionOf"
   }, {
-    "id" : "2",
-    "type" : "owl:Class"
-  }, {
     "id" : "33",
-    "type" : "owl:Thing"
+    "type" : "owl:Class"
   }, {
     "id" : "65",
     "type" : "owl:unionOf"
   }, {
-    "id" : "66",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "68",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "69",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "52",
+    "id" : "2",
     "type" : "owl:Class"
+  }, {
+    "id" : "67",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "18",
+    "type" : "owl:unionOf"
   }, {
     "id" : "70",
     "type" : "owl:unionOf"
@@ -127,92 +121,125 @@
     "id" : "72",
     "type" : "owl:unionOf"
   }, {
-    "id" : "67",
+    "id" : "41",
     "type" : "owl:Class"
   }, {
-    "id" : "31",
+    "id" : "73",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "74",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "75",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "17",
     "type" : "owl:Class"
   }, {
-    "id" : "36",
+    "id" : "9",
     "type" : "owl:Class"
   }, {
-    "id" : "49",
-    "type" : "owl:Class"
+    "id" : "43",
+    "type" : "owl:equivalentClass"
   }, {
-    "id" : "16",
-    "type" : "owl:Class"
-  }, {
-    "id" : "8",
-    "type" : "owl:Class"
+    "id" : "94",
+    "type" : "owl:equivalentClass"
   }, {
     "id" : "38",
     "type" : "owl:Class"
   }, {
-    "id" : "51",
-    "type" : "owl:Class"
-  }, {
-    "id" : "18",
-    "type" : "owl:Class"
-  }, {
-    "id" : "23",
+    "id" : "21",
     "type" : "owl:Class"
   }, {
     "id" : "12",
     "type" : "owl:Class"
   }, {
-    "id" : "5",
+    "id" : "109",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "93",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "45",
     "type" : "owl:Class"
   }, {
     "id" : "40",
     "type" : "owl:Class"
   }, {
-    "id" : "61",
+    "id" : "77",
     "type" : "owl:Class"
   }, {
-    "id" : "57",
+    "id" : "121",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "25",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "10",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "99",
     "type" : "owl:Class"
   }, {
     "id" : "27",
     "type" : "owl:Class"
   }, {
-    "id" : "25",
+    "id" : "122",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "62",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "126",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "57",
     "type" : "owl:Class"
   }, {
-    "id" : "6",
+    "id" : "29",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "104",
     "type" : "owl:Class"
   }, {
-    "id" : "112",
+    "id" : "60",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "84",
     "type" : "owl:unionOf"
   }, {
-    "id" : "77",
+    "id" : "134",
     "type" : "owl:unionOf"
   }, {
-    "id" : "113",
+    "id" : "128",
     "type" : "owl:unionOf"
   }, {
-    "id" : "107",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "110",
+    "id" : "131",
     "type" : "owl:unionOf"
   }, {
     "id" : "54",
     "type" : "owl:unionOf"
   }, {
+    "id" : "92",
+    "type" : "owl:unionOf"
+  }, {
     "id" : "56",
     "type" : "owl:unionOf"
   }, {
-    "id" : "114",
+    "id" : "136",
     "type" : "owl:unionOf"
   }, {
-    "id" : "98",
+    "id" : "5",
     "type" : "owl:unionOf"
   }, {
-    "id" : "9",
+    "id" : "13",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "118",
     "type" : "owl:Class"
   }, {
-    "id" : "102",
-    "type" : "owl:Class"
+    "id" : "133",
+    "type" : "owl:equivalentClass"
   } ],
   "classAttribute" : [ {
     "iri" : "http://www.w3.org/ns/prov#Activity",
@@ -221,9 +248,9 @@
     "label" : {
       "IRI-based" : "Activity"
     },
-    "subClasses" : [ "12" ],
+    "subClasses" : [ "10" ],
     "attributes" : [ "external" ],
-    "id" : "11"
+    "id" : "15"
   }, {
     "iri" : "https://w3id.org/ep-plan#Objective",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -235,7 +262,7 @@
     "comment" : {
       "undefined" : "This utility concept can be used to identify a specific result that a plan aims to achieve. This class can be used, for example, to annotate steps and variables that represent some end results. More complex plans can have more than one objectives. Users are encouraged to extend this class, for example, to identify primary and secondary objectives of a plan."
     },
-    "id" : "13"
+    "id" : "6"
   }, {
     "iri" : "https://w3id.org/ep-plan#Policy",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -247,7 +274,7 @@
     "comment" : {
       "undefined" : "A generic representation of a collection of rules that may be applicable in the context of a specific plan. A policy can provide a rationale for constraints being applied to steps as well as explain reasons including other plan elements. For example, a data protection policy might require that steps are executed by specific agents and that a data anonymisation step is included in the plan."
     },
-    "id" : "14"
+    "id" : "19"
   }, {
     "iri" : "http://www.w3.org/ns/prov#Entity",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -255,9 +282,21 @@
     "label" : {
       "IRI-based" : "Entity"
     },
-    "subClasses" : [ "23" ],
+    "subClasses" : [ "25" ],
     "attributes" : [ "external" ],
-    "id" : "22"
+    "id" : "24"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "35",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "10", "21" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "49"
   }, {
     "iri" : "https://w3id.org/ep-plan#ConstraintEvaluation",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -272,9 +311,9 @@
     "id" : "1"
   }, {
     "instances" : 0,
-    "union" : [ "12", "16" ],
+    "union" : [ "10", "21" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "63"
+    "id" : "64"
   }, {
     "iri" : "https://w3id.org/ep-plan#EntityCollection",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -286,13 +325,13 @@
     "comment" : {
       "undefined" : "A collection of entities corresponding to ep-plan:MultiVariable. ep-pla:Entity contained in such collection corresponds to ep-plan:Variable that is linked to ep-plan:MultiVariable and defined in the subplan of a plan that the  ep-plan:MultiVariable is defined in.  Entity Collection is typically used or generated by  Multi Activity."
     },
-    "id" : "42",
-    "superClasses" : [ "23", "49" ]
+    "id" : "33",
+    "superClasses" : [ "25", "38" ]
   }, {
     "instances" : 0,
-    "union" : [ "12", "16" ],
+    "union" : [ "10", "21" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "64"
+    "id" : "65"
   }, {
     "iri" : "https://w3id.org/ep-plan#Constraint",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -306,32 +345,30 @@
     },
     "id" : "2"
   }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "33",
-    "label" : {
-      "undefined" : "Thing"
-    }
+    "instances" : 0,
+    "union" : [ "10", "21" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "67"
   }, {
     "instances" : 0,
-    "union" : [ "12", "16" ],
+    "union" : [ "13", "29" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "65"
+    "id" : "18"
   }, {
     "instances" : 0,
-    "union" : [ "8", "6", "2", "13", "67", "9", "27" ],
+    "union" : [ "10", "40", "25", "21" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "66"
+    "id" : "70"
   }, {
     "instances" : 0,
-    "union" : [ "12", "16" ],
+    "union" : [ "10", "21" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "68"
+    "id" : "71"
   }, {
     "instances" : 0,
-    "union" : [ "12", "16" ],
+    "union" : [ "12", "60", "2", "6", "17", "13", "29" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "69"
+    "id" : "72"
   }, {
     "iri" : "http://www.w3.org/ns/prov#Agent",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -339,24 +376,24 @@
     "label" : {
       "IRI-based" : "Agent"
     },
-    "subClasses" : [ "51" ],
+    "subClasses" : [ "40" ],
     "attributes" : [ "external" ],
-    "id" : "52"
+    "id" : "41"
   }, {
     "instances" : 0,
-    "union" : [ "8", "6", "2", "13", "67", "9", "27" ],
+    "union" : [ "12", "60", "2", "6", "17", "13", "29" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "70"
+    "id" : "73"
   }, {
     "instances" : 0,
-    "union" : [ "12", "51", "23", "16" ],
+    "union" : [ "12", "60", "2", "6", "17", "13", "29" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "71"
+    "id" : "74"
   }, {
     "instances" : 0,
-    "union" : [ "8", "6", "2", "13", "67", "9", "27" ],
+    "union" : [ "12", "60", "2", "17", "13", "29" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "72"
+    "id" : "75"
   }, {
     "iri" : "https://w3id.org/ep-plan#ResponsibleAgent",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -368,7 +405,7 @@
     "comment" : {
       "undefined" : "An agent that can bear some responsibility for execution of activities corresponding to the planned steps."
     },
-    "id" : "67"
+    "id" : "17"
   }, {
     "iri" : "https://w3id.org/ep-plan#MultiActivity",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -380,10 +417,11 @@
     "comment" : {
       "undefined" : "An activity that typically corresponds to a MultiStep which is decomposed as a Plan or the main execution activity that executed the plan. ep-plan:MultiActivity typically generates ep-plan:ExecutionTraceBundle."
     },
-    "id" : "31",
-    "superClasses" : [ "12" ]
+    "id" : "9",
+    "superClasses" : [ "10" ]
   }, {
     "iri" : "https://w3id.org/ep-plan#ExecutionTraceBundle",
+    "equivalent" : [ "93" ],
     "baseIri" : "https://w3id.org/ep-plan",
     "instances" : 0,
     "label" : {
@@ -393,8 +431,18 @@
     "comment" : {
       "undefined" : "A collection of trace elements that were generated during a single plan execution."
     },
-    "id" : "36",
-    "superClasses" : [ "38", "23" ]
+    "attributes" : [ "equivalent" ],
+    "id" : "43",
+    "superClasses" : [ "45", "25" ]
+  }, {
+    "iri" : "http://purl.org/net/p-plan#Step",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Step"
+    },
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "94"
   }, {
     "iri" : "http://www.w3.org/ns/prov#Collection",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -402,9 +450,9 @@
     "label" : {
       "IRI-based" : "Collection"
     },
-    "subClasses" : [ "42" ],
+    "subClasses" : [ "33" ],
     "attributes" : [ "external" ],
-    "id" : "49"
+    "id" : "38"
   }, {
     "iri" : "https://w3id.org/ep-plan#Communication",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -416,8 +464,8 @@
     "comment" : {
       "undefined" : "ep-plan:Communication is a type of prov:Communication representing a transfer of an entity between two activities according to some planned specification expressed as ep-plan:CommsSpec."
     },
-    "id" : "16",
-    "superClasses" : [ "25" ]
+    "id" : "21",
+    "superClasses" : [ "104" ]
   }, {
     "iri" : "https://w3id.org/ep-plan#CommunicationSpecification",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -429,7 +477,25 @@
     "comment" : {
       "undefined" : "A specification of how communication/exchange of variables between two steps should be performed."
     },
-    "id" : "8"
+    "id" : "12"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#Variable",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Variable"
+    },
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "109"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#Bundle",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Bundle"
+    },
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "93"
   }, {
     "iri" : "http://www.w3.org/ns/prov#Bundle",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -437,9 +503,9 @@
     "label" : {
       "IRI-based" : "Bundle"
     },
-    "subClasses" : [ "36" ],
+    "subClasses" : [ "43" ],
     "attributes" : [ "external" ],
-    "id" : "38"
+    "id" : "45"
   }, {
     "iri" : "https://w3id.org/ep-plan#Agent",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -451,8 +517,8 @@
     "comment" : {
       "undefined" : "A human or computational agent that can be responsible for the execution of an activity corresponding to a planned step or the overall plan execution."
     },
-    "id" : "51",
-    "superClasses" : [ "52" ]
+    "id" : "40",
+    "superClasses" : [ "41" ]
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Resource",
     "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
@@ -461,35 +527,48 @@
       "IRI-based" : "Resource"
     },
     "attributes" : [ "external" ],
-    "id" : "18"
+    "id" : "77"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#Activity",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Activity"
+    },
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "121"
   }, {
     "iri" : "https://w3id.org/ep-plan#Entity",
+    "equivalent" : [ "122" ],
     "baseIri" : "https://w3id.org/ep-plan",
     "instances" : 0,
     "label" : {
       "IRI-based" : "Entity",
       "undefined" : "Entity"
     },
-    "subClasses" : [ "36", "42" ],
+    "subClasses" : [ "43", "33" ],
     "comment" : {
       "undefined" : "An element of an execution trace representing an indidual entity corresponding to a  variable of a plan which was used and/or generated by activities recorded in the execution trace."
     },
-    "id" : "23",
-    "superClasses" : [ "22" ]
+    "attributes" : [ "equivalent" ],
+    "id" : "25",
+    "superClasses" : [ "24" ]
   }, {
     "iri" : "https://w3id.org/ep-plan#Activity",
+    "equivalent" : [ "121" ],
     "baseIri" : "https://w3id.org/ep-plan",
     "instances" : 0,
     "label" : {
       "IRI-based" : "Activity",
       "undefined" : "Activity"
     },
-    "subClasses" : [ "40", "31" ],
+    "subClasses" : [ "27", "9" ],
     "comment" : {
       "undefined" : "An element of an execution trace representing an individual process/activity corresponding to a  step of a plan and which used and/or generated  trace entities."
     },
-    "id" : "12",
-    "superClasses" : [ "11" ]
+    "attributes" : [ "equivalent" ],
+    "id" : "10",
+    "superClasses" : [ "15" ]
   }, {
     "iri" : "https://w3id.org/ep-plan#MultiVariable",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -501,8 +580,8 @@
     "comment" : {
       "undefined" : "An ep-plan:MultiVariable represents a composite variable that can be broken down into smaller parts represented as ep-plan:Variable(s)."
     },
-    "id" : "5",
-    "superClasses" : [ "6" ]
+    "id" : "99",
+    "superClasses" : [ "60" ]
   }, {
     "iri" : "https://w3id.org/ep-plan#FailedActivity",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -514,10 +593,20 @@
     "comment" : {
       "undefined" : "A concept representing an activity that was not executed in full, for example, due to constraint violation. Such an activity usually marks the point when the plan execution was interrupted due to some problem."
     },
-    "id" : "40",
-    "superClasses" : [ "12" ]
+    "id" : "27",
+    "superClasses" : [ "10" ]
+  }, {
+    "iri" : "http://purl.org/net/p-plan#Entity",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Entity"
+    },
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "122"
   }, {
     "iri" : "https://w3id.org/ep-plan#MultiStep",
+    "equivalent" : [ "126" ],
     "baseIri" : "https://w3id.org/ep-plan",
     "instances" : 0,
     "label" : {
@@ -527,8 +616,18 @@
     "comment" : {
       "undefined" : "An ep-plan:MultiStep is the representation of a composite step that can be described (decomposed) as another ep-plan:Plan."
     },
-    "id" : "61",
-    "superClasses" : [ "9" ]
+    "attributes" : [ "equivalent" ],
+    "id" : "62",
+    "superClasses" : [ "13" ]
+  }, {
+    "iri" : "http://purl.org/net/p-plan#MultiStep",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MultiStep"
+    },
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "126"
   }, {
     "iri" : "https://w3id.org/ep-plan#Rationale",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -543,6 +642,7 @@
     "id" : "57"
   }, {
     "iri" : "https://w3id.org/ep-plan#Plan",
+    "equivalent" : [ "133" ],
     "baseIri" : "https://w3id.org/ep-plan",
     "instances" : 0,
     "label" : {
@@ -552,8 +652,9 @@
     "comment" : {
       "undefined" : "An ep-plan:Plan is a specific type of prov:Plan. It is composed of smaller steps that use and produce variables."
     },
-    "id" : "27",
-    "superClasses" : [ "102" ]
+    "attributes" : [ "equivalent" ],
+    "id" : "29",
+    "superClasses" : [ "118" ]
   }, {
     "iri" : "http://www.w3.org/ns/prov#Communication",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -561,80 +662,84 @@
     "label" : {
       "IRI-based" : "Communication"
     },
-    "subClasses" : [ "16" ],
+    "subClasses" : [ "21" ],
     "attributes" : [ "external" ],
-    "id" : "25"
+    "id" : "104"
   }, {
     "iri" : "https://w3id.org/ep-plan#Variable",
+    "equivalent" : [ "109" ],
     "baseIri" : "https://w3id.org/ep-plan",
     "instances" : 0,
     "label" : {
       "IRI-based" : "Variable",
       "undefined" : "Variable"
     },
-    "subClasses" : [ "5" ],
+    "subClasses" : [ "99" ],
     "comment" : {
       "undefined" : "An ep-plan:Variable represents a description of the input of the planned Activity (ep-plan:Step)"
     },
-    "id" : "6"
+    "attributes" : [ "equivalent" ],
+    "id" : "60"
   }, {
     "instances" : 0,
-    "union" : [ "9", "27" ],
+    "union" : [ "12", "13", "29" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "112"
+    "id" : "84"
   }, {
     "instances" : 0,
-    "union" : [ "8", "9", "27" ],
+    "union" : [ "10", "21" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "77"
+    "id" : "134"
   }, {
     "instances" : 0,
-    "union" : [ "12", "16" ],
+    "union" : [ "10", "21" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "113"
+    "id" : "128"
   }, {
     "instances" : 0,
-    "union" : [ "12", "16" ],
+    "union" : [ "10", "21" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "107"
+    "id" : "131"
   }, {
     "instances" : 0,
-    "union" : [ "12", "16" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "110"
-  }, {
-    "instances" : 0,
-    "union" : [ "8", "9", "27" ],
+    "union" : [ "12", "13", "29" ],
     "attributes" : [ "anonymous", "union" ],
     "id" : "54"
   }, {
     "instances" : 0,
-    "union" : [ "8", "6", "2", "13", "67", "9", "27" ],
+    "union" : [ "13", "29" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "92"
+  }, {
+    "instances" : 0,
+    "union" : [ "12", "60", "2", "6", "17", "13", "29" ],
     "attributes" : [ "anonymous", "union" ],
     "id" : "56"
   }, {
     "instances" : 0,
-    "union" : [ "12", "51", "23", "16" ],
+    "union" : [ "10", "40", "25", "21" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "114"
+    "id" : "136"
   }, {
     "instances" : 0,
-    "union" : [ "9", "27" ],
+    "union" : [ "12", "60", "2", "6", "17", "13", "29" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "98"
+    "id" : "5"
   }, {
     "iri" : "https://w3id.org/ep-plan#Step",
+    "equivalent" : [ "94" ],
     "baseIri" : "https://w3id.org/ep-plan",
     "instances" : 0,
     "label" : {
       "IRI-based" : "Step",
       "undefined" : "Step"
     },
-    "subClasses" : [ "61" ],
+    "subClasses" : [ "62" ],
     "comment" : {
       "undefined" : "An ep-plan:Step represents the planned execution activity."
     },
-    "id" : "9"
+    "attributes" : [ "equivalent" ],
+    "id" : "13"
   }, {
     "iri" : "http://www.w3.org/ns/prov#Plan",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -642,46 +747,55 @@
     "label" : {
       "IRI-based" : "Plan"
     },
-    "subClasses" : [ "27" ],
+    "subClasses" : [ "29" ],
     "attributes" : [ "external" ],
-    "id" : "102"
+    "id" : "118"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#Plan",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Plan"
+    },
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "133"
   } ],
   "property" : [ {
     "id" : "0",
     "type" : "owl:objectProperty"
   }, {
     "id" : "4",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "8",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "7",
+    "id" : "11",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "15",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "17",
+    "id" : "16",
     "type" : "owl:objectProperty"
   }, {
     "id" : "20",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "21",
+    "id" : "22",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "24",
-    "type" : "rdfs:SubClassOf"
+    "id" : "23",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "26",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "30",
     "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "32",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "35",
     "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "34",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "37",
     "type" : "rdfs:SubClassOf"
@@ -689,25 +803,25 @@
     "id" : "39",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "41",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "43",
+    "id" : "42",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "44",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "46",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "34",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "48",
+    "id" : "47",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "36",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "51",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "50",
+    "id" : "52",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "53",
@@ -719,52 +833,49 @@
     "id" : "59",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "60",
+    "id" : "61",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "62",
+    "id" : "66",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "73",
+    "id" : "68",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "74",
+    "id" : "63",
     "type" : "owl:objectProperty"
   }, {
     "id" : "76",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "78",
+    "id" : "79",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "79",
+    "id" : "80",
     "type" : "owl:objectProperty"
   }, {
     "id" : "81",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "10",
+    "id" : "82",
     "type" : "owl:objectProperty"
   }, {
     "id" : "83",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "84",
+    "id" : "85",
     "type" : "owl:objectProperty"
   }, {
     "id" : "86",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "87",
+    "id" : "89",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "88",
+    "id" : "91",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "90",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "45",
+    "id" : "14",
     "type" : "owl:objectProperty"
   }, {
     "id" : "95",
@@ -773,103 +884,145 @@
     "id" : "96",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "47",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "92",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "58",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "97",
+    "id" : "98",
     "type" : "owl:objectProperty"
   }, {
     "id" : "100",
     "type" : "owl:objectProperty"
   }, {
     "id" : "101",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "103",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "104",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "75",
+    "id" : "88",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "94",
+    "id" : "48",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "105",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "80",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "106",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "82",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "108",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "91",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "93",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "19",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "109",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "115",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "3",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "117",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "118",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "116",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "119",
+    "id" : "110",
     "type" : "owl:objectProperty"
   }, {
     "id" : "111",
     "type" : "owl:objectProperty"
   }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "106",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "58",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "113",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "114",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "115",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "116",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "117",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "119",
+    "type" : "rdfs:SubClassOf"
+  }, {
     "id" : "120",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "28",
+    "id" : "108",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "29",
+    "id" : "124",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "99",
+    "id" : "123",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "121",
+    "id" : "125",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "85",
+    "id" : "7",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "89",
+    "id" : "69",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "78",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "127",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "90",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "129",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "105",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "107",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "130",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "112",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "135",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "137",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "3",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "139",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "140",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "138",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "141",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "142",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "132",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "87",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "143",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "97",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "102",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
@@ -888,191 +1041,206 @@
     "attributes" : [ "object" ],
     "id" : "0"
   }, {
+    "iri" : "https://w3id.org/ep-plan#achieves",
+    "inverse" : "7",
+    "baseIri" : "https://w3id.org/ep-plan",
     "range" : "6",
+    "label" : {
+      "IRI-based" : "achieves",
+      "undefined" : "achieves"
+    },
     "domain" : "5",
-    "attributes" : [ "anonymous", "object" ],
+    "comment" : {
+      "undefined" : "Inverse of ep-plan:isAchievedBy."
+    },
+    "attributes" : [ "object" ],
     "id" : "4"
   }, {
+    "range" : "10",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "8"
+  }, {
     "iri" : "https://w3id.org/ep-plan#hasRecipient",
-    "inverse" : "10",
+    "inverse" : "14",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "9",
+    "range" : "13",
     "label" : {
       "IRI-based" : "hasRecipient",
       "undefined" : "hasRecipient"
     },
-    "domain" : "8",
+    "domain" : "12",
     "comment" : {
       "undefined" : "ep-plan:hasRecipient links an ep-plan:Step to an ep-plan:CommsSpec and indicates that the step is expected to receive an ep-plan:Variable that will be transferred according to the ep-plan:CommsSpec."
     },
     "attributes" : [ "object" ],
-    "id" : "7"
+    "id" : "11"
+  }, {
+    "iri" : "https://w3id.org/ep-plan#isPermittedAgentFor",
+    "baseIri" : "https://w3id.org/ep-plan",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "isPermittedAgentFor",
+      "undefined" : "isPermittedAgentFor"
+    },
+    "domain" : "17",
+    "comment" : {
+      "undefined" : "Inverse of ep-plan:hasPermittedAgent."
+    },
+    "attributes" : [ "object" ],
+    "id" : "16"
   }, {
     "iri" : "https://w3id.org/ep-plan#hasCorrespondingCommunication",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "16",
+    "range" : "21",
     "label" : {
       "IRI-based" : "hasCorrespondingCommunication",
       "undefined" : "hasCorrespondingCommunication"
     },
-    "domain" : "8",
+    "domain" : "12",
     "comment" : {
       "undefined" : "Inverse of correspondsToCommsSpec"
     },
     "attributes" : [ "object" ],
-    "id" : "15"
-  }, {
-    "iri" : "https://w3id.org/ep-plan#hasImplementation",
-    "inverse" : "19",
-    "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "18",
-    "label" : {
-      "IRI-based" : "hasImplementation",
-      "undefined" : "hasImplementation"
-    },
-    "domain" : "2",
-    "comment" : {
-      "undefined" : "ep-plan:hasImplementation links ep-plan:Constraint to any resource that provides details on how such constraint is implemented (e.g. a rule, script, etc.)."
-    },
-    "attributes" : [ "object" ],
-    "id" : "17"
+    "id" : "20"
   }, {
     "iri" : "https://w3id.org/ep-plan#hasSender",
-    "inverse" : "21",
+    "inverse" : "23",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "9",
+    "range" : "13",
     "label" : {
       "IRI-based" : "hasSender",
       "undefined" : "hasSender"
     },
-    "domain" : "8",
+    "domain" : "12",
     "comment" : {
       "undefined" : "ep-plan:hasSender links an ep-plan:Step to  an ep-plan:CommsSpec and indicates that the step is expected to produce an ep-plan:Variable that will be transferred according to the ep-plan:CommsSpec."
     },
     "attributes" : [ "object" ],
-    "id" : "20"
+    "id" : "22"
   }, {
     "iri" : "https://w3id.org/ep-plan#isSenderIn",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "8",
+    "range" : "12",
     "label" : {
       "IRI-based" : "isSenderIn",
       "undefined" : "isSenderIn"
     },
-    "domain" : "9",
+    "domain" : "13",
     "comment" : {
       "undefined" : "Inverse of ep-plan:hasSender."
     },
     "attributes" : [ "object" ],
-    "id" : "21"
+    "id" : "23"
   }, {
-    "range" : "25",
-    "domain" : "16",
+    "range" : "10",
+    "domain" : "27",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "24"
+    "id" : "26"
   }, {
     "iri" : "https://w3id.org/ep-plan#includesCommsSpec",
-    "inverse" : "28",
+    "inverse" : "30",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "8",
+    "range" : "12",
     "label" : {
       "IRI-based" : "includesCommsSpec",
       "undefined" : "includesCommsSpec"
     },
-    "superproperty" : [ "29" ],
-    "domain" : "27",
+    "superproperty" : [ "31" ],
+    "domain" : "29",
     "comment" : {
       "undefined" : "Inverse of ep-plan:isCommsSpecOfPlan."
     },
     "attributes" : [ "object" ],
-    "id" : "26"
+    "id" : "28"
   }, {
-    "range" : "12",
-    "domain" : "31",
+    "range" : "25",
+    "domain" : "33",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "30"
+    "id" : "32"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
     "baseIri" : "http://www.w3.org/2002/07/owl",
-    "range" : "33",
+    "range" : "35",
     "label" : {
       "IRI-based" : "topObjectProperty"
     },
-    "domain" : "33",
-    "subproperty" : [ "34" ],
-    "attributes" : [ "external", "object" ],
-    "id" : "32"
-  }, {
-    "range" : "23",
-    "domain" : "36",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "35"
+    "domain" : "35",
+    "subproperty" : [ "36" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "34"
   }, {
     "range" : "38",
-    "domain" : "36",
+    "domain" : "33",
     "attributes" : [ "anonymous", "object" ],
     "id" : "37"
   }, {
-    "range" : "12",
+    "range" : "41",
     "domain" : "40",
     "attributes" : [ "anonymous", "object" ],
     "id" : "39"
   }, {
-    "range" : "23",
-    "domain" : "42",
+    "range" : "25",
+    "domain" : "43",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "41"
+    "id" : "42"
   }, {
-    "range" : "22",
-    "domain" : "23",
+    "range" : "45",
+    "domain" : "43",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "43"
+    "id" : "44"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#isPrecededBy",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "isPrecededBy"
+    },
+    "domain" : "35",
+    "attributes" : [ "object", "external" ],
+    "id" : "46"
   }, {
     "iri" : "https://w3id.org/ep-plan#isObjectiveOfPlan",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "27",
+    "range" : "29",
     "label" : {
       "IRI-based" : "isObjectiveOfPlan",
       "undefined" : "isObjectiveOfPlan"
     },
-    "superproperty" : [ "45" ],
-    "domain" : "13",
+    "superproperty" : [ "48" ],
+    "domain" : "6",
     "comment" : {
       "undefined" : "ep-plan:isObjectiveOfPlan binds a ep-plan:Objective to the ep-plan:Plan it corresponds to."
     },
     "attributes" : [ "object" ],
-    "id" : "44"
-  }, {
-    "range" : "11",
-    "domain" : "12",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "46"
+    "id" : "47"
   }, {
     "iri" : "https://w3id.org/ep-plan#isPrecededBy",
-    "inverse" : "47",
+    "inverse" : "50",
+    "equivalent" : [ "46" ],
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "9",
+    "range" : "13",
     "label" : {
       "IRI-based" : "isPrecededBy",
       "undefined" : "isPrecededBy"
     },
-    "superproperty" : [ "32" ],
-    "domain" : "9",
+    "superproperty" : [ "34" ],
+    "domain" : "13",
     "comment" : {
       "undefined" : "Property that asserts which Step preceeds the current one."
     },
     "attributes" : [ "transitive", "object" ],
-    "id" : "34"
+    "id" : "36"
   }, {
-    "range" : "49",
-    "domain" : "42",
+    "range" : "24",
+    "domain" : "25",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "48"
+    "id" : "51"
   }, {
-    "range" : "52",
-    "domain" : "51",
+    "range" : "15",
+    "domain" : "10",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "50"
+    "id" : "52"
   }, {
     "iri" : "https://w3id.org/ep-plan#hasConstraint",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -1105,12 +1273,12 @@
   }, {
     "iri" : "https://w3id.org/ep-plan#hasCorrespondingEntity",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "23",
+    "range" : "25",
     "label" : {
       "IRI-based" : "hasCorrespondingEntity",
       "undefined" : "hasCorrespondingEntity"
     },
-    "domain" : "6",
+    "domain" : "60",
     "comment" : {
       "undefined" : "Inverse of ep-plan:correspondsToVariable."
     },
@@ -1118,69 +1286,131 @@
     "id" : "59"
   }, {
     "iri" : "https://w3id.org/ep-plan#decomposesMultiStep",
-    "inverse" : "62",
+    "inverse" : "63",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "61",
+    "range" : "62",
     "label" : {
       "IRI-based" : "decomposesMultiStep",
       "undefined" : "decomposesMultiStep"
     },
-    "domain" : "27",
+    "domain" : "29",
     "comment" : {
       "undefined" : "Inverse of ep-plan:isDecomposedAsPlan."
     },
     "attributes" : [ "object" ],
-    "id" : "60"
+    "id" : "61"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#isDecomposedAsPlan",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "isDecomposedAsPlan"
+    },
+    "domain" : "35",
+    "attributes" : [ "object", "external" ],
+    "id" : "66"
+  }, {
+    "iri" : "https://w3id.org/ep-plan#isInputVariableOf",
+    "equivalent" : [ "69" ],
+    "baseIri" : "https://w3id.org/ep-plan",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "isInputVariableOf",
+      "undefined" : "isInputVariableOf"
+    },
+    "domain" : "60",
+    "comment" : {
+      "undefined" : "Inverse of ep-plan:hasInputVariable"
+    },
+    "attributes" : [ "object" ],
+    "id" : "68"
   }, {
     "iri" : "https://w3id.org/ep-plan#isDecomposedAsPlan",
+    "equivalent" : [ "66" ],
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "27",
+    "range" : "29",
     "label" : {
       "IRI-based" : "isDecomposedAsPlan",
       "undefined" : "isDecomposedAsPlan"
     },
-    "domain" : "61",
+    "domain" : "62",
     "comment" : {
       "undefined" : "The ep-plan:isDecomposedAsPlan relationship binds a ep-plan:MultiStep to the ep-plan:Plan holding the definition of that step. That is, ep-plan:isDecomposedAsPlan links the MultiStep to the Plan sptecification where it is decomposed."
     },
     "attributes" : [ "object" ],
-    "id" : "62"
+    "id" : "63"
+  }, {
+    "iri" : "https://w3id.org/ep-plan#hasConstraintImplementation",
+    "inverse" : "78",
+    "baseIri" : "https://w3id.org/ep-plan",
+    "range" : "77",
+    "label" : {
+      "IRI-based" : "hasConstraintImplementation",
+      "undefined" : "hasConstraintImplementation"
+    },
+    "domain" : "2",
+    "comment" : {
+      "undefined" : "ep-plan:hasConstraintImplementation links ep-plan:Constraint to any resource that provides details on how such constraint is implemented (e.g. a rule, script, etc.)."
+    },
+    "attributes" : [ "object" ],
+    "id" : "76"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#isStepOfPlan",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "isStepOfPlan"
+    },
+    "domain" : "35",
+    "attributes" : [ "object", "external" ],
+    "id" : "79"
   }, {
     "iri" : "https://w3id.org/ep-plan#includesObjective",
-    "inverse" : "44",
+    "inverse" : "47",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "13",
+    "range" : "6",
     "label" : {
       "IRI-based" : "includesObjective",
       "undefined" : "includesObjective"
     },
-    "superproperty" : [ "29" ],
-    "domain" : "27",
+    "superproperty" : [ "31" ],
+    "domain" : "29",
     "comment" : {
       "undefined" : "Inverse of ep-plan:isObjectiveOfPlan."
     },
     "attributes" : [ "object" ],
-    "id" : "73"
+    "id" : "80"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#hasInputVar",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "hasInputVar"
+    },
+    "domain" : "35",
+    "attributes" : [ "object", "external" ],
+    "id" : "81"
   }, {
     "iri" : "https://w3id.org/ep-plan#hasInputVariable",
-    "inverse" : "75",
+    "inverse" : "68",
+    "equivalent" : [ "81" ],
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "6",
+    "range" : "60",
     "label" : {
       "IRI-based" : "hasInputVariable",
       "undefined" : "hasInputVariable"
     },
-    "domain" : "9",
+    "domain" : "13",
     "comment" : {
       "undefined" : "ep-plan:hasInputVariable binds a ep-plan:Step to the ep-plan:Variable that takes as input for the planned execution."
     },
     "attributes" : [ "object" ],
-    "id" : "74"
+    "id" : "82"
   }, {
     "iri" : "https://w3id.org/ep-plan#constrains",
     "inverse" : "53",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "77",
+    "range" : "84",
     "label" : {
       "IRI-based" : "constrains",
       "undefined" : "constrains"
@@ -1190,235 +1420,262 @@
       "undefined" : "Inverse of ep-plan:hasConstraint."
     },
     "attributes" : [ "object" ],
-    "id" : "76"
+    "id" : "83"
   }, {
     "iri" : "https://w3id.org/ep-plan#isPolicyOfPlan",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "27",
+    "range" : "29",
     "label" : {
       "IRI-based" : "isPolicyOfPlan",
       "undefined" : "isPolicyOfPlan"
     },
-    "superproperty" : [ "45" ],
-    "domain" : "14",
+    "superproperty" : [ "48" ],
+    "domain" : "19",
     "comment" : {
       "undefined" : "ep-plan:isPolicyOfPlan binds a ep-plan:Policy to the ep-plan:Plan it corresponds to."
     },
     "attributes" : [ "object" ],
-    "id" : "78"
+    "id" : "85"
   }, {
     "iri" : "https://w3id.org/ep-plan#hasOutputVariable",
-    "inverse" : "80",
+    "inverse" : "87",
+    "equivalent" : [ "88" ],
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "6",
+    "range" : "60",
     "label" : {
       "IRI-based" : "hasOutputVariable",
       "undefined" : "hasOutputVariable"
     },
-    "domain" : "9",
+    "domain" : "13",
     "comment" : {
       "undefined" : "ep-plan:hasOutputVariable binds a ep-plan:Step to the ep-plan:Variable that will be produced as output in the planned execution"
     },
     "attributes" : [ "object" ],
-    "id" : "79"
+    "id" : "86"
   }, {
     "iri" : "https://w3id.org/ep-plan#satisfiedBy",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "69",
+    "range" : "65",
     "label" : {
       "IRI-based" : "satisfiedBy",
       "undefined" : "satisfiedBy"
     },
-    "superproperty" : [ "82" ],
+    "superproperty" : [ "90" ],
     "domain" : "2",
     "comment" : {
       "undefined" : "Inverse of ep-plan:satisfied."
     },
     "attributes" : [ "object" ],
-    "id" : "81"
+    "id" : "89"
+  }, {
+    "iri" : "https://w3id.org/ep-plan#hasPermittedAgent",
+    "inverse" : "16",
+    "baseIri" : "https://w3id.org/ep-plan",
+    "range" : "17",
+    "label" : {
+      "IRI-based" : "hasPermittedAgent",
+      "undefined" : "hasPermittedAgent"
+    },
+    "domain" : "92",
+    "comment" : {
+      "undefined" : "ep-plan:hasPermittedAgent links ep-plan:Step or the overall ep-plan:Plan to an ep-plan:ResponsibleAgent denoting that  the agent is allowed to assume some form of responsibility during the execution. Please note that not all linked ep-plan:ResponsibleAgent(s) must also appear in the execution trace as ep-plan:Agent. ep-plan:hasPermittedAgent relationship merely indicates that it is possible for this agent to asssume some responsibility during the execution."
+    },
+    "attributes" : [ "object" ],
+    "id" : "91"
   }, {
     "iri" : "https://w3id.org/ep-plan#isRecipientIn",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "8",
+    "range" : "12",
     "label" : {
       "IRI-based" : "isRecipientIn",
       "undefined" : "isRecipientIn"
     },
-    "domain" : "9",
+    "domain" : "13",
     "comment" : {
       "undefined" : "Inverse of ep-plan:hasRecipient."
     },
     "attributes" : [ "object" ],
-    "id" : "10"
+    "id" : "14"
   }, {
     "iri" : "https://w3id.org/ep-plan#correspondsToCommunicationSpecification",
-    "inverse" : "15",
+    "inverse" : "20",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "8",
+    "range" : "12",
     "label" : {
       "IRI-based" : "correspondsToCommunicationSpecification",
       "undefined" : "correspondsToCommunicationSpecification"
     },
-    "domain" : "16",
+    "domain" : "21",
     "comment" : {
       "undefined" : "ep-plan:correspondsToCommunicationSpecification links ep-plan:Communication to its planned specification."
     },
-    "attributes" : [ "object", "functional" ],
-    "id" : "83"
+    "attributes" : [ "functional", "object" ],
+    "id" : "95"
   }, {
     "iri" : "https://w3id.org/ep-plan#hasPayload",
-    "inverse" : "85",
+    "inverse" : "97",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "6",
+    "range" : "60",
     "label" : {
       "IRI-based" : "hasPayload",
       "undefined" : "hasPayload"
     },
-    "domain" : "8",
+    "domain" : "12",
     "comment" : {
       "undefined" : "ep-plan:hasPayload links an ep-plan:Variable to an ep-plan:CommsSpec and identyfies the variable that will be transferred according to the ep-plan:CommsSpec."
     },
     "attributes" : [ "object" ],
-    "id" : "84"
+    "id" : "96"
   }, {
     "iri" : "https://w3id.org/ep-plan#isPartOf",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "5",
+    "range" : "99",
     "label" : {
       "IRI-based" : "isPartOf",
       "undefined" : "isPartOf"
     },
-    "domain" : "6",
+    "domain" : "60",
     "comment" : {
       "undefined" : "Inverse of ep-plan:hasPart."
     },
     "attributes" : [ "object" ],
-    "id" : "86"
+    "id" : "98"
   }, {
     "iri" : "https://w3id.org/ep-plan#violatedBy",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "64",
+    "range" : "67",
     "label" : {
       "IRI-based" : "violatedBy",
       "undefined" : "violatedBy"
     },
-    "superproperty" : [ "82" ],
+    "superproperty" : [ "90" ],
     "domain" : "2",
     "comment" : {
       "undefined" : "Inverse of ep-plan:violated."
     },
     "attributes" : [ "object" ],
-    "id" : "87"
+    "id" : "100"
   }, {
     "iri" : "https://w3id.org/ep-plan#violated",
-    "inverse" : "87",
+    "inverse" : "100",
     "baseIri" : "https://w3id.org/ep-plan",
     "range" : "2",
     "label" : {
       "IRI-based" : "violated",
       "undefined" : "violated"
     },
-    "superproperty" : [ "89" ],
-    "domain" : "68",
+    "superproperty" : [ "102" ],
+    "domain" : "64",
     "comment" : {
       "undefined" : "ep-plan:satisfied links ep-plan:Activity or ep-plan:Communication to a ep-plan:Constraint. The property indicates that the execution trace element did not satisfy the constraint."
     },
     "attributes" : [ "object" ],
-    "id" : "88"
+    "id" : "101"
   }, {
     "iri" : "https://w3id.org/ep-plan#isResponsibleAgentOfPlan",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "27",
+    "range" : "29",
     "label" : {
       "IRI-based" : "isResponsibleAgentOfPlan",
       "undefined" : "isResposibleAgentOfPlan"
     },
-    "superproperty" : [ "45" ],
-    "domain" : "67",
+    "superproperty" : [ "48" ],
+    "domain" : "17",
     "comment" : {
       "undefined" : "ep-plan:isResponsibleAgentOfPlan binds a ep-plan:ResponsibleAgent to the ep-plan:Plan it corresponds to."
     },
     "attributes" : [ "object" ],
-    "id" : "90"
+    "id" : "103"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#hasOutputVar",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "hasOutputVar"
+    },
+    "domain" : "35",
+    "attributes" : [ "object", "external" ],
+    "id" : "88"
   }, {
     "iri" : "https://w3id.org/ep-plan#isElementOfPlan",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "27",
+    "range" : "29",
     "label" : {
       "IRI-based" : "isElementOfPlan",
       "undefined" : "isElementOfPlan"
     },
-    "domain" : "72",
-    "subproperty" : [ "91", "92", "93", "28", "94", "78", "44", "90" ],
+    "domain" : "74",
+    "subproperty" : [ "105", "106", "107", "30", "108", "85", "47", "103" ],
     "comment" : {
       "undefined" : "ep-plan:isElementOfPlan binds a ep-plan:PlanElement to the ep-plan:Plan it corresponds to."
     },
     "attributes" : [ "object" ],
-    "id" : "45"
+    "id" : "48"
   }, {
     "iri" : "https://w3id.org/ep-plan#includesPolicy",
-    "inverse" : "78",
+    "inverse" : "85",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "14",
+    "range" : "19",
     "label" : {
       "IRI-based" : "includesPolicy",
       "undefined" : "includesPolicy"
     },
-    "superproperty" : [ "29" ],
-    "domain" : "27",
+    "superproperty" : [ "31" ],
+    "domain" : "29",
     "comment" : {
       "undefined" : "Inverse of ep-plan:isPolicyOfPlan."
     },
     "attributes" : [ "object" ],
-    "id" : "95"
+    "id" : "110"
   }, {
     "iri" : "https://w3id.org/ep-plan#correspondsToVariable",
     "inverse" : "59",
+    "equivalent" : [ "112" ],
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "6",
+    "range" : "60",
     "label" : {
       "IRI-based" : "correspondsToVariable",
       "undefined" : "correspondsToVariable"
     },
-    "domain" : "23",
+    "domain" : "25",
     "comment" : {
       "undefined" : "ep-plan:correspondsToVariable binds a ep-plan:Entity (used by a ep-plan:Activity in the execution of a plan) to the ep-plan:Variable it represented it in the ep-plan:Plan."
     },
-    "attributes" : [ "object", "functional" ],
-    "id" : "96"
+    "attributes" : [ "functional", "object" ],
+    "id" : "111"
   }, {
     "iri" : "https://w3id.org/ep-plan#precedes",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "9",
+    "range" : "13",
     "label" : {
       "IRI-based" : "precedes",
       "undefined" : "precedes"
     },
-    "domain" : "9",
+    "domain" : "13",
     "comment" : {
       "undefined" : "Inverse of ep-plan:isPrecededBy."
     },
     "attributes" : [ "transitive", "object" ],
-    "id" : "47"
+    "id" : "50"
   }, {
     "iri" : "https://w3id.org/ep-plan#isConstraintOfPlan",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "27",
+    "range" : "29",
     "label" : {
       "IRI-based" : "isConstraintOfPlan",
       "undefined" : "isConstraintOfPlan"
     },
-    "superproperty" : [ "45" ],
+    "superproperty" : [ "48" ],
     "domain" : "2",
     "comment" : {
       "undefined" : "ep-plan:isConstraintOfPlan binds a ep-plan:Constraint to the ep-plan:Plan it corresponds to."
     },
     "attributes" : [ "object" ],
-    "id" : "92"
+    "id" : "106"
   }, {
     "iri" : "https://w3id.org/ep-plan#isRationaleOf",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "66",
+    "range" : "72",
     "label" : {
       "IRI-based" : "isRationaleOf",
       "undefined" : "isRationaleOf"
@@ -1430,215 +1687,239 @@
     "attributes" : [ "object" ],
     "id" : "58"
   }, {
-    "iri" : "https://w3id.org/ep-plan#canBeResponsibilityOf",
-    "inverse" : "99",
-    "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "67",
-    "label" : {
-      "IRI-based" : "canBeResponsibilityOf",
-      "undefined" : "canBeResponsibilityOf"
-    },
-    "domain" : "98",
-    "comment" : {
-      "undefined" : "Inverse of ep-plan:canBeResponsibleFor."
-    },
-    "attributes" : [ "object" ],
-    "id" : "97"
-  }, {
     "iri" : "https://w3id.org/ep-plan#includesConstraint",
-    "inverse" : "92",
+    "inverse" : "106",
     "baseIri" : "https://w3id.org/ep-plan",
     "range" : "2",
     "label" : {
       "IRI-based" : "includesConstraint",
       "undefined" : "includesConstraint"
     },
-    "superproperty" : [ "29" ],
-    "domain" : "27",
+    "superproperty" : [ "31" ],
+    "domain" : "29",
     "comment" : {
       "undefined" : "Inverse of ep-plan:isConstraintOfPlan."
     },
     "attributes" : [ "object" ],
-    "id" : "100"
+    "id" : "113"
   }, {
-    "range" : "102",
-    "domain" : "27",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "101"
+    "iri" : "http://purl.org/net/p-plan#isVariableOfPlan",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "isVariableOfPlan"
+    },
+    "domain" : "35",
+    "attributes" : [ "object", "external" ],
+    "id" : "114"
   }, {
-    "range" : "9",
-    "domain" : "61",
+    "range" : "60",
+    "domain" : "99",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "103"
+    "id" : "115"
+  }, {
+    "range" : "104",
+    "domain" : "21",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "116"
+  }, {
+    "range" : "118",
+    "domain" : "29",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "117"
+  }, {
+    "range" : "13",
+    "domain" : "62",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "119"
   }, {
     "iri" : "https://w3id.org/ep-plan#includesResponsibleAgent",
-    "inverse" : "90",
+    "inverse" : "103",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "67",
+    "range" : "17",
     "label" : {
       "IRI-based" : "includesResponsibleAgent",
       "undefined" : "includesResponsibleAgent"
     },
-    "superproperty" : [ "29" ],
-    "domain" : "27",
+    "superproperty" : [ "31" ],
+    "domain" : "29",
     "comment" : {
       "undefined" : "Inverse of ep-plan:isResponsibleAgentOfPlan."
     },
     "attributes" : [ "object" ],
-    "id" : "104"
-  }, {
-    "iri" : "https://w3id.org/ep-plan#isInputVarOf",
-    "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "9",
-    "label" : {
-      "IRI-based" : "isInputVarOf",
-      "undefined" : "isInputVarOf"
-    },
-    "domain" : "6",
-    "comment" : {
-      "undefined" : "Inverse of ep-plan:hasInputVar"
-    },
-    "attributes" : [ "object" ],
-    "id" : "75"
+    "id" : "120"
   }, {
     "iri" : "https://w3id.org/ep-plan#isSubPlanOfPlan",
+    "equivalent" : [ "123" ],
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "27",
+    "range" : "29",
     "label" : {
       "IRI-based" : "isSubPlanOfPlan",
       "undefined" : "isSubPlanOfPlan"
     },
-    "superproperty" : [ "45" ],
-    "domain" : "27",
+    "superproperty" : [ "48" ],
+    "domain" : "29",
     "comment" : {
       "undefined" : "A ep-plan:Plan may be a subplan of another bigger ep-plan:Plan. The relation ep-plan:isSubPlanOfPlan is used to state the link among the two different plans. Note that if p1 is a sub-plan of p2, p1 will not necessarily be a step of p2. A multistep will represent p1 in p2, and link to p1 with the hasStepDecomposition relationship."
     },
     "attributes" : [ "transitive", "object" ],
-    "id" : "94"
+    "id" : "108"
   }, {
     "iri" : "https://w3id.org/ep-plan#hasCorrespondingActivity",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "12",
+    "range" : "10",
     "label" : {
       "IRI-based" : "hasCorrespondingActivity",
       "undefined" : "hasCorrespondingActivity"
     },
-    "domain" : "9",
+    "domain" : "13",
     "comment" : {
       "undefined" : "Inverse of ep-plan:correspondsToStep."
     },
     "attributes" : [ "object" ],
-    "id" : "105"
+    "id" : "124"
   }, {
-    "iri" : "https://w3id.org/ep-plan#isOutputVarOf",
-    "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "9",
+    "iri" : "http://purl.org/net/p-plan#isSubPlanOfPlan",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "35",
     "label" : {
-      "IRI-based" : "isOutputVarOf",
-      "undefined" : "isOutputVarOf"
+      "IRI-based" : "isSubPlanOfPlan"
+    },
+    "domain" : "35",
+    "attributes" : [ "object", "external" ],
+    "id" : "123"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#isOutputVarOf",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "isOutputVarOf"
+    },
+    "domain" : "35",
+    "attributes" : [ "object", "external" ],
+    "id" : "125"
+  }, {
+    "iri" : "https://w3id.org/ep-plan#isAchievedBy",
+    "baseIri" : "https://w3id.org/ep-plan",
+    "range" : "75",
+    "label" : {
+      "IRI-based" : "isAchievedBy",
+      "undefined" : "isAchievedBy"
     },
     "domain" : "6",
     "comment" : {
-      "undefined" : "Inverse of p-plan:hasOutputVar."
+      "undefined" : "ep-plan:isAchievedBy links ep-plan:Objective to a plan or individual plan element that is expected to achieve the objective specified by ep-plan:Objective."
     },
     "attributes" : [ "object" ],
-    "id" : "80"
+    "id" : "7"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#isInputVarOf",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "isInputVarOf"
+    },
+    "domain" : "35",
+    "attributes" : [ "object", "external" ],
+    "id" : "69"
+  }, {
+    "iri" : "https://w3id.org/ep-plan#isConstraintImplementationOf",
+    "baseIri" : "https://w3id.org/ep-plan",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "isConstraintImplementationOf",
+      "undefined" : "isConstraintImplementationOf"
+    },
+    "domain" : "77",
+    "comment" : {
+      "undefined" : "Inverse of ep-plan:hasConstraintImplementation."
+    },
+    "attributes" : [ "object" ],
+    "id" : "78"
   }, {
     "iri" : "https://w3id.org/ep-plan#includesVar",
-    "inverse" : "93",
+    "inverse" : "107",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "6",
+    "range" : "60",
     "label" : {
       "IRI-based" : "includesVar",
       "undefined" : "includesVar"
     },
-    "superproperty" : [ "29" ],
-    "domain" : "27",
+    "superproperty" : [ "31" ],
+    "domain" : "29",
     "comment" : {
       "undefined" : "Inverse of ep-plan:isVariableOfPlan."
     },
     "attributes" : [ "object" ],
-    "id" : "106"
+    "id" : "127"
   }, {
     "iri" : "https://w3id.org/ep-plan#evaluatedFor",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "107",
+    "range" : "128",
     "label" : {
       "IRI-based" : "evaluatedFor",
       "undefined" : "evaluatedFor"
     },
     "domain" : "2",
-    "subproperty" : [ "81", "87" ],
+    "subproperty" : [ "89", "100" ],
     "comment" : {
       "undefined" : "Inverse of ep-plan:evaluatedAgainst."
     },
     "attributes" : [ "object" ],
-    "id" : "82"
+    "id" : "90"
   }, {
     "iri" : "https://w3id.org/ep-plan#includesSubPlan",
-    "inverse" : "94",
+    "inverse" : "108",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "27",
+    "range" : "29",
     "label" : {
       "IRI-based" : "includesSubPlan",
       "undefined" : "includesSubPlan"
     },
-    "superproperty" : [ "29" ],
-    "domain" : "27",
+    "superproperty" : [ "31" ],
+    "domain" : "29",
     "comment" : {
       "undefined" : "Inverse of ep-plan:isSubPlanOf."
     },
     "attributes" : [ "transitive", "object" ],
-    "id" : "108"
+    "id" : "129"
   }, {
     "iri" : "https://w3id.org/ep-plan#isStepOfPlan",
+    "equivalent" : [ "79" ],
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "27",
+    "range" : "29",
     "label" : {
       "IRI-based" : "isStepOfPlan",
       "undefined" : "isStepOfPlan"
     },
-    "superproperty" : [ "45" ],
-    "domain" : "9",
+    "superproperty" : [ "48" ],
+    "domain" : "13",
     "comment" : {
       "undefined" : "ep-plan:isStepOfPlan binds a ep-plan:Step to the ep-plan:Plan it corresponds to."
     },
     "attributes" : [ "object" ],
-    "id" : "91"
+    "id" : "105"
   }, {
     "iri" : "https://w3id.org/ep-plan#isVariableOfPlan",
+    "equivalent" : [ "114" ],
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "27",
+    "range" : "29",
     "label" : {
       "IRI-based" : "isVariableOfPlan",
       "undefined" : "isVariableOfPlan"
     },
-    "superproperty" : [ "45" ],
-    "domain" : "6",
+    "superproperty" : [ "48" ],
+    "domain" : "60",
     "comment" : {
       "undefined" : "ep-plan:isVariableOfPlan binds a ep-plan:Variable to the ep-plan:Plan it corresponds to."
     },
     "attributes" : [ "object" ],
-    "id" : "93"
-  }, {
-    "iri" : "https://w3id.org/ep-plan#isImplementationOf",
-    "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "2",
-    "label" : {
-      "IRI-based" : "isImplementationOf",
-      "undefined" : "isImplementationOf"
-    },
-    "domain" : "18",
-    "comment" : {
-      "undefined" : "Inverse of ep-plan:hasImplementation."
-    },
-    "attributes" : [ "object" ],
-    "id" : "19"
+    "id" : "107"
   }, {
     "iri" : "https://w3id.org/ep-plan#evaluatedTraceElement",
-    "inverse" : "111",
+    "inverse" : "132",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "110",
+    "range" : "131",
     "label" : {
       "IRI-based" : "evaluatedTraceElement",
       "undefined" : "evaluatedTraceElement"
@@ -1648,22 +1929,42 @@
       "undefined" : "ep-plan:evaluatedTraceElement links ep-plan:ConstriantEvaluation to a ep-plan:Activity or ep-plan:Communication that were evaluated against a ep-plan:Constraint defined in the plan."
     },
     "attributes" : [ "object" ],
-    "id" : "109"
+    "id" : "130"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#correspondsToVariable",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "correspondsToVariable"
+    },
+    "domain" : "35",
+    "attributes" : [ "object", "external" ],
+    "id" : "112"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#correspondsToStep",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "correspondsToStep"
+    },
+    "domain" : "35",
+    "attributes" : [ "object", "external" ],
+    "id" : "135"
   }, {
     "iri" : "https://w3id.org/ep-plan#hasTraceElement",
-    "inverse" : "116",
+    "inverse" : "138",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "114",
+    "range" : "136",
     "label" : {
       "IRI-based" : "hasTraceElement",
       "undefined" : "hasTraceElement"
     },
-    "domain" : "36",
+    "domain" : "43",
     "comment" : {
       "undefined" : "ep-plan:hasTraceElement links ep-plan:ExecutionTraceBundle to ep-plan:TraceElement."
     },
     "attributes" : [ "object" ],
-    "id" : "115"
+    "id" : "137"
   }, {
     "iri" : "https://w3id.org/ep-plan#qualifiedEvaluation",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -1679,55 +1980,72 @@
     "attributes" : [ "object" ],
     "id" : "3"
   }, {
-    "range" : "6",
-    "domain" : "9",
+    "range" : "60",
+    "domain" : "13",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "117"
+    "id" : "139"
   }, {
     "iri" : "https://w3id.org/ep-plan#includesStep",
-    "inverse" : "91",
+    "inverse" : "105",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "9",
+    "range" : "13",
     "label" : {
       "IRI-based" : "includesStep",
       "undefined" : "includesStep"
     },
-    "superproperty" : [ "29" ],
-    "domain" : "27",
+    "superproperty" : [ "31" ],
+    "domain" : "29",
     "comment" : {
       "undefined" : "Inverse of ep-plan:isStepOfPlan."
     },
     "attributes" : [ "object" ],
-    "id" : "118"
+    "id" : "140"
   }, {
     "iri" : "https://w3id.org/ep-plan#isElementOfTrace",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "36",
+    "range" : "43",
     "label" : {
       "IRI-based" : "isElementOfTrace",
       "undefined" : "isElementOfTrace"
     },
-    "domain" : "71",
+    "domain" : "70",
     "comment" : {
       "undefined" : "Inverse of ep-plan:hasTraceElement."
     },
     "attributes" : [ "object" ],
-    "id" : "116"
+    "id" : "138"
   }, {
     "iri" : "https://w3id.org/ep-plan#correspondsToStep",
-    "inverse" : "105",
+    "inverse" : "124",
+    "equivalent" : [ "135" ],
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "9",
+    "range" : "13",
     "label" : {
       "IRI-based" : "correspondsToStep",
       "undefined" : "correspondsToStep"
     },
-    "domain" : "12",
+    "domain" : "10",
     "comment" : {
       "undefined" : "ep-plan:correspondsToStep links a ep-plan:Activity to its planned ep-plan:Step"
     },
-    "attributes" : [ "object", "functional" ],
-    "id" : "119"
+    "attributes" : [ "functional", "object" ],
+    "id" : "141"
+  }, {
+    "iri" : "https://w3id.org/ep-plan#satisfied",
+    "inverse" : "89",
+    "baseIri" : "https://w3id.org/ep-plan",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "satisfied",
+      "undefined" : "satisfied"
+    },
+    "superproperty" : [ "102" ],
+    "domain" : "71",
+    "comment" : {
+      "undefined" : "ep-plan:satisfied links ep-plan:Activity or ep-plan:Communication to a ep-plan:Constraint. The property indicates that the execution trace element satisfied the constraint."
+    },
+    "attributes" : [ "object" ],
+    "id" : "142"
   }, {
     "iri" : "https://w3id.org/ep-plan#wasEvaluatedtraceElement",
     "baseIri" : "https://w3id.org/ep-plan",
@@ -1736,117 +2054,102 @@
       "IRI-based" : "wasEvaluatedtraceElement",
       "undefined" : "wasEvaluatedTraceElement"
     },
-    "domain" : "63",
+    "domain" : "49",
     "comment" : {
       "undefined" : "Inverse of ep-plan:evaluatedTraceElement."
     },
     "attributes" : [ "object" ],
-    "id" : "111"
-  }, {
-    "iri" : "https://w3id.org/ep-plan#satisfied",
-    "inverse" : "81",
-    "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "2",
-    "label" : {
-      "IRI-based" : "satisfied",
-      "undefined" : "satisfied"
-    },
-    "superproperty" : [ "89" ],
-    "domain" : "65",
-    "comment" : {
-      "undefined" : "ep-plan:satisfied links ep-plan:Activity or ep-plan:Communication to a ep-plan:Constraint. The property indicates that the execution trace element satisfied the constraint."
-    },
-    "attributes" : [ "object" ],
-    "id" : "120"
+    "id" : "132"
   }, {
     "iri" : "https://w3id.org/ep-plan#isCommsSpecOfPlan",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "27",
+    "range" : "29",
     "label" : {
       "IRI-based" : "isCommsSpecOfPlan",
       "undefined" : "isCommsSpecOfPlan"
     },
-    "superproperty" : [ "45" ],
-    "domain" : "8",
+    "superproperty" : [ "48" ],
+    "domain" : "12",
     "comment" : {
       "undefined" : "ep-plan:isCommsSpecOfPlan binds a ep-plan:CommsSpec to the ep-plan:Plan it corresponds to."
     },
     "attributes" : [ "object" ],
-    "id" : "28"
+    "id" : "30"
   }, {
     "iri" : "https://w3id.org/ep-plan#includesPlanElement",
-    "inverse" : "45",
+    "inverse" : "48",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "70",
+    "range" : "73",
     "label" : {
       "IRI-based" : "includesPlanElement",
       "undefined" : "includesPlanElement"
     },
-    "domain" : "27",
-    "subproperty" : [ "95", "104", "26", "73", "118", "108", "100", "106" ],
+    "domain" : "29",
+    "subproperty" : [ "110", "120", "28", "80", "140", "129", "113", "127" ],
     "comment" : {
       "undefined" : "Inverse of ep-plan:isElementOfPlan."
     },
     "attributes" : [ "object" ],
-    "id" : "29"
+    "id" : "31"
   }, {
-    "iri" : "https://w3id.org/ep-plan#canBeResponsibleFor",
+    "iri" : "https://w3id.org/ep-plan#isOutputVariableOf",
+    "equivalent" : [ "125" ],
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "112",
+    "range" : "13",
     "label" : {
-      "IRI-based" : "canBeResponsibleFor",
-      "undefined" : "canBeResponsibleFor"
+      "IRI-based" : "isOutputVariableOf",
+      "undefined" : "isOutputVariableOf"
     },
-    "domain" : "67",
+    "domain" : "60",
     "comment" : {
-      "undefined" : "ep-plan:canBeResponsibleFor links an ep-plan:ResponsibleAgent to a planned ep-plan:Step or the overall ep-plan:Plan for which the agent can assume some form of responsibility during the execution. Please note that not all linked ep-plan:ResponsibleAgent(s) must also appear in the execution trace as ep-plan:Agent. ep-plan:canBeResponsibleFor relationship merely indicates that it is possible for this agent to asssume some responsibility diring the execution."
+      "undefined" : "Inverse of p-plan:hasOutputVariable."
     },
     "attributes" : [ "object" ],
-    "id" : "99"
+    "id" : "87"
   }, {
     "iri" : "https://w3id.org/ep-plan#hasPart",
-    "inverse" : "86",
+    "inverse" : "98",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "6",
+    "range" : "60",
     "label" : {
       "IRI-based" : "hasPart",
       "undefined" : "hasPart"
     },
-    "domain" : "5",
+    "domain" : "99",
     "comment" : {
       "undefined" : "ep-plan:hasPart links amn ep-plan:MultiVariable to another ep-plan:Variable that represents a smaller part of a composite variable."
     },
     "attributes" : [ "object" ],
-    "id" : "121"
+    "id" : "143"
   }, {
     "iri" : "https://w3id.org/ep-plan#isPayloadIn",
     "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "8",
+    "range" : "12",
     "label" : {
       "IRI-based" : "isPayloadIn",
       "undefined" : "isPayloadIn"
     },
-    "domain" : "6",
+    "domain" : "60",
     "comment" : {
       "undefined" : "Inverse of ep-plan:hasPayload."
     },
     "attributes" : [ "object" ],
-    "id" : "85"
+    "id" : "97"
   }, {
     "iri" : "https://w3id.org/ep-plan#evaluatedAgainst",
-    "inverse" : "82",
+    "inverse" : "90",
     "baseIri" : "https://w3id.org/ep-plan",
     "range" : "2",
     "label" : {
       "IRI-based" : "evaluatedAgainst",
       "undefined" : "evaluatedAgainst"
     },
-    "domain" : "113",
-    "subproperty" : [ "120", "88" ],
+    "domain" : "134",
+    "subproperty" : [ "142", "101" ],
     "comment" : {
       "undefined" : "ep-plan:evaluatedAgainst links ep-plan:Activity or ep-plan:Communication to an ep-plan:Constraint. The use of subproperties of ep-plan:evaluatedAgainst is encouraged to indicate whether the execution trace element satisfied the constraint."
     },
     "attributes" : [ "object" ],
-    "id" : "89"
+    "id" : "102"
   } ]
 }

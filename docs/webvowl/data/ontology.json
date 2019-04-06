@@ -235,11 +235,11 @@
     "id" : "13",
     "type" : "owl:equivalentClass"
   }, {
-    "id" : "118",
-    "type" : "owl:Class"
-  }, {
     "id" : "133",
     "type" : "owl:equivalentClass"
+  }, {
+    "id" : "118",
+    "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
     "iri" : "http://www.w3.org/ns/prov#Activity",
@@ -441,7 +441,7 @@
     "label" : {
       "IRI-based" : "Step"
     },
-    "attributes" : [ "equivalent", "external" ],
+    "attributes" : [ "external", "equivalent" ],
     "id" : "94"
   }, {
     "iri" : "http://www.w3.org/ns/prov#Collection",
@@ -485,7 +485,7 @@
     "label" : {
       "IRI-based" : "Variable"
     },
-    "attributes" : [ "equivalent", "external" ],
+    "attributes" : [ "external", "equivalent" ],
     "id" : "109"
   }, {
     "iri" : "http://purl.org/net/p-plan#Bundle",
@@ -494,7 +494,7 @@
     "label" : {
       "IRI-based" : "Bundle"
     },
-    "attributes" : [ "equivalent", "external" ],
+    "attributes" : [ "external", "equivalent" ],
     "id" : "93"
   }, {
     "iri" : "http://www.w3.org/ns/prov#Bundle",
@@ -535,7 +535,7 @@
     "label" : {
       "IRI-based" : "Activity"
     },
-    "attributes" : [ "equivalent", "external" ],
+    "attributes" : [ "external", "equivalent" ],
     "id" : "121"
   }, {
     "iri" : "https://w3id.org/ep-plan#Entity",
@@ -602,7 +602,7 @@
     "label" : {
       "IRI-based" : "Entity"
     },
-    "attributes" : [ "equivalent", "external" ],
+    "attributes" : [ "external", "equivalent" ],
     "id" : "122"
   }, {
     "iri" : "https://w3id.org/ep-plan#MultiStep",
@@ -626,7 +626,7 @@
     "label" : {
       "IRI-based" : "MultiStep"
     },
-    "attributes" : [ "equivalent", "external" ],
+    "attributes" : [ "external", "equivalent" ],
     "id" : "126"
   }, {
     "iri" : "https://w3id.org/ep-plan#Rationale",
@@ -722,7 +722,7 @@
     "id" : "136"
   }, {
     "instances" : 0,
-    "union" : [ "12", "60", "2", "6", "17", "13", "29" ],
+    "union" : [ "12", "60", "2", "17", "13", "29" ],
     "attributes" : [ "anonymous", "union" ],
     "id" : "5"
   }, {
@@ -741,6 +741,15 @@
     "attributes" : [ "equivalent" ],
     "id" : "13"
   }, {
+    "iri" : "http://purl.org/net/p-plan#Plan",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Plan"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "133"
+  }, {
     "iri" : "http://www.w3.org/ns/prov#Plan",
     "baseIri" : "http://www.w3.org/ns/prov",
     "instances" : 0,
@@ -750,15 +759,6 @@
     "subClasses" : [ "29" ],
     "attributes" : [ "external" ],
     "id" : "118"
-  }, {
-    "iri" : "http://purl.org/net/p-plan#Plan",
-    "baseIri" : "http://purl.org/net/p-plan",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Plan"
-    },
-    "attributes" : [ "equivalent", "external" ],
-    "id" : "133"
   } ],
   "property" : [ {
     "id" : "0",
@@ -812,7 +812,7 @@
     "id" : "46",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "47",
+    "id" : "48",
     "type" : "owl:objectProperty"
   }, {
     "id" : "36",
@@ -899,7 +899,7 @@
     "id" : "88",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "48",
+    "id" : "47",
     "type" : "owl:objectProperty"
   }, {
     "id" : "110",
@@ -953,10 +953,10 @@
     "id" : "7",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "69",
+    "id" : "78",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "78",
+    "id" : "69",
     "type" : "owl:objectProperty"
   }, {
     "id" : "127",
@@ -1190,6 +1190,21 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "44"
   }, {
+    "iri" : "https://w3id.org/ep-plan#isObjectiveOfPlan",
+    "baseIri" : "https://w3id.org/ep-plan",
+    "range" : "29",
+    "label" : {
+      "IRI-based" : "isObjectiveOfPlan",
+      "undefined" : "isObjectiveOfPlan"
+    },
+    "superproperty" : [ "47" ],
+    "domain" : "6",
+    "comment" : {
+      "undefined" : "ep-plan:isObjectiveOfPlan binds a ep-plan:Objective to the ep-plan:Plan it corresponds to."
+    },
+    "attributes" : [ "object" ],
+    "id" : "46"
+  }, {
     "iri" : "http://purl.org/net/p-plan#isPrecededBy",
     "baseIri" : "http://purl.org/net/p-plan",
     "range" : "35",
@@ -1198,26 +1213,11 @@
     },
     "domain" : "35",
     "attributes" : [ "object", "external" ],
-    "id" : "46"
-  }, {
-    "iri" : "https://w3id.org/ep-plan#isObjectiveOfPlan",
-    "baseIri" : "https://w3id.org/ep-plan",
-    "range" : "29",
-    "label" : {
-      "IRI-based" : "isObjectiveOfPlan",
-      "undefined" : "isObjectiveOfPlan"
-    },
-    "superproperty" : [ "48" ],
-    "domain" : "6",
-    "comment" : {
-      "undefined" : "ep-plan:isObjectiveOfPlan binds a ep-plan:Objective to the ep-plan:Plan it corresponds to."
-    },
-    "attributes" : [ "object" ],
-    "id" : "47"
+    "id" : "48"
   }, {
     "iri" : "https://w3id.org/ep-plan#isPrecededBy",
     "inverse" : "50",
-    "equivalent" : [ "46" ],
+    "equivalent" : [ "48" ],
     "baseIri" : "https://w3id.org/ep-plan",
     "range" : "13",
     "label" : {
@@ -1229,7 +1229,7 @@
     "comment" : {
       "undefined" : "Property that asserts which Step preceeds the current one."
     },
-    "attributes" : [ "transitive", "object" ],
+    "attributes" : [ "object", "transitive" ],
     "id" : "36"
   }, {
     "range" : "24",
@@ -1366,7 +1366,7 @@
     "id" : "79"
   }, {
     "iri" : "https://w3id.org/ep-plan#includesObjective",
-    "inverse" : "47",
+    "inverse" : "46",
     "baseIri" : "https://w3id.org/ep-plan",
     "range" : "6",
     "label" : {
@@ -1381,19 +1381,9 @@
     "attributes" : [ "object" ],
     "id" : "80"
   }, {
-    "iri" : "http://purl.org/net/p-plan#hasInputVar",
-    "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "35",
-    "label" : {
-      "IRI-based" : "hasInputVar"
-    },
-    "domain" : "35",
-    "attributes" : [ "object", "external" ],
-    "id" : "81"
-  }, {
     "iri" : "https://w3id.org/ep-plan#hasInputVariable",
     "inverse" : "68",
-    "equivalent" : [ "81" ],
+    "equivalent" : [ "82" ],
     "baseIri" : "https://w3id.org/ep-plan",
     "range" : "60",
     "label" : {
@@ -1405,6 +1395,16 @@
       "undefined" : "ep-plan:hasInputVariable binds a ep-plan:Step to the ep-plan:Variable that takes as input for the planned execution."
     },
     "attributes" : [ "object" ],
+    "id" : "81"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#hasInputVar",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "hasInputVar"
+    },
+    "domain" : "35",
+    "attributes" : [ "object", "external" ],
     "id" : "82"
   }, {
     "iri" : "https://w3id.org/ep-plan#constrains",
@@ -1429,7 +1429,7 @@
       "IRI-based" : "isPolicyOfPlan",
       "undefined" : "isPolicyOfPlan"
     },
-    "superproperty" : [ "48" ],
+    "superproperty" : [ "47" ],
     "domain" : "19",
     "comment" : {
       "undefined" : "ep-plan:isPolicyOfPlan binds a ep-plan:Policy to the ep-plan:Plan it corresponds to."
@@ -1509,7 +1509,7 @@
     "comment" : {
       "undefined" : "ep-plan:correspondsToCommunicationSpecification links ep-plan:Communication to its planned specification."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "95"
   }, {
     "iri" : "https://w3id.org/ep-plan#hasPayload",
@@ -1579,7 +1579,7 @@
       "IRI-based" : "isResponsibleAgentOfPlan",
       "undefined" : "isResposibleAgentOfPlan"
     },
-    "superproperty" : [ "48" ],
+    "superproperty" : [ "47" ],
     "domain" : "17",
     "comment" : {
       "undefined" : "ep-plan:isResponsibleAgentOfPlan binds a ep-plan:ResponsibleAgent to the ep-plan:Plan it corresponds to."
@@ -1605,12 +1605,12 @@
       "undefined" : "isElementOfPlan"
     },
     "domain" : "74",
-    "subproperty" : [ "105", "106", "107", "30", "108", "85", "47", "103" ],
+    "subproperty" : [ "105", "106", "107", "30", "108", "85", "46", "103" ],
     "comment" : {
       "undefined" : "ep-plan:isElementOfPlan binds a ep-plan:PlanElement to the ep-plan:Plan it corresponds to."
     },
     "attributes" : [ "object" ],
-    "id" : "48"
+    "id" : "47"
   }, {
     "iri" : "https://w3id.org/ep-plan#includesPolicy",
     "inverse" : "85",
@@ -1641,7 +1641,7 @@
     "comment" : {
       "undefined" : "ep-plan:correspondsToVariable binds a ep-plan:Entity (used by a ep-plan:Activity in the execution of a plan) to the ep-plan:Variable it represented it in the ep-plan:Plan."
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "111"
   }, {
     "iri" : "https://w3id.org/ep-plan#precedes",
@@ -1655,7 +1655,7 @@
     "comment" : {
       "undefined" : "Inverse of ep-plan:isPrecededBy."
     },
-    "attributes" : [ "transitive", "object" ],
+    "attributes" : [ "object", "transitive" ],
     "id" : "50"
   }, {
     "iri" : "https://w3id.org/ep-plan#isConstraintOfPlan",
@@ -1665,7 +1665,7 @@
       "IRI-based" : "isConstraintOfPlan",
       "undefined" : "isConstraintOfPlan"
     },
-    "superproperty" : [ "48" ],
+    "superproperty" : [ "47" ],
     "domain" : "2",
     "comment" : {
       "undefined" : "ep-plan:isConstraintOfPlan binds a ep-plan:Constraint to the ep-plan:Plan it corresponds to."
@@ -1757,12 +1757,12 @@
       "IRI-based" : "isSubPlanOfPlan",
       "undefined" : "isSubPlanOfPlan"
     },
-    "superproperty" : [ "48" ],
+    "superproperty" : [ "47" ],
     "domain" : "29",
     "comment" : {
       "undefined" : "A ep-plan:Plan may be a subplan of another bigger ep-plan:Plan. The relation ep-plan:isSubPlanOfPlan is used to state the link among the two different plans. Note that if p1 is a sub-plan of p2, p1 will not necessarily be a step of p2. A multistep will represent p1 in p2, and link to p1 with the hasStepDecomposition relationship."
     },
-    "attributes" : [ "transitive", "object" ],
+    "attributes" : [ "object", "transitive" ],
     "id" : "108"
   }, {
     "iri" : "https://w3id.org/ep-plan#hasCorrespondingActivity",
@@ -1813,16 +1813,6 @@
     "attributes" : [ "object" ],
     "id" : "7"
   }, {
-    "iri" : "http://purl.org/net/p-plan#isInputVarOf",
-    "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "35",
-    "label" : {
-      "IRI-based" : "isInputVarOf"
-    },
-    "domain" : "35",
-    "attributes" : [ "object", "external" ],
-    "id" : "69"
-  }, {
     "iri" : "https://w3id.org/ep-plan#isConstraintImplementationOf",
     "baseIri" : "https://w3id.org/ep-plan",
     "range" : "2",
@@ -1836,6 +1826,16 @@
     },
     "attributes" : [ "object" ],
     "id" : "78"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#isInputVarOf",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "isInputVarOf"
+    },
+    "domain" : "35",
+    "attributes" : [ "object", "external" ],
+    "id" : "69"
   }, {
     "iri" : "https://w3id.org/ep-plan#includesVar",
     "inverse" : "107",
@@ -1881,7 +1881,7 @@
     "comment" : {
       "undefined" : "Inverse of ep-plan:isSubPlanOf."
     },
-    "attributes" : [ "transitive", "object" ],
+    "attributes" : [ "object", "transitive" ],
     "id" : "129"
   }, {
     "iri" : "https://w3id.org/ep-plan#isStepOfPlan",
@@ -1892,7 +1892,7 @@
       "IRI-based" : "isStepOfPlan",
       "undefined" : "isStepOfPlan"
     },
-    "superproperty" : [ "48" ],
+    "superproperty" : [ "47" ],
     "domain" : "13",
     "comment" : {
       "undefined" : "ep-plan:isStepOfPlan binds a ep-plan:Step to the ep-plan:Plan it corresponds to."
@@ -1908,7 +1908,7 @@
       "IRI-based" : "isVariableOfPlan",
       "undefined" : "isVariableOfPlan"
     },
-    "superproperty" : [ "48" ],
+    "superproperty" : [ "47" ],
     "domain" : "60",
     "comment" : {
       "undefined" : "ep-plan:isVariableOfPlan binds a ep-plan:Variable to the ep-plan:Plan it corresponds to."
@@ -2028,7 +2028,7 @@
     "comment" : {
       "undefined" : "ep-plan:correspondsToStep links a ep-plan:Activity to its planned ep-plan:Step"
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "141"
   }, {
     "iri" : "https://w3id.org/ep-plan#satisfied",
@@ -2068,7 +2068,7 @@
       "IRI-based" : "isCommsSpecOfPlan",
       "undefined" : "isCommsSpecOfPlan"
     },
-    "superproperty" : [ "48" ],
+    "superproperty" : [ "47" ],
     "domain" : "12",
     "comment" : {
       "undefined" : "ep-plan:isCommsSpecOfPlan binds a ep-plan:CommsSpec to the ep-plan:Plan it corresponds to."
@@ -2077,7 +2077,7 @@
     "id" : "30"
   }, {
     "iri" : "https://w3id.org/ep-plan#includesPlanElement",
-    "inverse" : "48",
+    "inverse" : "47",
     "baseIri" : "https://w3id.org/ep-plan",
     "range" : "73",
     "label" : {

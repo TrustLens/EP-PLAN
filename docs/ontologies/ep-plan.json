@@ -1144,16 +1144,16 @@
     "@id" : "https://w3id.org/ep-plan#isElementOfTrace"
   } ]
 }, {
-  "@id" : "https://w3id.org/ep-plan#includesCommsSpec",
+  "@id" : "https://w3id.org/ep-plan#includesCommunicationSpecification",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Inverse of ep-plan:isCommsSpecOfPlan."
+    "@value" : "Inverse of ep-plan:isCommunicationSpecificationOfPlan."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/ep-plan#Plan"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "includesCommsSpec"
+    "@value" : "includesCommunicationSpecification"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
@@ -1162,7 +1162,7 @@
     "@id" : "https://w3id.org/ep-plan#includesPlanElement"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/ep-plan#isCommsSpecOfPlan"
+    "@id" : "https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan"
   } ]
 }, {
   "@id" : "https://w3id.org/ep-plan#includesConstraint",
@@ -1309,7 +1309,7 @@
     "@id" : "https://w3id.org/ep-plan#isSubPlanOfPlan"
   } ]
 }, {
-  "@id" : "https://w3id.org/ep-plan#includesVar",
+  "@id" : "https://w3id.org/ep-plan#includesVariable",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Inverse of ep-plan:isVariableOfPlan."
@@ -1318,7 +1318,7 @@
     "@id" : "https://w3id.org/ep-plan#Plan"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "includesVar"
+    "@value" : "includesVariable"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/ep-plan#Variable"
@@ -1345,16 +1345,16 @@
     "@id" : "_:genid49"
   } ]
 }, {
-  "@id" : "https://w3id.org/ep-plan#isCommsSpecOfPlan",
+  "@id" : "https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "ep-plan:isCommsSpecOfPlan binds a ep-plan:CommsSpec to the ep-plan:Plan it corresponds to."
+    "@value" : "ep-plan:isCommunicationSpecificationOfPlan binds a ep-plan:CommunicationSpecification to the ep-plan:Plan it corresponds to."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/ep-plan#CommunicationSpecification"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "isCommsSpecOfPlan"
+    "@value" : "isCommunicationSpecificationOfPlan"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/ep-plan#Plan"

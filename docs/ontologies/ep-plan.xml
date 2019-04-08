@@ -568,16 +568,16 @@
     
 
 
-    <!-- https://w3id.org/ep-plan#includesCommsSpec -->
+    <!-- https://w3id.org/ep-plan#includesCommunicationSpecification -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#includesCommsSpec">
+    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#includesCommunicationSpecification">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/ep-plan#includesPlanElement"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#isCommsSpecOfPlan"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan"/>
         <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Plan"/>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#CommunicationSpecification"/>
-        <rdfs:comment>Inverse of ep-plan:isCommsSpecOfPlan.</rdfs:comment>
-        <rdfs:label>includesCommsSpec</rdfs:label>
+        <rdfs:comment>Inverse of ep-plan:isCommunicationSpecificationOfPlan.</rdfs:comment>
+        <rdfs:label>includesCommunicationSpecification</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -692,16 +692,16 @@
     
 
 
-    <!-- https://w3id.org/ep-plan#includesVar -->
+    <!-- https://w3id.org/ep-plan#includesVariable -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#includesVar">
+    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#includesVariable">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/ep-plan#includesPlanElement"/>
         <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#isVariableOfPlan"/>
         <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Plan"/>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#Variable"/>
         <rdfs:comment>Inverse of ep-plan:isVariableOfPlan.</rdfs:comment>
-        <rdfs:label>includesVar</rdfs:label>
+        <rdfs:label>includesVariable</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -729,15 +729,15 @@
     
 
 
-    <!-- https://w3id.org/ep-plan#isCommsSpecOfPlan -->
+    <!-- https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#isCommsSpecOfPlan">
+    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/ep-plan#isElementOfPlan"/>
         <rdfs:domain rdf:resource="https://w3id.org/ep-plan#CommunicationSpecification"/>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#Plan"/>
-        <rdfs:comment>ep-plan:isCommsSpecOfPlan binds a ep-plan:CommsSpec to the ep-plan:Plan it corresponds to.</rdfs:comment>
-        <rdfs:label>isCommsSpecOfPlan</rdfs:label>
+        <rdfs:comment>ep-plan:isCommunicationSpecificationOfPlan binds a ep-plan:CommunicationSpecification to the ep-plan:Plan it corresponds to.</rdfs:comment>
+        <rdfs:label>isCommunicationSpecificationOfPlan</rdfs:label>
     </owl:ObjectProperty>
     
 

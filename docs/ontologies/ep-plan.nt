@@ -385,14 +385,14 @@ _:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/ep-plan#hasTraceElement> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:hasTraceElement links ep-plan:ExecutionTraceBundle to ep-plan:TraceElement." .
 <https://w3id.org/ep-plan#hasTraceElement> <http://www.w3.org/2000/01/rdf-schema#label> "hasTraceElement" .
 # 
-# https://w3id.org/ep-plan#includesCommsSpec
-<https://w3id.org/ep-plan#includesCommsSpec> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/ep-plan#includesCommsSpec> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ep-plan#includesPlanElement> .
-<https://w3id.org/ep-plan#includesCommsSpec> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ep-plan#isCommsSpecOfPlan> .
-<https://w3id.org/ep-plan#includesCommsSpec> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ep-plan#Plan> .
-<https://w3id.org/ep-plan#includesCommsSpec> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ep-plan#CommunicationSpecification> .
-<https://w3id.org/ep-plan#includesCommsSpec> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse of ep-plan:isCommsSpecOfPlan." .
-<https://w3id.org/ep-plan#includesCommsSpec> <http://www.w3.org/2000/01/rdf-schema#label> "includesCommsSpec" .
+# https://w3id.org/ep-plan#includesCommunicationSpecification
+<https://w3id.org/ep-plan#includesCommunicationSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ep-plan#includesCommunicationSpecification> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ep-plan#includesPlanElement> .
+<https://w3id.org/ep-plan#includesCommunicationSpecification> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan> .
+<https://w3id.org/ep-plan#includesCommunicationSpecification> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ep-plan#Plan> .
+<https://w3id.org/ep-plan#includesCommunicationSpecification> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ep-plan#CommunicationSpecification> .
+<https://w3id.org/ep-plan#includesCommunicationSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse of ep-plan:isCommunicationSpecificationOfPlan." .
+<https://w3id.org/ep-plan#includesCommunicationSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "includesCommunicationSpecification" .
 # 
 # https://w3id.org/ep-plan#includesConstraint
 <https://w3id.org/ep-plan#includesConstraint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -480,14 +480,14 @@ _:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/ep-plan#includesSubPlan> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse of ep-plan:isSubPlanOf." .
 <https://w3id.org/ep-plan#includesSubPlan> <http://www.w3.org/2000/01/rdf-schema#label> "includesSubPlan" .
 # 
-# https://w3id.org/ep-plan#includesVar
-<https://w3id.org/ep-plan#includesVar> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/ep-plan#includesVar> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ep-plan#includesPlanElement> .
-<https://w3id.org/ep-plan#includesVar> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ep-plan#isVariableOfPlan> .
-<https://w3id.org/ep-plan#includesVar> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ep-plan#Plan> .
-<https://w3id.org/ep-plan#includesVar> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ep-plan#Variable> .
-<https://w3id.org/ep-plan#includesVar> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse of ep-plan:isVariableOfPlan." .
-<https://w3id.org/ep-plan#includesVar> <http://www.w3.org/2000/01/rdf-schema#label> "includesVar" .
+# https://w3id.org/ep-plan#includesVariable
+<https://w3id.org/ep-plan#includesVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ep-plan#includesVariable> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ep-plan#includesPlanElement> .
+<https://w3id.org/ep-plan#includesVariable> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ep-plan#isVariableOfPlan> .
+<https://w3id.org/ep-plan#includesVariable> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ep-plan#Plan> .
+<https://w3id.org/ep-plan#includesVariable> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ep-plan#Variable> .
+<https://w3id.org/ep-plan#includesVariable> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse of ep-plan:isVariableOfPlan." .
+<https://w3id.org/ep-plan#includesVariable> <http://www.w3.org/2000/01/rdf-schema#label> "includesVariable" .
 # 
 # https://w3id.org/ep-plan#isAchievedBy
 <https://w3id.org/ep-plan#isAchievedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -516,13 +516,13 @@ _:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/ep-plan#isAchievedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:isAchievedBy links ep-plan:Objective to a plan or individual plan element that is expected to achieve the objective specified by ep-plan:Objective." .
 <https://w3id.org/ep-plan#isAchievedBy> <http://www.w3.org/2000/01/rdf-schema#label> "isAchievedBy" .
 # 
-# https://w3id.org/ep-plan#isCommsSpecOfPlan
-<https://w3id.org/ep-plan#isCommsSpecOfPlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/ep-plan#isCommsSpecOfPlan> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ep-plan#isElementOfPlan> .
-<https://w3id.org/ep-plan#isCommsSpecOfPlan> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ep-plan#CommunicationSpecification> .
-<https://w3id.org/ep-plan#isCommsSpecOfPlan> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ep-plan#Plan> .
-<https://w3id.org/ep-plan#isCommsSpecOfPlan> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:isCommsSpecOfPlan binds a ep-plan:CommsSpec to the ep-plan:Plan it corresponds to." .
-<https://w3id.org/ep-plan#isCommsSpecOfPlan> <http://www.w3.org/2000/01/rdf-schema#label> "isCommsSpecOfPlan" .
+# https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan
+<https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ep-plan#isElementOfPlan> .
+<https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ep-plan#CommunicationSpecification> .
+<https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ep-plan#Plan> .
+<https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:isCommunicationSpecificationOfPlan binds a ep-plan:CommunicationSpecification to the ep-plan:Plan it corresponds to." .
+<https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan> <http://www.w3.org/2000/01/rdf-schema#label> "isCommunicationSpecificationOfPlan" .
 # 
 # https://w3id.org/ep-plan#isConstraintImplementationOf
 <https://w3id.org/ep-plan#isConstraintImplementationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .

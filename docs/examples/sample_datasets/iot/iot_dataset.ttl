@@ -282,7 +282,7 @@
 
 ###  http://trustlens.org/test_dataset1#DataUploadOfCollectedData
 :DataUploadOfCollectedData rdf:type owl:NamedIndividual ,
-                                    ep-plan:CommsSpec ;
+                                    ep-plan:CommunicationSpecification ;
                            ep-plan:hasConstraint :UseEncryption ;
                            ep-plan:hasPayload :CollectedData ;
                            ep-plan:hasRecipient :DataProcessing ;

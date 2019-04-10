@@ -1014,7 +1014,7 @@
     "@id" : "https://w3id.org/ep-plan#includesPlanElement"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan"
+    "@id" : "https://w3id.org/ep-plan#isCommunicationSpecificationOfPlan"
   } ]
 }, {
   "@id" : "https://w3id.org/ep-plan#includesConstraint",
@@ -1197,7 +1197,7 @@
     "@id" : "_:genid49"
   } ]
 }, {
-  "@id" : "https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan",
+  "@id" : "https://w3id.org/ep-plan#isCommunicationSpecificationOfPlan",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "ep-plan:isCommunicationSpecificationOfPlan binds a ep-plan:CommunicationSpecification to the ep-plan:Plan it corresponds to."

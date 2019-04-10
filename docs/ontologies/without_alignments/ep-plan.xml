@@ -474,7 +474,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#includesCommunicationSpecification">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/ep-plan#includesPlanElement"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/ep-plan#isCommunicationSpecificationOfPlan"/>
         <rdfs:domain rdf:resource="https://w3id.org/ep-plan#Plan"/>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#CommunicationSpecification"/>
         <rdfs:comment>Inverse of ep-plan:isCommunicationSpecificationOfPlan.</rdfs:comment>
@@ -630,10 +630,10 @@
     
 
 
-    <!-- https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan -->
+    <!-- https://w3id.org/ep-plan#isCommunicationSpecificationOfPlan -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan">
+    <owl:ObjectProperty rdf:about="https://w3id.org/ep-plan#isCommunicationSpecificationOfPlan">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/ep-plan#isElementOfPlan"/>
         <rdfs:domain rdf:resource="https://w3id.org/ep-plan#CommunicationSpecification"/>
         <rdfs:range rdf:resource="https://w3id.org/ep-plan#Plan"/>

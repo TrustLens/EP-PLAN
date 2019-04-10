@@ -48,10 +48,6 @@
 # #################################################################
 # 
 # 
-# http://purl.org/net/p-plan#isDecomposedAsPlan
-<http://purl.org/net/p-plan#isDecomposedAsPlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/net/p-plan#isDecomposedAsPlan> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/ep-plan#isDecomposedAsPlan> .
-# 
 # https://w3id.org/ep-plan#achieves
 <https://w3id.org/ep-plan#achieves> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/ep-plan#achieves> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ep-plan#isAchievedBy> .

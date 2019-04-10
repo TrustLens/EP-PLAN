@@ -54,11 +54,6 @@
 #    Object Properties
 #################################################################
 
-###  http://purl.org/net/p-plan#isDecomposedAsPlan
-<http://purl.org/net/p-plan#isDecomposedAsPlan> rdf:type owl:ObjectProperty ;
-                                                owl:equivalentProperty :isDecomposedAsPlan .
-
-
 ###  https://w3id.org/ep-plan#achieves
 :achieves rdf:type owl:ObjectProperty ;
           owl:inverseOf :isAchievedBy ;

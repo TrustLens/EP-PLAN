@@ -96,15 +96,6 @@
     
 
 
-    <!-- http://purl.org/net/p-plan#isDecomposedAsPlan -->
-
-
-    <owl:ObjectProperty rdf:about="http://purl.org/net/p-plan#isDecomposedAsPlan">
-        <owl:equivalentProperty rdf:resource="https://w3id.org/ep-plan#isDecomposedAsPlan"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/ep-plan#achieves -->
 
 

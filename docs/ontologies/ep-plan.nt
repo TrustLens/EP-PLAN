@@ -258,7 +258,7 @@ _:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/ep-plan#hasCorrespondingCommunication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/ep-plan#hasCorrespondingCommunication> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ep-plan#CommunicationSpecification> .
 <https://w3id.org/ep-plan#hasCorrespondingCommunication> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ep-plan#Communication> .
-<https://w3id.org/ep-plan#hasCorrespondingCommunication> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse of correspondsToCommsSpec" .
+<https://w3id.org/ep-plan#hasCorrespondingCommunication> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse of correspondsToCommunicationSpecification" .
 <https://w3id.org/ep-plan#hasCorrespondingCommunication> <http://www.w3.org/2000/01/rdf-schema#label> "hasCorrespondingCommunication" .
 # 
 # https://w3id.org/ep-plan#hasCorrespondingEntity
@@ -297,7 +297,7 @@ _:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/ep-plan#hasPayload> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ep-plan#isPayloadIn> .
 <https://w3id.org/ep-plan#hasPayload> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ep-plan#CommunicationSpecification> .
 <https://w3id.org/ep-plan#hasPayload> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ep-plan#Variable> .
-<https://w3id.org/ep-plan#hasPayload> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:hasPayload links an ep-plan:Variable to an ep-plan:CommsSpec and identyfies the variable that will be transferred according to the ep-plan:CommsSpec." .
+<https://w3id.org/ep-plan#hasPayload> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:hasPayload links an ep-plan:Variable to an ep-plan:CommunicationSpecification and identyfies the variable that will be transferred according to the ep-plan:CommunicationSpecification." .
 <https://w3id.org/ep-plan#hasPayload> <http://www.w3.org/2000/01/rdf-schema#label> "hasPayload" .
 # 
 # https://w3id.org/ep-plan#hasPermittedAgent
@@ -352,7 +352,7 @@ _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/ep-plan#hasRecipient> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ep-plan#isRecipientIn> .
 <https://w3id.org/ep-plan#hasRecipient> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ep-plan#CommunicationSpecification> .
 <https://w3id.org/ep-plan#hasRecipient> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ep-plan#Step> .
-<https://w3id.org/ep-plan#hasRecipient> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:hasRecipient links an ep-plan:Step to an ep-plan:CommsSpec and indicates that the step is expected to receive an ep-plan:Variable that will be transferred according to the ep-plan:CommsSpec." .
+<https://w3id.org/ep-plan#hasRecipient> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:hasRecipient links an ep-plan:Step to an ep-plan:CommunicationSpecification and indicates that the step is expected to receive an ep-plan:Variable that will be transferred according to the ep-plan:CommunicationSpecification." .
 <https://w3id.org/ep-plan#hasRecipient> <http://www.w3.org/2000/01/rdf-schema#label> "hasRecipient" .
 # 
 # https://w3id.org/ep-plan#hasSender
@@ -360,7 +360,7 @@ _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/ep-plan#hasSender> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ep-plan#isSenderIn> .
 <https://w3id.org/ep-plan#hasSender> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ep-plan#CommunicationSpecification> .
 <https://w3id.org/ep-plan#hasSender> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ep-plan#Step> .
-<https://w3id.org/ep-plan#hasSender> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:hasSender links an ep-plan:Step to  an ep-plan:CommsSpec and indicates that the step is expected to produce an ep-plan:Variable that will be transferred according to the ep-plan:CommsSpec." .
+<https://w3id.org/ep-plan#hasSender> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:hasSender links an ep-plan:Step to  an ep-plan:CommunicationSpecification and indicates that the step is expected to produce an ep-plan:Variable that will be transferred according to the ep-plan:CommunicationSpecification." .
 <https://w3id.org/ep-plan#hasSender> <http://www.w3.org/2000/01/rdf-schema#label> "hasSender" .
 # 
 # https://w3id.org/ep-plan#hasTraceElement
@@ -382,7 +382,7 @@ _:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid37 .
 _:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/ep-plan#Entity> .
 _:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/ep-plan#hasTraceElement> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:hasTraceElement links ep-plan:ExecutionTraceBundle to ep-plan:TraceElement." .
+<https://w3id.org/ep-plan#hasTraceElement> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:hasTraceElement links ep-plan:ExecutionTraceBundle to execution trace elements ( i.e. ep-plan:Agent,ep-plan:Activity or ep-plan:Entity)." .
 <https://w3id.org/ep-plan#hasTraceElement> <http://www.w3.org/2000/01/rdf-schema#label> "hasTraceElement" .
 # 
 # https://w3id.org/ep-plan#includesCommunicationSpecification
@@ -740,7 +740,7 @@ _:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/ep-plan#isSubPlanOfPlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
 <https://w3id.org/ep-plan#isSubPlanOfPlan> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ep-plan#Plan> .
 <https://w3id.org/ep-plan#isSubPlanOfPlan> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ep-plan#Plan> .
-<https://w3id.org/ep-plan#isSubPlanOfPlan> <http://www.w3.org/2000/01/rdf-schema#comment> "A ep-plan:Plan may be a subplan of another bigger ep-plan:Plan. The relation ep-plan:isSubPlanOfPlan is used to state the link among the two different plans. Note that if p1 is a sub-plan of p2, p1 will not necessarily be a step of p2. A multistep will represent p1 in p2, and link to p1 with the hasStepDecomposition relationship." .
+<https://w3id.org/ep-plan#isSubPlanOfPlan> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:Plan may be a subplan of another bigger ep-plan:Plan. The relation ep-plan:isSubPlanOfPlan is used to state the link among the two different plans. Note that if p1 is a sub-plan of p2, p1 will not necessarily be a step of p2. A multistep will represent p1 in p2, and link to p1 with the hasStepDecomposition relationship." .
 <https://w3id.org/ep-plan#isSubPlanOfPlan> <http://www.w3.org/2000/01/rdf-schema#label> "isSubPlanOfPlan" .
 # 
 # https://w3id.org/ep-plan#isVariableOfPlan
@@ -923,7 +923,7 @@ _:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # https://w3id.org/ep-plan#Communication
 <https://w3id.org/ep-plan#Communication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ep-plan#Communication> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Communication> .
-<https://w3id.org/ep-plan#Communication> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:Communication is a type of prov:Communication representing a transfer of an entity between two activities according to some planned specification expressed as ep-plan:CommsSpec." .
+<https://w3id.org/ep-plan#Communication> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:Communication is a type of prov:Communication representing a transfer of an entity between two activities according to some planned specification expressed as ep-plan:CommunicationSpecification." .
 <https://w3id.org/ep-plan#Communication> <http://www.w3.org/2000/01/rdf-schema#label> "Communication" .
 # 
 # https://w3id.org/ep-plan#CommunicationSpecification
@@ -981,7 +981,7 @@ _:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/
 <https://w3id.org/ep-plan#EntityCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ep-plan#EntityCollection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Collection> .
 <https://w3id.org/ep-plan#EntityCollection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ep-plan#Entity> .
-<https://w3id.org/ep-plan#EntityCollection> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of entities corresponding to ep-plan:MultiVariable. ep-pla:Entity contained in such collection corresponds to ep-plan:Variable that is linked to ep-plan:MultiVariable and defined in the subplan of a plan that the  ep-plan:MultiVariable is defined in.  Entity Collection is typically used or generated by  Multi Activity." .
+<https://w3id.org/ep-plan#EntityCollection> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of entities corresponding to ep-plan:MultiVariable. ep-pla:Entity contained in such collection corresponds to ep-plan:Variable that is linked to ep-plan:MultiVariable and defined in the subplan of a plan that the  ep-plan:MultiVariable is defined in.  Entity Collection is typically used or generated by  ep-plan:MultiActivity." .
 <https://w3id.org/ep-plan#EntityCollection> <http://www.w3.org/2000/01/rdf-schema#label> "Entity Collection" .
 # 
 # https://w3id.org/ep-plan#ExecutionTraceBundle
@@ -1006,18 +1006,18 @@ _:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/
 # https://w3id.org/ep-plan#MultiStep
 <https://w3id.org/ep-plan#MultiStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ep-plan#MultiStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ep-plan#Step> .
-<https://w3id.org/ep-plan#MultiStep> <http://www.w3.org/2000/01/rdf-schema#comment> "An ep-plan:MultiStep is the representation of a composite step that can be described (decomposed) as another ep-plan:Plan." .
+<https://w3id.org/ep-plan#MultiStep> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:MultiStep is the representation of a composite step that can be described (decomposed) as another ep-plan:Plan." .
 <https://w3id.org/ep-plan#MultiStep> <http://www.w3.org/2000/01/rdf-schema#label> "MultiStep" .
 # 
 # https://w3id.org/ep-plan#MultiVariable
 <https://w3id.org/ep-plan#MultiVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ep-plan#MultiVariable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ep-plan#Variable> .
-<https://w3id.org/ep-plan#MultiVariable> <http://www.w3.org/2000/01/rdf-schema#comment> "An ep-plan:MultiVariable represents a composite variable that can be broken down into smaller parts represented as ep-plan:Variable(s)." .
+<https://w3id.org/ep-plan#MultiVariable> <http://www.w3.org/2000/01/rdf-schema#comment> "ep-plan:MultiVariable represents a composite variable that can be broken down into smaller parts represented as ep-plan:Variable(s)." .
 <https://w3id.org/ep-plan#MultiVariable> <http://www.w3.org/2000/01/rdf-schema#label> "MultiVariable" .
 # 
 # https://w3id.org/ep-plan#Objective
 <https://w3id.org/ep-plan#Objective> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/ep-plan#Objective> <http://www.w3.org/2000/01/rdf-schema#comment> "This utility concept can be used to identify a specific result that a plan aims to achieve. This class can be used, for example, to annotate steps and variables that represent some end results. More complex plans can have more than one objectives. Users are encouraged to extend this class, for example, to identify primary and secondary objectives of a plan." .
+<https://w3id.org/ep-plan#Objective> <http://www.w3.org/2000/01/rdf-schema#comment> " ep-plan:Objective describes information detailing a specific purpose of a plan. Plans can have more than one objectives. Users are encouraged to extend this class, for example, to identify primary and secondary objectives of a plan." .
 <https://w3id.org/ep-plan#Objective> <http://www.w3.org/2000/01/rdf-schema#label> "Objective" .
 # 
 # https://w3id.org/ep-plan#Plan

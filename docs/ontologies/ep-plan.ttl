@@ -366,7 +366,7 @@
 ###  https://w3id.org/ep-plan#includesCommunicationSpecification
 :includesCommunicationSpecification rdf:type owl:ObjectProperty ;
                                     rdfs:subPropertyOf :includesPlanElement ;
-                                    owl:inverseOf :isCommunicationSpecifciationOfPlan ;
+                                    owl:inverseOf :isCommunicationSpecificationOfPlan ;
                                     rdfs:domain :Plan ;
                                     rdfs:range :CommunicationSpecification ;
                                     rdfs:comment "Inverse of ep-plan:isCommunicationSpecificationOfPlan." ;
@@ -478,8 +478,8 @@
               rdfs:label "isAchievedBy" .
 
 
-###  https://w3id.org/ep-plan#isCommunicationSpecifciationOfPlan
-:isCommunicationSpecifciationOfPlan rdf:type owl:ObjectProperty ;
+###  https://w3id.org/ep-plan#isCommunicationSpecificationOfPlan
+:isCommunicationSpecificationOfPlan rdf:type owl:ObjectProperty ;
                                     rdfs:subPropertyOf :isElementOfPlan ;
                                     rdfs:domain :CommunicationSpecification ;
                                     rdfs:range :Plan ;

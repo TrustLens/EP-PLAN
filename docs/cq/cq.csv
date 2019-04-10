@@ -1,1 +1,308 @@
+Group,Competency Question,Related Concepts,Example SPARQL Query
+Plan (General Structure),What steps describe this plan?,"Step, Plan","SELECT DISTINCT ?step  
 
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step.
+     ?step a ep-plan:Step.
+    
+}"
+,What variables are part of this plan?,"Variable, Plan","SELECT DISTINCT  ?variable 
+
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesVariable ?variable.
+     
+     ?variable a ep-plan:Variable.
+}"
+,Which step preceeds which step in this plan ?,"Step, Plan","SELECT DISTINCT ?step ?nextStep 
+
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesStep ?nextStep.
+     ?step ep-plan:precedes ?nextStep; a ep-plan:Step.
+     ?nextStep a ep-plan:Step.
+}"
+,Which steps use which variables in this plan ?,"Step, Plan,Variable","SELECT DISTINCT ?step ?variableUsed 
+
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVariable ?variableUsed.
+     ?step a ep-plan:Step; ep-plan:hasInputVariable ?variableUsed.
+     ?variableUsed a ep-plan:Variable.
+}"
+,Which steps produce which variables in this plan ?,"Step, Plan,Variable","SELECT DISTINCT ?step ?variableProduced 
+
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVariable ?variableProduced.
+     ?step a ep-plan:Step; ep-plan:hasOutputVariable ?variableProduced.
+     ?variableProduced a ep-plan:Variable.
+}"
+,Which variables of this plan had corresponding execution trace elements during which execution activity?,"Entity, MultiActivity, Plan, Variable, ExecutionTraceBundle","SELECT DISTINCT ?executionActivity ?entity 
+
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesVariable ?variable.
+     ?variable a ep-plan:Variable.
+
+     ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom <PlanURI>; ep-plan:hasTraceElement ?entity.
+     ?executionActivity a ep-plan:MultiActivity.
+
+     ?entity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable.
+}"
+,Which steps of this plan were executed during which execution process?,"Activity, MultiActivity, Plan, Step, ExecutionTraceBundle","SELECT DISTINCT ?executionActivity ?step 
+
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesStep ?failedStep.
+     ?failedStep a ep-plan:Step.
+
+     ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom <PlanURI>; ep-plan:hasTraceElement ?activity. 
+     ?executionActivity a ep-plan:MultiActivity.
+
+     ?activity a ep-plan:Activity; ep-plan:correspondsToStep ?step.
+}"
+,Which steps of this plan failed to execute during  execution activity?,"Activity, MultiActivity, Failed Activity, Plan, Step, ExecutionTraceBundle","SELECT DISTINCT ?executionActivity ?failedStep
+
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesStep ?failedStep.
+     ?failedStep a ep-plan:Step.
+
+     ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom <PlanURI>; ep-plan:hasTraceElement ?activity.
+     ?executionActivity a ep-plan:MultiActivity.
+
+     ?activity a ep-plan:FailedActivity; ep-plan:correspondsToStep ?failedStep.
+}"
+Plan Decoposition,Which steps of this plan are composite steps?,"Plan, MultiStep","SELECT DISTINCT ?step 
+
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step.
+     ?step a ep-plan:MultiStep.
+}"
+,Which variables of this plan are composite variables?,"Plan, MultiVariable","SELECT DISTINCT ?variable 
+
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesVariable ?variable.
+     ?variable a ep-plan:MultiVariable.
+}"
+,Which sub-plan of this plan describe which composite step of this plan?,"Plan, MultiStep","SELECT DISTINCT ?subPlan ?step
+
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesStep ?step.
+     ?step a ep-plan:MultiStep; ep-plan:isDecomposedAsPlan ?subPlan.
+     ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <PlanURI>.
+}"
+,Which variable of a sub-plan of this plan describe a composite variable of this plan?,"MultiVariable, Variable, Plan","SELECT DISTINCT ?compositeVar ?atomicVar 
+
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesVariable ?compositeVar.
+     ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <PlanURI>; ep-plan:includesVariable ?atomicVar.
+     ?atomicVar a ep-plan:Variable.
+     ?compositeVar a ep-plan:MultiVariable; ep-plan:hasPart ?atomicVar.
+}"
+,Which variable of this plan is also used in a sub-plan of this plan?,"Plan, Variable","SELECT DISTINCT ?variable ?subplan 
+
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesVariable ?variable.
+     ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <PlanURI>; ep-plan:includesVariable ?variable.
+     ?variable a ep-plan:Variable.
+}"
+,Which execution trace elements corresponding to variables of a sub-plan are part of execution trace lements corresponding to composite variables of this plan? ,"Plan, MultiVariable, EntityCollection, Entity, ExecutionTraceBundle","SELECT DISTINCT ?compositeEntity ?atomicEntity 
+
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesVariable ?compositeVar.
+     ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <PlanURI>; ep-plan:includesVariable ?atomicVar.
+     ?atomicVar a ep-plan:Variable.
+     ?compositeVar a ep-plan:MultiVariable; ep-plan:hasPart ?atomicVar.
+
+     ?mainExecutionTrace a ep-plan:ExecutionTraceBundle; prov:wasDerivedFrom <PlanURI>; ep-plan:hasTraceElement ?compositeEntity; ep-plan:hasTraceElement ?subPlanExecutionTrace.
+     ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan:hasTraceElement ?atomicEntity; prov:wasDerivedFrom ?subPlan.
+
+     ?compositeEntity a ep-plan:EntityCollection; ep-plan:correspondsToVariable ?compositeVar; prov:hadMember ?atomicEntity.
+     ?atomicEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?atomicVar. 
+}"
+,Which execution trace elements corresponding  to variables of this plan are also mentioned in the execution trace of its sub-plan?,"Plan, Entity, Variable, ExecutionTraceBundle","SELECT DISTINCT ?mainPlanEntity ?subPlanEntity 
+
+WHERE
+{
+     <PlanURI> a ep-plan:Plan; ep-plan:includesVariable ?variable.
+     ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <PlanURI>; ep-plan:includesVariable ?variable.
+     ?variable a ep-plan:Variable.
+
+     ?mainExecutionTrace a ep-plan:ExecutionTraceBundle; prov:wasDerivedFrom <PlanURI>; ep-plan:hasTraceElement ?mainPlanEntity; ep-plan:hasTraceElement ?subPlanExecutionTrace.
+     ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan:hasTraceElement ?subPlanEntity; prov:wasDerivedFrom ?subPlan.
+
+     ?mainPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable.
+     ?subPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable; prov:mentionOf ?mainPlanEntity. 
+}"
+Agents,Which  which generated which execution trace of this plan?,"Plan, MultiActivity, ExecutionTraceBundle","SELECT DISTINCT ?agent ?executionTrace
+
+WHERE 
+{
+     <PlanURI> a ep-plan:Plan.
+     ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity.
+     ?executionActivity prov:wasAssociatedWith ?agent; a ep-plan:MultiActivity.
+
+     ?executionTrace prov:wasDerivedFrom <PlanURI>.
+     
+}"
+,Which agents are allowed to participate in this plan?,"ResponsibleAgent, Plan","SELECT DISTINCT ?agent 
+     
+     WHERE {
+          <PlanURI> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.
+     }"
+,Which agents are allowed to participate in this plan (search all abstraction layers)?,"ResponsibleAgent,Plan","SELECT DISTINCT ?agent 
+     
+     WHERE {
+     {
+          <PlanURI> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.
+     }
+     UNION {
+          ?subPlan ep-plan:isSubPlanOfPlan* <PlanURI>; ep-plan:includesResponsibleAgent ?agent.
+     }
+     }"
+,Which agents are allowed to participate in execution of this step?,"Step, ResponsibleAgent","SELECT DISTINCT ?agent 
+     
+     WHERE {
+     
+          <stepURI> a ep-plan:Step; ep-plan:hasPermittedAgent ?agent.
+     }"
+,Which agents are allowed to participate in execution of this composite step (search all abstraction layers)?,"MultiStep, Plan, ResponsibleAgent","SELECT DISTINCT ?agent 
+
+     WHERE {
+     {
+          <StepURI> a ep-plan:MultiStep; ep-plan:canBeResponsibilityOf ?agent.
+     }
+     UNION
+     {
+          <StepURI> ep-plan:isDecomposedAsPlan ?plan.
+          {
+          ?plan a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.
+          }
+          Union
+          {
+          ?subPlan ep-plan:isSubPlanOfPlan* ?plan; ep-plan:includesResponsibleAgent ?agent.
+          }
+     }
+     }"
+,Which agents that were allowed to participate in execution of this step were recorded as part of the execution trace?,"Agent, ResponsibleAgent, Activity","SELECT DISTINCT  ?agent ?activity
+     
+     WHERE {
+     
+          <stepURI> a ep-plan:Step; ep-plan:hasPermittedAgent ?agent.
+          ?agent a ep-plan:ResponsibleAgent; a ep-plan:Agent.
+          ?activity a ep-plan:Activity; ep-plan:correspondsToStep <stepURI>; prov:wasAssociatedWith ?agent.
+     }"
+Constraints,What constraints are associated with which steps of this plan?,"Constraint, Step, Plan"," SELECT DISTINCT ?constraint ?step 
+
+     WHERE 
+     {
+          <PlanURI> a ep-plan:Plan; ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.
+          ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.
+          ?constraint a ep-plan:Constraint.
+     }
+     "
+,Which executions of this step satisfied which constraints?,"ExecutionTraceBundle,Step,Constraint,Activity,Plan","SELECT DISTINCT ?constraint ?activity 
+
+     WHERE 
+     {
+          <PlanURI> ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.
+          ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.
+          ?constraint a ep-plan:Constraint.
+          ?activity ep-plan:correspondsToStep ?step; a ep-plan:Activity.
+          ?activity ep-plan:satisfied ?constraint.
+          ?execTraceBundle prov:wasDerivedFrom  <PlanURI>; ep-plan:hasTraceElement ?activity.
+     }"
+,Which executions of which step violated which constraints?,"ExecutionTraceBundle,Step,Constraint,Activity,Plan","SELECT DISTINCT ?constraint ?activity 
+
+     WHERE 
+     {
+          <PlanURI> ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.
+          ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.
+          ?constraint a ep-plan:Constraint.
+          ?activity ep-plan:correspondsToStep ?step; a ep-plan:Activity.
+          ?activity ep-plan:violated ?constraint.
+          ?execTraceBundle prov:wasDerivedFrom  <PlanURI>; ep-plan:hasTraceElement ?activity.
+     }"
+,Which constraints are restricting the exchange of data between  steps in this plan?,"Plan, CommunicationSpecification, Constraint","SELECT DISTINCT ?constraint ?commsSpec 
+
+     WHERE 
+     {
+          <PlanURI> a ep-plan:Plan; ep-plan:includesCommunicationSpecification ?commsSpec; ep-plan:includesStep ?step.
+          ?commsSpec ep-plan:hasConstraint ?constraint; a ep-plan:CommunicationSpecification.
+          ?constraint a ep-plan:Constraint.
+     }"
+,Exchange of which data variable between which steps is restricted which constraint in this plan?,"Plan, CommunicationSpecification, Constraint, Variable, Step","SELECT DISTINCT ?constraint ?variable 
+
+     WHERE 
+     {
+          <PlanURI>  a ep-plan:Plan; ep-plan:includesCommunicationSpecification ?commsSpec; ep-plan:includesStep ?step1; ep-plan:includesStep ?step2; ep-plan:includesVariable ?variable.
+          ?commsSpec ep-plan:hasConstraint ?constraint; a ep-plan:CommunicationSpecification.
+          ?constraint a ep-plan:Constraint.
+          ?commsSpec ep-plan:hasSender ?step1; ep-plan:hasRecipient?step2; ep-plan:hasPayload ?variable.
+          ?variable a ep-plan:Variable.
+          ?step1 a ep-plan:Step.
+          ?step2 a ep-plan:Step.
+     }"
+,Which step executions satisfied constraints restricting the exchange of data in this plan?,"Plan, CommunicationSpecification, Constraint, Variable, Step, Variable, Enntity, Communication","SELECT DISTINCT ?constraint ?senderActivity ?recipientActivity ?exchangedData
+
+     WHERE 
+     {
+          <PlanURI> a ep-plan:Plan; ep-plan:includesCommunicationSpecification ?commsSpec; ep-plan:includesStep ?sender; ep-plan:includesStep ?recipient; ep-plan:includesVariable ?variable.
+
+          ?senderActivity a ep-plan:Activity; ep-plan:correspondsToStep ?sender.
+          ?exchangedData a ep-plan:Entity; prov:wasGeneratedBy ?senderActivity; ep-plan:correspondsToVariable ?variable. 
+          ?recipientActivity a ep-plan:Activity; prov:used ?exchangedData; prov:qualifiedCommunication ?communication;ep-plan:correspondsToStep ?recipient.
+          ?communication a ep-plan:Communication; ep-plan:correspondsToCommunicationSpecification ?commsSpec; prov:activity ?senderActivity.
+          
+          ?commsSpec ep-plan:hasConstraint ?constraint; a ep-plan:CommunicationSpecification.
+          ?commsSpec ep-plan:hasSender ?sender; ep-plan:hasRecipient ?recipient; ep-plan:hasPayload ?variable.
+          ?communication ep-plan:satisfied ?constraint.
+     }"
+Policies,What are the policies associated with this plan?,"Plan, Policy","SELECT DISTINCT ?policy
+
+     WHERE 
+     {
+          <PlanURI> a ep-plan:Plan; ep-plan:includesPolicy ?policy. 
+          ?policy a ep-plan:Policy.
+     }"
+,Which plan elements were included in this plan as a result of which policy?,"Policy,Plan,Rationale, Constraint, CommunicationSpecification, Step, Variable, ResponsibleAgent","SELECT DISTINCT ?policy ?planElement
+
+     WHERE 
+     {
+          <PlanURI> a ep-plan:Plan; ep-plan:includesPolicy ?policy; ep-plan:includesPlanElement ?planElement. 
+          ?policy a ep-plan:Policy; a ep-plan:Rationale.
+          ?planElement ep-plan:hasRationale ?policy.
+     }"
+Rationales & Objectives,What is the rationale for including which plan elements?,"Plan,Rationale, Constraint, CommunicationSpecification, Step, Variable, ResponsibleAgent","SELECT DISTINCT ?rationale ?planElement
+
+     WHERE 
+     {
+          <PlanURI> a ep-plan:Plan; ep-plan:includesPlanElement ?planElement.
+          ?planElement ep-plan:hasRationale ?rationale. 
+          ?rationale a ep-plan:Rationale. 
+     }"
+,What are the objectives of this plan and what is their rationale (if known)?,"Rationale, Plan, Objective","SELECT DISTINCT ?objective ?rationale ?objectiveDescription
+
+     WHERE 
+     {
+          <PlanURI> a ep-plan:Plan; ep-plan:includesObjective ?objective.
+          ?objective a ep-plan:Objective; rdfs:comment ?objectiveDescription. 
+          
+     }"
+,Which plan elements are expected to achieve which objective of this plan?,"Plan,Objective, Constraint, CommunicationSpecification, Step, Variable, ResponsibleAgent","SELECT DISTINCT ?objective  ?objectiveDescription ?achievedBy
+
+     WHERE 
+     {
+          <PlanURI> a ep-plan:Plan; ep-plan:includesObjective ?objective.
+          ?objective a ep-plan:Objective; rdfs:comment ?objectiveDescription; ep-plan:isAchievedBy ?achievedBy. 
+          
+     }"

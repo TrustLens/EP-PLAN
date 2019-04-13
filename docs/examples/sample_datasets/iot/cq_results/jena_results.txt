@@ -1,4 +1,7 @@
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> SELECT DISTINCT ?step  WHERE { <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step. ?step a ep-plan:Step.  } 
+WHAT STEPS DESCRIBE THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>SELECT DISTINCT ?step  WHERE { <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step. ?step a ep-plan:Step.  } 
+
 ----------------------------------------------------------
 | step                                                   |
 ==========================================================
@@ -8,7 +11,11 @@ PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/pro
 | <http://trustlens.org/test_dataset1#DataProcessing>    |
 | <http://trustlens.org/test_dataset1#CollectData>       |
 ----------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT  ?variable   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.            ?variable a ep-plan:Variable. } 
+
+WHAT VARIABLES ARE PART OF THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT  ?variable   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.            ?variable a ep-plan:Variable. } 
+
 ----------------------------------------------------------
 | variable                                               |
 ==========================================================
@@ -19,7 +26,11 @@ PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/pro
 | <http://trustlens.org/test_dataset1#CollectedData>     |
 | <http://trustlens.org/test_dataset1#DataDashboard>     |
 ----------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?step ?nextStep   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesStep ?nextStep.      ?step ep-plan:precedes ?nextStep; a ep-plan:Step.      ?nextStep a ep-plan:Step. } 
+
+WHICH STEP PRECEEDS WHICH STEP IN THIS PLAN ?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?step ?nextStep   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesStep ?nextStep.      ?step ep-plan:precedes ?nextStep; a ep-plan:Step.      ?nextStep a ep-plan:Step. } 
+
 ----------------------------------------------------------------------------------------------------------------
 | step                                                | nextStep                                               |
 ================================================================================================================
@@ -33,7 +44,11 @@ PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/pro
 | <http://trustlens.org/test_dataset1#CollectData>    | <http://trustlens.org/test_dataset1#DataAnonymisation> |
 | <http://trustlens.org/test_dataset1#CollectData>    | <http://trustlens.org/test_dataset1#DataProcessing>    |
 ----------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?step ?variableUsed   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVariable ?variableUsed.      ?step a ep-plan:Step; ep-plan:hasInputVariable ?variableUsed.      ?variableUsed a ep-plan:Variable. } 
+
+WHICH STEPS USE WHICH VARIABLES IN THIS PLAN ?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?step ?variableUsed   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVariable ?variableUsed.      ?step a ep-plan:Step; ep-plan:hasInputVariable ?variableUsed.      ?variableUsed a ep-plan:Variable. } 
+
 -----------------------------------------------------------------------------------------------------------------
 | step                                                   | variableUsed                                         |
 =================================================================================================================
@@ -43,7 +58,11 @@ PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/pro
 | <http://trustlens.org/test_dataset1#DataAnonymisation> | <http://trustlens.org/test_dataset1#UpdatedDatabase> |
 | <http://trustlens.org/test_dataset1#DataProcessing>    | <http://trustlens.org/test_dataset1#CollectedData>   |
 -----------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?step ?variableProduced   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVariable ?variableProduced.      ?step a ep-plan:Step; ep-plan:hasOutputVariable ?variableProduced.      ?variableProduced a ep-plan:Variable. } 
+
+WHICH STEPS PRODUCE WHICH VARIABLES IN THIS PLAN ?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?step ?variableProduced   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVariable ?variableProduced.      ?step a ep-plan:Step; ep-plan:hasOutputVariable ?variableProduced.      ?variableProduced a ep-plan:Variable. } 
+
 -----------------------------------------------------------------------------------------------------------------
 | step                                                   | variableProduced                                     |
 =================================================================================================================
@@ -52,7 +71,11 @@ PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/pro
 | <http://trustlens.org/test_dataset1#DataProcessing>    | <http://trustlens.org/test_dataset1#DataEntry>       |
 | <http://trustlens.org/test_dataset1#CollectData>       | <http://trustlens.org/test_dataset1#CollectedData>   |
 -----------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?executionActivity ?entity   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.      ?variable a ep-plan:Variable.       ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?entity.      ?executionActivity a ep-plan:MultiActivity.       ?entity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable. } 
+
+WHICH VARIABLES OF THIS PLAN HAD CORRESPONDING EXECUTION TRACE ELEMENTS DURING WHICH EXECUTION ACTIVITY?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?executionActivity ?entity   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.      ?variable a ep-plan:Variable.       ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?entity.      ?executionActivity a ep-plan:MultiActivity.       ?entity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable. } 
+
 ----------------------------------------------------------------------------------------------------------------------------------
 | executionActivity                                               | entity                                                       |
 ==================================================================================================================================
@@ -63,7 +86,11 @@ PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/pro
 | <http://trustlens.org/test_dataset1#MainPlanExecutionActivity1> | <http://trustlens.org/test_dataset1#DataReadingsCollection>  |
 | <http://trustlens.org/test_dataset1#MainPlanExecutionActivity1> | <http://trustlens.org/test_dataset1#DashBoardEntity>         |
 ----------------------------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?executionActivity ?step   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?failedStep.      ?failedStep a ep-plan:Step.       ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?activity.       ?executionActivity a ep-plan:MultiActivity.       ?activity a ep-plan:Activity; ep-plan:correspondsToStep ?step. } 
+
+WHICH STEPS OF THIS PLAN WERE EXECUTED DURING WHICH EXECUTION PROCESS?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?executionActivity ?step   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?failedStep.      ?failedStep a ep-plan:Step.       ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?activity.       ?executionActivity a ep-plan:MultiActivity.       ?activity a ep-plan:Activity; ep-plan:correspondsToStep ?step. } 
+
 ----------------------------------------------------------------------------------------------------------------------------
 | executionActivity                                               | step                                                   |
 ============================================================================================================================
@@ -74,55 +101,91 @@ PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/pro
 | <http://trustlens.org/test_dataset1#MainPlanExecutionActivity1> | <http://trustlens.org/test_dataset1#DataVisualisation> |
 | <http://trustlens.org/test_dataset1#MainPlanExecutionActivity1> | <http://trustlens.org/test_dataset1#CollectData>       |
 ----------------------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?executionActivity ?failedStep  WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?failedStep.      ?failedStep a ep-plan:Step.       ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?activity.      ?executionActivity a ep-plan:MultiActivity.       ?activity a ep-plan:FailedActivity; ep-plan:correspondsToStep ?failedStep. } 
+
+WHICH STEPS OF THIS PLAN FAILED TO EXECUTE DURING  EXECUTION ACTIVITY?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?executionActivity ?failedStep  WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?failedStep.      ?failedStep a ep-plan:Step.       ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?activity.      ?executionActivity a ep-plan:MultiActivity.       ?activity a ep-plan:FailedActivity; ep-plan:correspondsToStep ?failedStep. } 
+
 ----------------------------------------------------------------------------------------------------------------------
 | executionActivity                                               | failedStep                                       |
 ======================================================================================================================
 | <http://trustlens.org/test_dataset1#MainPlanExecutionActivity2> | <http://trustlens.org/test_dataset1#CollectData> |
 ----------------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?step   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step.      ?step a ep-plan:MultiStep. } 
+
+WHICH STEPS OF THIS PLAN ARE COMPOSITE STEPS?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?step   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step.      ?step a ep-plan:MultiStep. } 
+
 ----------------------------------------------------
 | step                                             |
 ====================================================
 | <http://trustlens.org/test_dataset1#CollectData> |
 ----------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?variable   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.      ?variable a ep-plan:MultiVariable. } 
+
+WHICH VARIABLES OF THIS PLAN ARE COMPOSITE VARIABLES?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?variable   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.      ?variable a ep-plan:MultiVariable. } 
+
 ------------------------------------------------------
 | variable                                           |
 ======================================================
 | <http://trustlens.org/test_dataset1#CollectedData> |
 ------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?subPlan ?step  WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step.      ?step a ep-plan:MultiStep; ep-plan:isDecomposedAsPlan ?subPlan.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>. } 
+
+WHICH SUB-PLAN OF THIS PLAN DESCRIBE WHICH COMPOSITE STEP OF THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?subPlan ?step  WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step.      ?step a ep-plan:MultiStep; ep-plan:isDecomposedAsPlan ?subPlan.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>. } 
+
 ------------------------------------------------------------------------------------------------------------
 | subPlan                                               | step                                             |
 ============================================================================================================
 | <http://trustlens.org/test_dataset1#IoTCollectorPlan> | <http://trustlens.org/test_dataset1#CollectData> |
 ------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?compositeVar ?atomicVar   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?compositeVar.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:includesVariable ?atomicVar.      ?atomicVar a ep-plan:Variable.      ?compositeVar a ep-plan:MultiVariable; ep-plan:hasPart ?atomicVar. } 
+
+WHICH VARIABLE OF A SUB-PLAN OF THIS PLAN DESCRIBE A COMPOSITE VARIABLE OF THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?compositeVar ?atomicVar   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?compositeVar.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:includesVariable ?atomicVar.      ?atomicVar a ep-plan:Variable.      ?compositeVar a ep-plan:MultiVariable; ep-plan:hasPart ?atomicVar. } 
+
 --------------------------------------------------------------------------------------------------------------
 | compositeVar                                       | atomicVar                                             |
 ==============================================================================================================
 | <http://trustlens.org/test_dataset1#CollectedData> | <http://trustlens.org/test_dataset1#UploadedTempData> |
 | <http://trustlens.org/test_dataset1#CollectedData> | <http://trustlens.org/test_dataset1#UploadedCo2Data>  |
 --------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?variable ?subplan   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:includesVariable ?variable.      ?variable a ep-plan:Variable. } 
+
+WHICH VARIABLE OF THIS PLAN IS ALSO USED IN A SUB-PLAN OF THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?variable ?subplan   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:includesVariable ?variable.      ?variable a ep-plan:Variable. } 
+
 ----------------------
 | variable | subplan |
 ======================
 ----------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?compositeEntity ?atomicEntity   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?compositeVar.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:includesVariable ?atomicVar.      ?atomicVar a ep-plan:Variable.      ?compositeVar a ep-plan:MultiVariable; ep-plan:hasPart ?atomicVar.       ?mainExecutionTrace a ep-plan:ExecutionTraceBundle; prov:wasDerivedFrom <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?compositeEntity; ep-plan:hasTraceElement ?subPlanExecutionTrace.      ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan:hasTraceElement ?atomicEntity; prov:wasDerivedFrom ?subPlan.       ?compositeEntity a ep-plan:EntityCollection; ep-plan:correspondsToVariable ?compositeVar; prov:hadMember ?atomicEntity.      ?atomicEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?atomicVar.  } 
+
+WHICH EXECUTION TRACE ELEMENTS CORRESPONDING TO VARIABLES OF A SUB-PLAN ARE PART OF EXECUTION TRACE LEMENTS CORRESPONDING TO COMPOSITE VARIABLES OF THIS PLAN? 
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?compositeEntity ?atomicEntity   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?compositeVar.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:includesVariable ?atomicVar.      ?atomicVar a ep-plan:Variable.      ?compositeVar a ep-plan:MultiVariable; ep-plan:hasPart ?atomicVar.       ?mainExecutionTrace a ep-plan:ExecutionTraceBundle; prov:wasDerivedFrom <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?compositeEntity; ep-plan:hasTraceElement ?subPlanExecutionTrace.      ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan:hasTraceElement ?atomicEntity; prov:wasDerivedFrom ?subPlan.       ?compositeEntity a ep-plan:EntityCollection; ep-plan:correspondsToVariable ?compositeVar; prov:hadMember ?atomicEntity.      ?atomicEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?atomicVar.  } 
+
 -------------------------------------------------------------------------------------------------------------------------
 | compositeEntity                                             | atomicEntity                                            |
 =========================================================================================================================
 | <http://trustlens.org/test_dataset1#DataReadingsCollection> | <http://trustlens.org/test_dataset1#UploadedTempEntity> |
 | <http://trustlens.org/test_dataset1#DataReadingsCollection> | <http://trustlens.org/test_dataset1#UploadedCo2Entity>  |
 -------------------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?mainPlanEntity ?subPlanEntity   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:includesVariable ?variable.      ?variable a ep-plan:Variable.       ?mainExecutionTrace a ep-plan:ExecutionTraceBundle; prov:wasDerivedFrom <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?mainPlanEntity; ep-plan:hasTraceElement ?subPlanExecutionTrace.      ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan:hasTraceElement ?subPlanEntity; prov:wasDerivedFrom ?subPlan.       ?mainPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable.      ?subPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable; prov:mentionOf ?mainPlanEntity.  } 
+
+WHICH EXECUTION TRACE ELEMENTS CORRESPONDING  TO VARIABLES OF THIS PLAN ARE ALSO MENTIONED IN THE EXECUTION TRACE OF ITS SUB-PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?mainPlanEntity ?subPlanEntity   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:includesVariable ?variable.      ?variable a ep-plan:Variable.       ?mainExecutionTrace a ep-plan:ExecutionTraceBundle; prov:wasDerivedFrom <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?mainPlanEntity; ep-plan:hasTraceElement ?subPlanExecutionTrace.      ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan:hasTraceElement ?subPlanEntity; prov:wasDerivedFrom ?subPlan.       ?mainPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable.      ?subPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable; prov:mentionOf ?mainPlanEntity.  } 
+
 ----------------------------------
 | mainPlanEntity | subPlanEntity |
 ==================================
 ----------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?agent ?executionTrace  WHERE  {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan.      ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity.      ?executionActivity prov:wasAssociatedWith ?agent; a ep-plan:MultiActivity.       ?executionTrace prov:wasDerivedFrom <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>.       } 
+
+WHICH  WHICH GENERATED WHICH EXECUTION TRACE OF THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?agent ?executionTrace  WHERE  {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan.      ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity.      ?executionActivity prov:wasAssociatedWith ?agent; a ep-plan:MultiActivity.       ?executionTrace prov:wasDerivedFrom <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>.       } 
+
 -----------------------------------------------------------------------------------------------------------------
 | agent                                               | executionTrace                                          |
 =================================================================================================================
@@ -131,7 +194,11 @@ PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/pro
 | <http://trustlens.org/test_dataset1#IoTSystemAgent> | <http://trustlens.org/test_dataset1#ExecutionMainPlan1> |
 | <http://trustlens.org/test_dataset1#CityCouncil>    | <http://trustlens.org/test_dataset1#ExecutionMainPlan1> |
 -----------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?agent             WHERE {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.      } 
+
+WHICH AGENTS ARE ALLOWED TO PARTICIPATE IN THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?agent             WHERE {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.      } 
+
 -------------------------------------------------------
 | agent                                               |
 =======================================================
@@ -140,7 +207,11 @@ PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/pro
 | <http://trustlens.org/test_dataset1#GoogleCloud>    |
 | <http://trustlens.org/test_dataset1#CityCouncil>    |
 -------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?agent             WHERE {      {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.      }      UNION {           ?subPlan ep-plan:isSubPlanOfPlan* <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:includesResponsibleAgent ?agent.      }      } 
+
+WHICH AGENTS ARE ALLOWED TO PARTICIPATE IN THIS PLAN (SEARCH ALL ABSTRACTION LAYERS)?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?agent             WHERE {      {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.      }      UNION {           ?subPlan ep-plan:isSubPlanOfPlan* <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:includesResponsibleAgent ?agent.      }      } 
+
 --------------------------------------------------------
 | agent                                                |
 ========================================================
@@ -153,13 +224,21 @@ PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/pro
 | <http://trustlens.org/test_dataset1#CO2SensorAgent>  |
 | <http://trustlens.org/test_dataset1#BinTechLtd>      |
 --------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?agent             WHERE {                 <http://trustlens.org/test_dataset1#CollectData> a ep-plan:Step; ep-plan:hasPermittedAgent ?agent.      } 
+
+WHICH AGENTS ARE ALLOWED TO PARTICIPATE IN EXECUTION OF THIS STEP?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?agent             WHERE {                 <http://trustlens.org/test_dataset1#CollectData> a ep-plan:Step; ep-plan:hasPermittedAgent ?agent.      } 
+
 -------------------------------------------------------
 | agent                                               |
 =======================================================
 | <http://trustlens.org/test_dataset1#IoTDeviceAgent> |
 -------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?agent        WHERE {      {           <http://trustlens.org/test_dataset1#CollectData> a ep-plan:MultiStep; ep-plan:hasPermittedAgent ?agent.      }      UNION      {           <http://trustlens.org/test_dataset1#CollectData> ep-plan:isDecomposedAsPlan ?plan.           {           ?plan a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.           }           Union           {           ?subPlan ep-plan:isSubPlanOfPlan* ?plan; ep-plan:includesResponsibleAgent ?agent.           }      }      } 
+
+WHICH AGENTS ARE ALLOWED TO PARTICIPATE IN EXECUTION OF THIS COMPOSITE STEP (SEARCH ALL ABSTRACTION LAYERS)?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?agent        WHERE {      {           <http://trustlens.org/test_dataset1#CollectData> a ep-plan:MultiStep; ep-plan:hasPermittedAgent ?agent.      }      UNION      {           <http://trustlens.org/test_dataset1#CollectData> ep-plan:isDecomposedAsPlan ?plan.           {           ?plan a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.           }           Union           {           ?subPlan ep-plan:isSubPlanOfPlan* ?plan; ep-plan:includesResponsibleAgent ?agent.           }      }      } 
+
 --------------------------------------------------------
 | agent                                                |
 ========================================================
@@ -168,73 +247,132 @@ PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/pro
 | <http://trustlens.org/test_dataset1#CO2SensorAgent>  |
 | <http://trustlens.org/test_dataset1#BinTechLtd>      |
 --------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT  ?agent ?activity            WHERE {                 <http://trustlens.org/test_dataset1#CollectData> a ep-plan:Step; ep-plan:hasPermittedAgent ?agent.           ?agent a ep-plan:ResponsibleAgent; a ep-plan:Agent.           ?activity a ep-plan:Activity; ep-plan:correspondsToStep  <http://trustlens.org/test_dataset1#CollectData> ; prov:wasAssociatedWith ?agent.      } 
+
+WHICH AGENTS THAT WERE ALLOWED TO PARTICIPATE IN EXECUTION OF THIS STEP WERE RECORDED AS PART OF THE EXECUTION TRACE?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT  ?agent ?activity            WHERE {                 <http://trustlens.org/test_dataset1#CollectData> a ep-plan:Step; ep-plan:hasPermittedAgent ?agent.           ?agent a ep-plan:ResponsibleAgent; a ep-plan:Agent.           ?activity a ep-plan:Activity; ep-plan:correspondsToStep  <http://trustlens.org/test_dataset1#CollectData> ; prov:wasAssociatedWith ?agent.      } 
+
 -------------------------------------------------------------------------------------------------------------------
 | agent                                               | activity                                                  |
 ===================================================================================================================
 | <http://trustlens.org/test_dataset1#IoTDeviceAgent> | <http://trustlens.org/test_dataset1#CollectDataActivity2> |
 | <http://trustlens.org/test_dataset1#IoTDeviceAgent> | <http://trustlens.org/test_dataset1#CollectDataActivity1> |
 -------------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?constraint ?step        WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.           ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.           ?constraint a ep-plan:Constraint.      } 
+
+WHAT CONSTRAINTS ARE ASSOCIATED WITH WHICH STEPS OF THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?constraint ?step        WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.           ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.           ?constraint a ep-plan:Constraint.      } 
+
 ---------------------------------------------------------------------------------------------------------------------
 | constraint                                                     | step                                             |
 =====================================================================================================================
 | <http://trustlens.org/test_dataset1#CollectAtLocationAberdeen> | <http://trustlens.org/test_dataset1#CollectData> |
 ---------------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?constraint ?activity        WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.           ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.           ?constraint a ep-plan:Constraint.           ?activity ep-plan:correspondsToStep ?step; a ep-plan:Activity.           ?activity ep-plan:satisfied ?constraint.           ?execTraceBundle prov:wasDerivedFrom  <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?activity.      } 
+
+WHICH EXECUTIONS OF THIS STEP SATISFIED WHICH CONSTRAINTS?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?constraint ?activity        WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.           ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.           ?constraint a ep-plan:Constraint.           ?activity ep-plan:correspondsToStep ?step; a ep-plan:Activity.           ?activity ep-plan:satisfied ?constraint.           ?execTraceBundle prov:wasDerivedFrom  <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?activity.      } 
+
 ------------------------------------------------------------------------------------------------------------------------------
 | constraint                                                     | activity                                                  |
 ==============================================================================================================================
 | <http://trustlens.org/test_dataset1#CollectAtLocationAberdeen> | <http://trustlens.org/test_dataset1#CollectDataActivity1> |
 ------------------------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?constraint ?activity        WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.           ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.           ?constraint a ep-plan:Constraint.           ?activity ep-plan:correspondsToStep ?step; a ep-plan:Activity.           ?activity ep-plan:violated ?constraint.           ?execTraceBundle prov:wasDerivedFrom  <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?activity.      } 
+
+WHICH EXECUTIONS OF WHICH STEP VIOLATED WHICH CONSTRAINTS?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?constraint ?activity        WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.           ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.           ?constraint a ep-plan:Constraint.           ?activity ep-plan:correspondsToStep ?step; a ep-plan:Activity.           ?activity ep-plan:violated ?constraint.           ?execTraceBundle prov:wasDerivedFrom  <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?activity.      } 
+
 ------------------------------------------------------------------------------------------------------------------------------
 | constraint                                                     | activity                                                  |
 ==============================================================================================================================
 | <http://trustlens.org/test_dataset1#CollectAtLocationAberdeen> | <http://trustlens.org/test_dataset1#CollectDataActivity2> |
 ------------------------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?constraint ?commsSpec        WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesCommunicationSpecification ?commsSpec; ep-plan:includesStep ?step.           ?commsSpec ep-plan:hasConstraint ?constraint; a ep-plan:CommunicationSpecification.           ?constraint a ep-plan:Constraint.      } 
+
+WHICH CONSTRAINTS ARE RESTRICTING THE EXCHANGE OF DATA BETWEEN  STEPS IN THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?constraint ?commsSpec        WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesCommunicationSpecification ?commsSpec; ep-plan:includesStep ?step.           ?commsSpec ep-plan:hasConstraint ?constraint; a ep-plan:CommunicationSpecification.           ?constraint a ep-plan:Constraint.      } 
+
 -----------------------------------------------------------------------------------------------------------------------
 | constraint                                         | commsSpec                                                      |
 =======================================================================================================================
 | <http://trustlens.org/test_dataset1#UseEncryption> | <http://trustlens.org/test_dataset1#DataUploadOfCollectedData> |
 -----------------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?constraint ?variable        WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>  a ep-plan:Plan; ep-plan:includesCommunicationSpecification ?commsSpec; ep-plan:includesStep ?step1; ep-plan:includesStep ?step2; ep-plan:includesVariable ?variable.           ?commsSpec ep-plan:hasConstraint ?constraint; a ep-plan:CommunicationSpecification.           ?constraint a ep-plan:Constraint.           ?commsSpec ep-plan:hasSender ?step1; ep-plan:hasRecipient?step2; ep-plan:hasPayload ?variable.           ?variable a ep-plan:Variable.           ?step1 a ep-plan:Step.           ?step2 a ep-plan:Step.      } 
+
+EXCHANGE OF WHICH DATA VARIABLE BETWEEN WHICH STEPS IS RESTRICTED WHICH CONSTRAINT IN THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?constraint ?variable        WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>  a ep-plan:Plan; ep-plan:includesCommunicationSpecification ?commsSpec; ep-plan:includesStep ?step1; ep-plan:includesStep ?step2; ep-plan:includesVariable ?variable.           ?commsSpec ep-plan:hasConstraint ?constraint; a ep-plan:CommunicationSpecification.           ?constraint a ep-plan:Constraint.           ?commsSpec ep-plan:hasSender ?step1; ep-plan:hasRecipient?step2; ep-plan:hasPayload ?variable.           ?variable a ep-plan:Variable.           ?step1 a ep-plan:Step.           ?step2 a ep-plan:Step.      } 
+
 -----------------------------------------------------------------------------------------------------------
 | constraint                                         | variable                                           |
 ===========================================================================================================
 | <http://trustlens.org/test_dataset1#UseEncryption> | <http://trustlens.org/test_dataset1#CollectedData> |
 -----------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?constraint ?senderActivity ?recipientActivity ?exchangedData       WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesCommunicationSpecification ?commsSpec; ep-plan:includesStep ?sender; ep-plan:includesStep ?recipient; ep-plan:includesVariable ?variable.            ?senderActivity a ep-plan:Activity; ep-plan:correspondsToStep ?sender.           ?exchangedData a ep-plan:Entity; prov:wasGeneratedBy ?senderActivity; ep-plan:correspondsToVariable ?variable.            ?recipientActivity a ep-plan:Activity; prov:used ?exchangedData; prov:qualifiedCommunication ?communication;ep-plan:correspondsToStep ?recipient.           ?communication a ep-plan:Communication; ep-plan:correspondsToCommunicationSpecification ?commsSpec; prov:activity ?senderActivity.                      ?commsSpec ep-plan:hasConstraint ?constraint; a ep-plan:CommunicationSpecification.           ?commsSpec ep-plan:hasSender ?sender; ep-plan:hasRecipient ?recipient; ep-plan:hasPayload ?variable.           ?communication ep-plan:satisfied ?constraint.      } 
+
+WHICH STEP EXECUTIONS SATISFIED CONSTRAINTS RESTRICTING THE EXCHANGE OF DATA IN THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?constraint ?senderActivity ?recipientActivity ?exchangedData       WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesCommunicationSpecification ?commsSpec; ep-plan:includesStep ?sender; ep-plan:includesStep ?recipient; ep-plan:includesVariable ?variable.            ?senderActivity a ep-plan:Activity; ep-plan:correspondsToStep ?sender.           ?exchangedData a ep-plan:Entity; prov:wasGeneratedBy ?senderActivity; ep-plan:correspondsToVariable ?variable.            ?recipientActivity a ep-plan:Activity; prov:used ?exchangedData; prov:qualifiedCommunication ?communication;ep-plan:correspondsToStep ?recipient.           ?communication a ep-plan:Communication; ep-plan:correspondsToCommunicationSpecification ?commsSpec; prov:activity ?senderActivity.                      ?commsSpec ep-plan:hasConstraint ?constraint; a ep-plan:CommunicationSpecification.           ?commsSpec ep-plan:hasSender ?sender; ep-plan:hasRecipient ?recipient; ep-plan:hasPayload ?variable.           ?communication ep-plan:satisfied ?constraint.      } 
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | constraint                                         | senderActivity                                            | recipientActivity                                           | exchangedData                                               |
 ==============================================================================================================================================================================================================================================
 | <http://trustlens.org/test_dataset1#UseEncryption> | <http://trustlens.org/test_dataset1#CollectDataActivity1> | <http://trustlens.org/test_dataset1#DataProcessingActivity> | <http://trustlens.org/test_dataset1#DataReadingsCollection> |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?policy       WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesPolicy ?policy.            ?policy a ep-plan:Policy.      } 
+
+WHAT ARE THE POLICIES ASSOCIATED WITH THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?policy       WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesPolicy ?policy.            ?policy a ep-plan:Policy.      } 
+
 -------------------------------------------------------------
 | policy                                                    |
 =============================================================
 | <http://trustlens.org/test_dataset1#ExecutionPolicy>      |
 | <http://trustlens.org/test_dataset1#DataProtectionPolicy> |
 -------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?policy ?planElement       WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesPolicy ?policy; ep-plan:includesPlanElement ?planElement.            ?policy a ep-plan:Policy; a ep-plan:Rationale.           ?planElement  ep-plan:hasRationale ?policy.      } 
+
+WHICH PLAN ELEMENTS WERE INCLUDED IN THIS PLAN AS A RESULT OF WHICH POLICY?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?policy ?planElement       WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesPolicy ?policy; ep-plan:includesPlanElement ?planElement.            ?policy a ep-plan:Policy; a ep-plan:Rationale.           ?planElement  ep-plan:hasRationale ?policy.      } 
+
 ------------------------------------------------------------------------------------------------------------------------------
 | policy                                                    | planElement                                                    |
 ==============================================================================================================================
 | <http://trustlens.org/test_dataset1#ExecutionPolicy>      | <http://trustlens.org/test_dataset1#CollectAtLocationAberdeen> |
 | <http://trustlens.org/test_dataset1#DataProtectionPolicy> | <http://trustlens.org/test_dataset1#UseEncryption>             |
 ------------------------------------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?policyRationale       WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesPolicy <http://trustlens.org/test_dataset1#DataProtectionPolicy>.           <http://trustlens.org/test_dataset1#DataProtectionPolicy> a ep-plan:Policy; ep-plan:hasRationale ?policyRationale.            ?policyRationale a ep-plan:Rationale.       } 
------------------------------------------------------------------------------------------------
-| policyRationale                                                                             |
-===============================================================================================
-| <http://openscience.adaptcentre.ie/ontologies/GDPRtEXT/deliverables/gdpr.ttl#article32-1-a> |
------------------------------------------------------------------------------------------------
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#>  SELECT DISTINCT ?objective ?rationale      WHERE       {           <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesObjective ?objective.           ?objective a ep-plan:Objective.            OPTIONAL {           ?rationale a ep-plan:Rationale; ep-plan:isRationaleOf  ?objective.           }      }
-----------------------------------------------------------------------------------------------------------------------------
-| objective                                              | rationale                                                       |
-============================================================================================================================
-| <http://trustlens.org/test_dataset1#DataDashboard>     | <http://trustlens.org/test_dataset1#CityCouncilSmartCityAgenda> |
-| <http://trustlens.org/test_dataset1#AnonymisedDataSet> | <http://trustlens.org/test_dataset1#CityCouncilSmartCityAgenda> |
-----------------------------------------------------------------------------------------------------------------------------
+
+WHAT IS THE RATIONALE FOR INCLUDING WHICH PLAN ELEMENTS?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?rationale ?planElement WHERE { <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesPlanElement ?planElement. ?planElement ep-plan:hasRationale ?rationale. ?rationale a ep-plan:Rationale. }
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+| rationale                                                                                   | planElement                                                    |
+================================================================================================================================================================
+| <http://openscience.adaptcentre.ie/ontologies/GDPRtEXT/deliverables/gdpr.ttl#article32-1-a> | <http://trustlens.org/test_dataset1#DataProtectionPolicy>      |
+| <http://trustlens.org/test_dataset1#DataProtectionPolicy>                                   | <http://trustlens.org/test_dataset1#UseEncryption>             |
+| <http://trustlens.org/test_dataset1#ExecutionPolicy>                                        | <http://trustlens.org/test_dataset1#CollectAtLocationAberdeen> |
+| <http://trustlens.org/test_dataset1#CityCouncilSmartCityAgenda>                             | <http://trustlens.org/test_dataset1#MonitorOccupancy>          |
+| <http://trustlens.org/test_dataset1#CityCouncilSmartCityAgenda>                             | <http://trustlens.org/test_dataset1#ShareData>                 |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+WHAT ARE THE OBJECTIVES OF THIS PLAN AND WHAT IS THEIR RATIONALE ?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?objective ?rationale ?objectiveDescription WHERE { <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesObjective ?objective. ?objective a ep-plan:Objective; rdfs:comment ?objectiveDescription; ep-plan:hasRationale ?rationale. }
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| objective                                             | rationale                                                       | objectiveDescription                                                                                                    |
+=====================================================================================================================================================================================================================================================
+| <http://trustlens.org/test_dataset1#MonitorOccupancy> | <http://trustlens.org/test_dataset1#CityCouncilSmartCityAgenda> | "A city council wants to monitor occupancy levels in properties they manage"                                            |
+| <http://trustlens.org/test_dataset1#ShareData>        | <http://trustlens.org/test_dataset1#CityCouncilSmartCityAgenda> | "A city council will contribute anonymased data readings collected from social housing to national statistics archive." |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+WHICH PLAN ELEMENTS ARE EXPECTED TO ACHIEVE WHICH OBJECTIVE OF THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>SELECT DISTINCT ?objective ?objectiveDescription ?achievedBy WHERE { <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesObjective ?objective. ?objective a ep-plan:Objective; rdfs:comment ?objectiveDescription; ep-plan:isAchievedBy ?achievedBy. }
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| objective                                             | objectiveDescription                                                                                                    | achievedBy                                             |
+============================================================================================================================================================================================================================================
+| <http://trustlens.org/test_dataset1#MonitorOccupancy> | "A city council wants to monitor occupancy levels in properties they manage"                                            | <http://trustlens.org/test_dataset1#DataDashboard>     |
+| <http://trustlens.org/test_dataset1#ShareData>        | "A city council will contribute anonymased data readings collected from social housing to national statistics archive." | <http://trustlens.org/test_dataset1#AnonymisedDataSet> |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -49,6 +49,7 @@
 :California_Budget rdf:type owl:NamedIndividual ,
                             <https://w3id.org/ep-plan#Objective> ;
                    <https://w3id.org/ep-plan#hasRationale> <http://trustlens.org/wf_test_dataset1#2019_Budget_Review> ;
+                   <https://w3id.org/ep-plan#isAchievedBy> :Budget ;
                    <https://w3id.org/ep-plan#isObjectiveOfPlan> :CreateBudgetHighLevelPlan ;
                    rdfs:comment "Calculate pumping budget for wells in California based on the Hydrology Model."^^xsd:string .
 

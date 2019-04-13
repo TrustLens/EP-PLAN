@@ -106,7 +106,8 @@
 :EstimatePumpingBudgetPlan rdf:type owl:NamedIndividual ,
                                     <https://w3id.org/ep-plan#Plan> ;
                            <https://w3id.org/ep-plan#hasOutputVariable> :WellData ;
-                           <https://w3id.org/ep-plan#hasPermittedAgent> :Pegasus .
+                           <https://w3id.org/ep-plan#hasPermittedAgent> :Pegasus ;
+                           <https://w3id.org/ep-plan#isSubPlanOfPlan> :CreateBudgetHighLevelPlan .
 
 
 ###  http://trustlens.org/wf_test_dataset1#ExecCreateBudgetActivity1

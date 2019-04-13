@@ -10,13 +10,267 @@
 @base <http://trustlens.org/test_dataset1> .
 
 <http://trustlens.org/test_dataset1> rdf:type owl:Ontology ;
-                                      owl:imports <http://www.w3.org/ns/prov-o> ,
-                                                  <https://w3id.org/ep-plan> ;
                                       terms:created "2019-04-06"^^xsd:date ;
                                       terms:creator "https://www.abdn.ac.uk/ncs/profiles/milan.markovic/"^^xsd:anyURI ;
                                       terms:description "An example IoT system plan annotated using  the EP-Plan ontology.A high level IoT deployment plan (HomeMonitoringHighLevelPlan) contains a series of steps including Collect Data, Data Processing, Storage, Data Visualisation , and Data Anonymisation. The Collect Data step is further decomposed into a subplan executed by an IoT device (IoT collector Plan). This plan contains steps for collecting temperature and Co2 data and steps for uploading collected readings to the cloud. The dataset contains Two execution traces, one of which represents a failed execution, terminated at the point of Data Collection."@en ;
                                       terms:license "http://creativecommons.org/licenses/by-nc-sa/2.0/" ;
                                       terms:title "An example IoT system plan annotated using  the EP-Plan ontology"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+terms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+terms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+terms:title rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/ns/prov#activity
+<http://www.w3.org/ns/prov#activity> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#atLocation
+<http://www.w3.org/ns/prov#atLocation> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#hadMember
+<http://www.w3.org/ns/prov#hadMember> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#qualifiedCommunication
+<http://www.w3.org/ns/prov#qualifiedCommunication> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#used
+<http://www.w3.org/ns/prov#used> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#wasAssociatedWith
+<http://www.w3.org/ns/prov#wasAssociatedWith> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#wasDerivedFrom
+<http://www.w3.org/ns/prov#wasDerivedFrom> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+<http://www.w3.org/ns/prov#wasGeneratedBy> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#correspondsToCommunicationSpecification
+ep-plan:correspondsToCommunicationSpecification rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#correspondsToStep
+ep-plan:correspondsToStep rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#correspondsToVariable
+ep-plan:correspondsToVariable rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#hasConstraint
+ep-plan:hasConstraint rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#hasInputVariable
+ep-plan:hasInputVariable rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#hasOutputVariable
+ep-plan:hasOutputVariable rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#hasPayload
+ep-plan:hasPayload rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#hasRationale
+ep-plan:hasRationale rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#hasRecipient
+ep-plan:hasRecipient rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#hasSender
+ep-plan:hasSender rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isAchievedBy
+ep-plan:isAchievedBy rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isCommunicationSpecificationOfPlan
+ep-plan:isCommunicationSpecificationOfPlan rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isConstraintOfPlan
+ep-plan:isConstraintOfPlan rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isDecomposedAsPlan
+ep-plan:isDecomposedAsPlan rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isElementOfTrace
+ep-plan:isElementOfTrace rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isObjectiveOfPlan
+ep-plan:isObjectiveOfPlan rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isOutputVariableOf
+ep-plan:isOutputVariableOf rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isPartOf
+ep-plan:isPartOf rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isPermittedAgentFor
+ep-plan:isPermittedAgentFor rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isPolicyOfPlan
+ep-plan:isPolicyOfPlan rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isPrecededBy
+ep-plan:isPrecededBy rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isResponsibleAgentOfPlan
+ep-plan:isResponsibleAgentOfPlan rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isStepOfPlan
+ep-plan:isStepOfPlan rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isSubPlanOfPlan
+ep-plan:isSubPlanOfPlan rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#isVariableOfPlan
+ep-plan:isVariableOfPlan rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#precedes
+ep-plan:precedes rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#satisfied
+ep-plan:satisfied rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/ep-plan#violated
+ep-plan:violated rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/ns/prov#Location
+<http://www.w3.org/ns/prov#Location> rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#Activity
+ep-plan:Activity rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#Agent
+ep-plan:Agent rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#Communication
+ep-plan:Communication rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#CommunicationSpecification
+ep-plan:CommunicationSpecification rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#Constraint
+ep-plan:Constraint rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#Entity
+ep-plan:Entity rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#EntityCollection
+ep-plan:EntityCollection rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#ExecutionTraceBundle
+ep-plan:ExecutionTraceBundle rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#FailedActivity
+ep-plan:FailedActivity rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#MultiActivity
+ep-plan:MultiActivity rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#MultiStep
+ep-plan:MultiStep rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#MultiVariable
+ep-plan:MultiVariable rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#Objective
+ep-plan:Objective rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#Plan
+ep-plan:Plan rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#Policy
+ep-plan:Policy rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#Rationale
+ep-plan:Rationale rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#ResponsibleAgent
+ep-plan:ResponsibleAgent rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#Step
+ep-plan:Step rdf:type owl:Class .
+
+
+###  https://w3id.org/ep-plan#Variable
+ep-plan:Variable rdf:type owl:Class .
+
 
 #################################################################
 #    Individuals
@@ -431,6 +685,7 @@
                            ep-plan:Objective ;
                   ep-plan:hasRationale :CityCouncilSmartCityAgenda ;
                   ep-plan:isAchievedBy :DataDashboard ;
+                  ep-plan:isObjectiveOfPlan :HomeMonitoringHighLevelPlan ;
                   rdfs:comment "A city council wants to monitor occupancy levels in properties they manage"^^xsd:string .
 
 
@@ -439,6 +694,7 @@
                     ep-plan:Objective ;
            ep-plan:hasRationale :CityCouncilSmartCityAgenda ;
            ep-plan:isAchievedBy :AnonymisedDataSet ;
+           ep-plan:isObjectiveOfPlan :HomeMonitoringHighLevelPlan ;
            rdfs:comment "A city council will contribute anonymased data readings collected from social housing to national statistics archive."^^xsd:string .
 
 

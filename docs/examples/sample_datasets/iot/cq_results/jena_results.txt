@@ -153,14 +153,7 @@ PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/pro
 | <http://trustlens.org/test_dataset1#CollectedData> | <http://trustlens.org/test_dataset1#UploadedCo2Data>  |
 --------------------------------------------------------------------------------------------------------------
 
-WHICH VARIABLE OF THIS PLAN IS ALSO USED IN A SUB-PLAN OF THIS PLAN?
 
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?variable ?subplan   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:includesVariable ?variable.      ?variable a ep-plan:Variable. } 
-
-----------------------
-| variable | subplan |
-======================
-----------------------
 
 WHICH EXECUTION TRACE ELEMENTS CORRESPONDING TO VARIABLES OF A SUB-PLAN ARE PART OF EXECUTION TRACE LEMENTS CORRESPONDING TO COMPOSITE VARIABLES OF THIS PLAN? 
 
@@ -173,14 +166,7 @@ PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/pro
 | <http://trustlens.org/test_dataset1#DataReadingsCollection> | <http://trustlens.org/test_dataset1#UploadedCo2Entity>  |
 -------------------------------------------------------------------------------------------------------------------------
 
-WHICH EXECUTION TRACE ELEMENTS CORRESPONDING  TO VARIABLES OF THIS PLAN ARE ALSO MENTIONED IN THE EXECUTION TRACE OF ITS SUB-PLAN?
 
-PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?mainPlanEntity ?subPlanEntity   WHERE {      <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:includesVariable ?variable.      ?variable a ep-plan:Variable.       ?mainExecutionTrace a ep-plan:ExecutionTraceBundle; prov:wasDerivedFrom <http://trustlens.org/test_dataset1#HomeMonitoringHighLevelPlan>; ep-plan:hasTraceElement ?mainPlanEntity; ep-plan:hasTraceElement ?subPlanExecutionTrace.      ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan:hasTraceElement ?subPlanEntity; prov:wasDerivedFrom ?subPlan.       ?mainPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable.      ?subPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable; prov:mentionOf ?mainPlanEntity.  } 
-
-----------------------------------
-| mainPlanEntity | subPlanEntity |
-==================================
-----------------------------------
 
 WHICH  WHICH GENERATED WHICH EXECUTION TRACE OF THIS PLAN?
 

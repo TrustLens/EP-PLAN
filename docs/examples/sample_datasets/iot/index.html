@@ -3,8 +3,15 @@ IoT example
 Get the datatset from here: <a href="/EP-PLAN/examples/sample_datasets/iot/iot_dataset.ttl">iot_dataset.ttl</a>
 </p>
 
+<h2>Dataset</h2>
+<img src="/img/iot_overview.jpg">
+
+The dataes contains 67 individuals that describe an IoT system based on the schema illustrated above. A high level IoT deployment plan (HomeMonitoringHighLevelPlan) contains a series of steps including Collect Data, Data Processing, Storage, Data Visualisation , and Data Anonymisation. The Collect Data step is further decomposed into a subplan executed by an IoT device (IoT collector Plan). This plan contains steps for collecting temperature and Co2 data and steps for uploading collected readings to the cloud. The dataset contains Two execution traces, one of which represents a failed execution, terminated at the point of Data Collection.  
+
+
 <p>
-To run inferences import EP-PLAN and PROV-O. Note: At the moment, Protege doesn't resolve URIs from w3id.org properly so link directly to download locations on GITHUB for EP-PLAN and PROV-O alignments. 
+Make sure that you start a resoner as the competency questions make use of inverse properties. 
+<br> Note: At the moment, JENA doesn't resolve imports with URIs from w3id.org properly so to load EP-PLAN into your OntModel link directly to one of the download locations on GITHUB for EP-PLAN with PROV-O alignments. You might have the same isssues with an older versions of Protege. 
 </p>
 
 <h2>Competency Questions results</h2>
@@ -15,4 +22,4 @@ Competency questions were first checked manually in Protege with the help of FAC
 
 <h2>JENA-generated results</h2>
 
-Results of executing competency questions against the test dataset can be found <a href="https://raw.githubusercontent.com/TrustLens/EP-PLAN/master/docs/examples/sample_datasets/iot/cq_results/jena_results.txt">here</a>
+Results of executing competency questions against the test dataset can be found <a href="https://raw.githubusercontent.com/TrustLens/EP-PLAN/master/docs/examples/sample_datasets/iot/cq_results/jena_results.txt">HERE</a>.

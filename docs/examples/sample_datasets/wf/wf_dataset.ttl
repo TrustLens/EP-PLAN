@@ -146,8 +146,7 @@
                        <http://purl.org/net/p-plan#isDecomposedAsPlan> :EstimatePumpingBudgetPlan ;
                        <http://purl.org/net/p-plan#isStepOfPlan> :CreateBudgetHighLevelPlan ;
                        <https://w3id.org/ep-plan#hasOutputVariable> :Budget ;
-                       <https://w3id.org/ep-plan#hasPermittedAgent> :Pegasus ;
-                       <https://w3id.org/ep-plan#isResponsibleAgentOfPlan> :CreateBudgetHighLevelPlan .
+                       <https://w3id.org/ep-plan#hasPermittedAgent> :Pegasus .
 
 
 ###  http://trustlens.org/wf_test_dataset1#Pegasus

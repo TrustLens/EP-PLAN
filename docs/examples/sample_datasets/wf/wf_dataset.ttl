@@ -1,0 +1,265 @@
+@prefix : <http://trustlens.org/wf_test_dataset1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://trustlens.org/wf_test_dataset1> .
+
+<http://trustlens.org/wf_test_dataset1> rdf:type owl:Ontology ;
+                                         owl:imports <http://www.w3.org/ns/prov-links-20130430> ,
+                                                     <http://www.w3.org/ns/prov-o-20130430> ,
+                                                     <https://w3id.org/ep-plan> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://trustlens.org/wf_test_dataset1#Budget
+:Budget rdf:type owl:NamedIndividual ,
+                 <https://w3id.org/ep-plan#Variable> ;
+        <https://w3id.org/ep-plan#isVariableOfPlan> :CreateBudgetHighLevelPlan ,
+                                                    :EstimatePumpingBudgetPlan .
+
+
+###  http://trustlens.org/wf_test_dataset1#BudgetEntityForCreateBudgetPlan
+:BudgetEntityForCreateBudgetPlan rdf:type owl:NamedIndividual ,
+                                          <https://w3id.org/ep-plan#Entity> ;
+                                 <http://purl.org/net/p-plan#correspondsToVariable> :Budget ;
+                                 <http://www.w3.org/ns/prov#wasGeneratedBy> :ExecHydrologyModelActivity2 ;
+                                 <https://w3id.org/ep-plan#isElementOfTrace> :TraceCreateBudget2 .
+
+
+###  http://trustlens.org/wf_test_dataset1#BudgetEntityForEstimatePumpingBudgetPlan
+:BudgetEntityForEstimatePumpingBudgetPlan rdf:type owl:NamedIndividual ,
+                                                   <https://w3id.org/ep-plan#Entity> ;
+                                          <http://purl.org/net/p-plan#correspondsToVariable> :Budget ;
+                                          <http://www.w3.org/ns/prov#asInBundle> :TraceCreateBudget2 ;
+                                          <http://www.w3.org/ns/prov#mentionOf> :BudgetEntityForCreateBudgetPlan ;
+                                          <http://www.w3.org/ns/prov#wasGeneratedBy> :PumpingBudgetActivity2 ;
+                                          <https://w3id.org/ep-plan#isElementOfTrace> :TraceEstimatePumpingBudget2 .
+
+
+###  http://trustlens.org/wf_test_dataset1#California
+:California rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/ns/prov#Location> .
+
+
+###  http://trustlens.org/wf_test_dataset1#California_Budget
+:California_Budget rdf:type owl:NamedIndividual ,
+                            <https://w3id.org/ep-plan#Objective> ;
+                   <https://w3id.org/ep-plan#hasRationale> <http://trustlens.org/wf_test_dataset1#2019_Budget_Review> ;
+                   <https://w3id.org/ep-plan#isObjectiveOfPlan> :CreateBudgetHighLevelPlan ;
+                   rdfs:comment "Calculate pumping budget for wells in California based on the Hydrology Model."^^xsd:string .
+
+
+###  http://trustlens.org/wf_test_dataset1#CollectWellData
+:CollectWellData rdf:type owl:NamedIndividual ,
+                          <https://w3id.org/ep-plan#Step> ;
+                 <https://w3id.org/ep-plan#hasOutputVariable> :WellData ;
+                 <https://w3id.org/ep-plan#isStepOfPlan> :EstimatePumpingBudgetPlan .
+
+
+###  http://trustlens.org/wf_test_dataset1#CollectWellDataActivity1
+:CollectWellDataActivity1 rdf:type owl:NamedIndividual ,
+                                   <https://w3id.org/ep-plan#Activity> ;
+                          <http://purl.org/net/p-plan#correspondsToStep> :CollectWellData ;
+                          <https://w3id.org/ep-plan#isElementOfTrace> :TraceEstimatePumpingBudget1 .
+
+
+###  http://trustlens.org/wf_test_dataset1#CollectWellDataActivity2
+:CollectWellDataActivity2 rdf:type owl:NamedIndividual ,
+                                   <https://w3id.org/ep-plan#Activity> ;
+                          <https://w3id.org/ep-plan#correspondsToStep> :CollectWellData ;
+                          <https://w3id.org/ep-plan#isElementOfTrace> :TraceEstimatePumpingBudget2 .
+
+
+###  http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan
+:CreateBudgetHighLevelPlan rdf:type owl:NamedIndividual ,
+                                    <https://w3id.org/ep-plan#Plan> ;
+                           <https://w3id.org/ep-plan#hasPermittedAgent> :Wings .
+
+
+###  http://trustlens.org/wf_test_dataset1#DigitalElevationModel
+:DigitalElevationModel rdf:type owl:NamedIndividual ,
+                                <https://w3id.org/ep-plan#Variable> ;
+                       <https://w3id.org/ep-plan#isVariableOfPlan> :EstimatePumpingBudgetPlan .
+
+
+###  http://trustlens.org/wf_test_dataset1#DigitalElevationModelCalifornia
+:DigitalElevationModelCalifornia rdf:type owl:NamedIndividual ,
+                                          <https://w3id.org/ep-plan#Entity> ;
+                                 <http://purl.org/net/p-plan#correspondsToVariable> :DigitalElevationModel ;
+                                 <http://www.w3.org/ns/prov#atLocation> :California ;
+                                 <https://w3id.org/ep-plan#isElementOfTrace> :TraceEstimatePumpingBudget2 .
+
+
+###  http://trustlens.org/wf_test_dataset1#DigitalElevationModelWashington
+:DigitalElevationModelWashington rdf:type owl:NamedIndividual ,
+                                          <https://w3id.org/ep-plan#Entity> ;
+                                 <http://purl.org/net/p-plan#correspondsToVariable> :DigitalElevationModel ;
+                                 <http://www.w3.org/ns/prov#atLocation> :Washington ;
+                                 <https://w3id.org/ep-plan#isElementOfTrace> :TraceEstimatePumpingBudget1 .
+
+
+###  http://trustlens.org/wf_test_dataset1#EstimatePumpingBudgetPlan
+:EstimatePumpingBudgetPlan rdf:type owl:NamedIndividual ,
+                                    <https://w3id.org/ep-plan#Plan> ;
+                           <https://w3id.org/ep-plan#hasOutputVariable> :WellData ;
+                           <https://w3id.org/ep-plan#hasPermittedAgent> :Pegasus .
+
+
+###  http://trustlens.org/wf_test_dataset1#ExecCreateBudgetActivity1
+:ExecCreateBudgetActivity1 rdf:type owl:NamedIndividual ,
+                                    <https://w3id.org/ep-plan#MultiActivity> ;
+                           <http://www.w3.org/ns/prov#wasAssociatedWith> :Wings .
+
+
+###  http://trustlens.org/wf_test_dataset1#ExecCreateBudgetActivity2
+:ExecCreateBudgetActivity2 rdf:type owl:NamedIndividual ,
+                                    <https://w3id.org/ep-plan#MultiActivity> ;
+                           <http://www.w3.org/ns/prov#wasAssociatedWith> :Wings .
+
+
+###  http://trustlens.org/wf_test_dataset1#ExecHydrologyModelActivity1
+:ExecHydrologyModelActivity1 rdf:type owl:NamedIndividual ,
+                                      <https://w3id.org/ep-plan#FailedActivity> ,
+                                      <https://w3id.org/ep-plan#MultiActivity> ;
+                             <http://purl.org/net/p-plan#correspondsToStep> :ExecuteHydrologyModel ;
+                             <http://www.w3.org/ns/prov#wasAssociatedWith> :Pegasus ;
+                             <https://w3id.org/ep-plan#isElementOfTrace> :TraceCreateBudget1 .
+
+
+###  http://trustlens.org/wf_test_dataset1#ExecHydrologyModelActivity2
+:ExecHydrologyModelActivity2 rdf:type owl:NamedIndividual ,
+                                      <https://w3id.org/ep-plan#MultiActivity> ;
+                             <http://www.w3.org/ns/prov#wasAssociatedWith> :Pegasus ;
+                             <https://w3id.org/ep-plan#correspondsToStep> :ExecuteHydrologyModel ;
+                             <https://w3id.org/ep-plan#isElementOfTrace> :TraceCreateBudget2 .
+
+
+###  http://trustlens.org/wf_test_dataset1#ExecuteHydrologyModel
+:ExecuteHydrologyModel rdf:type owl:NamedIndividual ,
+                                <https://w3id.org/ep-plan#MultiStep> ;
+                       <http://purl.org/net/p-plan#isDecomposedAsPlan> :EstimatePumpingBudgetPlan ;
+                       <http://purl.org/net/p-plan#isStepOfPlan> :CreateBudgetHighLevelPlan ;
+                       <https://w3id.org/ep-plan#hasOutputVariable> :Budget .
+
+
+###  http://trustlens.org/wf_test_dataset1#Pegasus
+:Pegasus rdf:type owl:NamedIndividual ,
+                  <https://w3id.org/ep-plan#Agent> ,
+                  <https://w3id.org/ep-plan#ResponsibleAgent> ;
+         <https://w3id.org/ep-plan#isResponsibleAgentOfPlan> :EstimatePumpingBudgetPlan .
+
+
+###  http://trustlens.org/wf_test_dataset1#PumpingBudget
+:PumpingBudget rdf:type owl:NamedIndividual ,
+                        <https://w3id.org/ep-plan#Step> ;
+               <http://purl.org/net/p-plan#isPrecededBy> :CollectWellData ;
+               <http://purl.org/net/p-plan#isStepOfPlan> :EstimatePumpingBudgetPlan ;
+               <https://w3id.org/ep-plan#hasConstraint> :UseDataFromSameLocation ;
+               <https://w3id.org/ep-plan#hasInputVariable> :DigitalElevationModel ,
+                                                           :WellData ;
+               <https://w3id.org/ep-plan#hasOutputVariable> :Budget .
+
+
+###  http://trustlens.org/wf_test_dataset1#PumpingBudgetActivity1
+:PumpingBudgetActivity1 rdf:type owl:NamedIndividual ,
+                                 <https://w3id.org/ep-plan#Activity> ,
+                                 <https://w3id.org/ep-plan#FailedActivity> ;
+                        <http://purl.org/net/p-plan#correspondsToStep> :PumpingBudget ;
+                        <http://www.w3.org/ns/prov#used> :DigitalElevationModelWashington ,
+                                                         :WellData1 ;
+                        <https://w3id.org/ep-plan#isElementOfTrace> :TraceEstimatePumpingBudget1 ;
+                        <https://w3id.org/ep-plan#violated> :UseDataFromSameLocation .
+
+
+###  http://trustlens.org/wf_test_dataset1#PumpingBudgetActivity2
+:PumpingBudgetActivity2 rdf:type owl:NamedIndividual ,
+                                 <https://w3id.org/ep-plan#Activity> ;
+                        <http://www.w3.org/ns/prov#used> :DigitalElevationModelCalifornia ,
+                                                         :WellData2 ;
+                        <https://w3id.org/ep-plan#correspondsToStep> :PumpingBudget ;
+                        <https://w3id.org/ep-plan#isElementOfTrace> :TraceEstimatePumpingBudget2 ;
+                        <https://w3id.org/ep-plan#satisfied> :UseDataFromSameLocation .
+
+
+###  http://trustlens.org/wf_test_dataset1#TraceCreateBudget1
+:TraceCreateBudget1 rdf:type owl:NamedIndividual ,
+                             <https://w3id.org/ep-plan#ExecutionTraceBundle> ;
+                    <http://www.w3.org/ns/prov#wasDerivedFrom> :CreateBudgetHighLevelPlan ;
+                    <http://www.w3.org/ns/prov#wasGeneratedBy> :ExecCreateBudgetActivity1 .
+
+
+###  http://trustlens.org/wf_test_dataset1#TraceCreateBudget2
+:TraceCreateBudget2 rdf:type owl:NamedIndividual ,
+                             <https://w3id.org/ep-plan#ExecutionTraceBundle> ;
+                    <http://www.w3.org/ns/prov#wasDerivedFrom> :CreateBudgetHighLevelPlan ;
+                    <http://www.w3.org/ns/prov#wasGeneratedBy> :ExecCreateBudgetActivity2 .
+
+
+###  http://trustlens.org/wf_test_dataset1#TraceEstimatePumpingBudget1
+:TraceEstimatePumpingBudget1 rdf:type owl:NamedIndividual ,
+                                      <https://w3id.org/ep-plan#ExecutionTraceBundle> ;
+                             <http://www.w3.org/ns/prov#wasDerivedFrom> :EstimatePumpingBudgetPlan ;
+                             <http://www.w3.org/ns/prov#wasGeneratedBy> :ExecHydrologyModelActivity1 ;
+                             <https://w3id.org/ep-plan#isElementOfTrace> :TraceCreateBudget1 .
+
+
+###  http://trustlens.org/wf_test_dataset1#TraceEstimatePumpingBudget2
+:TraceEstimatePumpingBudget2 rdf:type owl:NamedIndividual ,
+                                      <https://w3id.org/ep-plan#ExecutionTraceBundle> ;
+                             <http://www.w3.org/ns/prov#wasDerivedFrom> :EstimatePumpingBudgetPlan ;
+                             <http://www.w3.org/ns/prov#wasGeneratedBy> :ExecHydrologyModelActivity2 ;
+                             <https://w3id.org/ep-plan#isElementOfTrace> :TraceCreateBudget2 .
+
+
+###  http://trustlens.org/wf_test_dataset1#UseDataFromSameLocation
+:UseDataFromSameLocation rdf:type owl:NamedIndividual ,
+                                  <https://w3id.org/ep-plan#Constraint> ;
+                         <https://w3id.org/ep-plan#isConstraintOfPlan> :EstimatePumpingBudgetPlan .
+
+
+###  http://trustlens.org/wf_test_dataset1#Washington
+:Washington rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/ns/prov#Location> .
+
+
+###  http://trustlens.org/wf_test_dataset1#WellData
+:WellData rdf:type owl:NamedIndividual ,
+                   <https://w3id.org/ep-plan#Variable> ;
+          <https://w3id.org/ep-plan#isVariableOfPlan> :EstimatePumpingBudgetPlan .
+
+
+###  http://trustlens.org/wf_test_dataset1#WellData1
+:WellData1 rdf:type owl:NamedIndividual ,
+                    <https://w3id.org/ep-plan#Entity> ;
+           <http://purl.org/net/p-plan#correspondsToVariable> :WellData ;
+           <http://www.w3.org/ns/prov#atLocation> :California ;
+           <http://www.w3.org/ns/prov#wasGeneratedBy> :CollectWellDataActivity1 ;
+           <https://w3id.org/ep-plan#isElementOfTrace> :TraceEstimatePumpingBudget1 .
+
+
+###  http://trustlens.org/wf_test_dataset1#WellData2
+:WellData2 rdf:type owl:NamedIndividual ,
+                    <https://w3id.org/ep-plan#Entity> ;
+           <http://purl.org/net/p-plan#correspondsToVariable> :WellData ;
+           <http://www.w3.org/ns/prov#atLocation> :California ;
+           <http://www.w3.org/ns/prov#wasGeneratedBy> :CollectWellDataActivity2 ;
+           <https://w3id.org/ep-plan#isElementOfTrace> :TraceEstimatePumpingBudget2 .
+
+
+###  http://trustlens.org/wf_test_dataset1#Wings
+:Wings rdf:type owl:NamedIndividual ,
+                <https://w3id.org/ep-plan#Agent> ,
+                <https://w3id.org/ep-plan#ResponsibleAgent> ;
+       <https://w3id.org/ep-plan#isResponsibleAgentOfPlan> :CreateBudgetHighLevelPlan .
+
+
+###  http://trustlens.org/wf_test_dataset1#2019_Budget_Review
+<http://trustlens.org/wf_test_dataset1#2019_Budget_Review> rdf:type owl:NamedIndividual ,
+                                                                    <https://w3id.org/ep-plan#Rationale> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

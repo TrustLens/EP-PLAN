@@ -290,12 +290,12 @@ Rationales & Objectives,What is the rationale for including which plan elements?
           ?planElement ep-plan:hasRationale ?rationale. 
           ?rationale a ep-plan:Rationale. 
      }"
-,What are the objectives of this plan and what is their rationale (if known)?,"Rationale, Plan, Objective","SELECT DISTINCT ?objective ?rationale ?objectiveDescription
+,What are the objectives of this plan and what is their rationale ?,"Rationale, Plan, Objective","SELECT DISTINCT ?objective ?rationale ?objectiveDescription
 
      WHERE 
      {
           <PlanURI> a ep-plan:Plan; ep-plan:includesObjective ?objective.
-          ?objective a ep-plan:Objective; rdfs:comment ?objectiveDescription. 
+          ?objective a ep-plan:Objective; rdfs:comment ?objectiveDescription; ep-plan:hasRationale ?rationale. 
           
      }"
 ,Which plan elements are expected to achieve which objective of this plan?,"Plan,Objective, Constraint, CommunicationSpecification, Step, Variable, ResponsibleAgent","SELECT DISTINCT ?objective  ?objectiveDescription ?achievedBy

@@ -9,7 +9,7 @@
 @prefix ep-plan: <https://w3id.org/ep-plan#> .
 @base <http://trustlens.org/test_dataset1> .
 
-<http://trustlens.org/test_dataset1> rdf:type owl:Ontology.
+<http://trustlens.org/test_dataset1> rdf:type owl:Ontology; owl:imports<https://w3id.org/ep-plan>,<http://www.w3.org/ns/prov-o>.
 
 
 #################################################################

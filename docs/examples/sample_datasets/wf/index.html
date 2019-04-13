@@ -1,0 +1,28 @@
+<h3><a href="https://trustlens.github.io/EP-PLAN/">Home</a></h3>
+
+<h1>Scientific Workflow example</h1>
+<p>
+Get the datatset from here: <a href="/EP-PLAN/examples/sample_datasets/iot/iot_dataset.ttl">wf_dataset.ttl</a>
+</p>
+
+<h2>Dataset</h2>
+<img src="/EP-PLAN/examples/sample_datasets/wf/img/wf_overview.jpg">
+<br><br>
+The dataset contains X individuals that describe a workflow for calculating pumping budget using a hydrology model. 
+A high level Create Budget plan (CreateBudgetHighLevelPlan) contains a single multi step Execute Hydrology Model that produces teh Budget Variable. This step is further decomposed into a subplan Estimate Pumping Budget Plan. This plan contains steps for collecting well data and calculating the pumping budget. The dataset contains two execution traces, one of which represents a failed execution, terminated at the point of Collect Well Data.  
+
+
+<p>
+Make sure that you start a resoner as the competency questions make use of inverse properties. 
+<br> Note: At the moment, JENA doesn't resolve imports with URIs from w3id.org properly so to load EP-PLAN into your OntModel link directly to one of the download locations on GITHUB for EP-PLAN with PROV-O alignments. You might have the same issues with an older versions of Protege. 
+</p>
+
+<h2>Competency Questions results</h2>
+
+<p>
+Competency questions were first checked manually in Protege with the help of FACT++ reasoner and SnapSPARQL plugins.  
+</p>
+
+<h2>JENA-generated results</h2>
+
+Results of executing competency questions against the test dataset can be found <a href="https://raw.githubusercontent.com/TrustLens/EP-PLAN/master/docs/examples/sample_datasets/wf/cq_results/jena_results.txt">HERE</a>.

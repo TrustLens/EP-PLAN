@@ -1,0 +1,251 @@
+WHAT STEPS DESCRIBE THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>SELECT DISTINCT ?step  WHERE { <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step. ?step a ep-plan:Step.  } 
+
+-----------------------------------------------------------------
+| step                                                          |
+=================================================================
+| <http://trustlens.org/wf_test_dataset1#ExecuteHydrologyModel> |
+-----------------------------------------------------------------
+
+WHAT VARIABLES ARE PART OF THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT  ?variable   WHERE {      <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.            ?variable a ep-plan:Variable. } 
+
+--------------------------------------------------
+| variable                                       |
+==================================================
+| <http://trustlens.org/wf_test_dataset1#Budget> |
+--------------------------------------------------
+
+WHICH STEP PRECEEDS WHICH STEP IN THIS PLAN ?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?step ?nextStep   WHERE {      <http://trustlens.org/wf_test_dataset1#EstimatePumpingBudgetPlan> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesStep ?nextStep.      ?step ep-plan:precedes ?nextStep; a ep-plan:Step.      ?nextStep a ep-plan:Step. } 
+
+-------------------------------------------------------------------------------------------------------------------
+| step                                                    | nextStep                                              |
+===================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#CollectWellData> | <http://trustlens.org/wf_test_dataset1#PumpingBudget> |
+-------------------------------------------------------------------------------------------------------------------
+
+WHICH STEPS USE WHICH VARIABLES IN THIS PLAN ?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?step ?variableUsed   WHERE {      <http://trustlens.org/wf_test_dataset1#EstimatePumpingBudgetPlan> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVariable ?variableUsed.      ?step a ep-plan:Step; ep-plan:hasInputVariable ?variableUsed.      ?variableUsed a ep-plan:Variable. } 
+
+-------------------------------------------------------------------------------------------------------------------------
+| step                                                  | variableUsed                                                  |
+=========================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#PumpingBudget> | <http://trustlens.org/wf_test_dataset1#DigitalElevationModel> |
+| <http://trustlens.org/wf_test_dataset1#PumpingBudget> | <http://trustlens.org/wf_test_dataset1#WellData>              |
+-------------------------------------------------------------------------------------------------------------------------
+
+WHICH STEPS PRODUCE WHICH VARIABLES IN THIS PLAN ?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?step ?variableProduced   WHERE {      <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step; ep-plan:includesVariable ?variableProduced.      ?step a ep-plan:Step; ep-plan:hasOutputVariable ?variableProduced.      ?variableProduced a ep-plan:Variable. } 
+
+------------------------------------------------------------------------------------------------------------------
+| step                                                          | variableProduced                               |
+==================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#ExecuteHydrologyModel> | <http://trustlens.org/wf_test_dataset1#Budget> |
+------------------------------------------------------------------------------------------------------------------
+
+WHICH VARIABLES OF THIS PLAN HAD CORRESPONDING EXECUTION TRACE ELEMENTS DURING WHICH EXECUTION ACTIVITY?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?executionActivity ?entity   WHERE {      <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.      ?variable a ep-plan:Variable.       ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan>; ep-plan:hasTraceElement ?entity.      ?executionActivity a ep-plan:MultiActivity.       ?entity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable. } 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| executionActivity                                                 | entity                                                                  |
+===============================================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#ExecCreateBudgetActivity2> | <http://trustlens.org/wf_test_dataset1#BudgetEntityForCreateBudgetPlan> |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+WHICH STEPS OF THIS PLAN WERE EXECUTED DURING WHICH EXECUTION PROCESS?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?executionActivity ?step   WHERE {      <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?failedStep.      ?failedStep a ep-plan:Step.       ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan>; ep-plan:hasTraceElement ?activity.       ?executionActivity a ep-plan:MultiActivity.       ?activity a ep-plan:Activity; ep-plan:correspondsToStep ?step. } 
+
+-------------------------------------------------------------------------------------------------------------------------------------
+| executionActivity                                                 | step                                                          |
+=====================================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#ExecCreateBudgetActivity2> | <http://trustlens.org/wf_test_dataset1#ExecuteHydrologyModel> |
+| <http://trustlens.org/wf_test_dataset1#ExecCreateBudgetActivity1> | <http://trustlens.org/wf_test_dataset1#ExecuteHydrologyModel> |
+-------------------------------------------------------------------------------------------------------------------------------------
+
+WHICH STEPS OF THIS PLAN FAILED TO EXECUTE DURING  EXECUTION ACTIVITY?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?executionActivity ?failedStep  WHERE {      <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?failedStep.      ?failedStep a ep-plan:Step.       ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity; prov:wasDerivedFrom <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan>; ep-plan:hasTraceElement ?activity.      ?executionActivity a ep-plan:MultiActivity.       ?activity a ep-plan:FailedActivity; ep-plan:correspondsToStep ?failedStep. } 
+
+-------------------------------------------------------------------------------------------------------------------------------------
+| executionActivity                                                 | failedStep                                                    |
+=====================================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#ExecCreateBudgetActivity1> | <http://trustlens.org/wf_test_dataset1#ExecuteHydrologyModel> |
+-------------------------------------------------------------------------------------------------------------------------------------
+
+WHICH STEPS OF THIS PLAN ARE COMPOSITE STEPS?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?step   WHERE {      <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step.      ?step a ep-plan:MultiStep. } 
+
+-----------------------------------------------------------------
+| step                                                          |
+=================================================================
+| <http://trustlens.org/wf_test_dataset1#ExecuteHydrologyModel> |
+-----------------------------------------------------------------
+
+
+
+WHICH SUB-PLAN OF THIS PLAN DESCRIBE WHICH COMPOSITE STEP OF THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?subPlan ?step  WHERE {      <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesStep ?step.      ?step a ep-plan:MultiStep; ep-plan:isDecomposedAsPlan ?subPlan.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan>. } 
+
+-------------------------------------------------------------------------------------------------------------------------------------
+| subPlan                                                           | step                                                          |
+=====================================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#EstimatePumpingBudgetPlan> | <http://trustlens.org/wf_test_dataset1#ExecuteHydrologyModel> |
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+WHICH VARIABLE OF THIS PLAN IS ALSO USED IN A SUB-PLAN OF THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?variable ?subPlan   WHERE {      <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan>; ep-plan:includesVariable ?variable.      ?variable a ep-plan:Variable. } 
+
+----------------------------------------------------------------------------------------------------------------------
+| variable                                       | subPlan                                                           |
+======================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#Budget> | <http://trustlens.org/wf_test_dataset1#EstimatePumpingBudgetPlan> |
+----------------------------------------------------------------------------------------------------------------------
+
+
+
+WHICH EXECUTION TRACE ELEMENTS CORRESPONDING  TO VARIABLES OF THIS PLAN ARE ALSO MENTIONED IN THE EXECUTION TRACE OF ITS SUB-PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?mainPlanEntity ?subPlanEntity   WHERE {      <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesVariable ?variable.      ?subPlan a ep-plan:Plan; ep-plan:isSubPlanOfPlan <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan>; ep-plan:includesVariable ?variable.      ?variable a ep-plan:Variable.       ?mainExecutionTrace a ep-plan:ExecutionTraceBundle; prov:wasDerivedFrom <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan>; ep-plan:hasTraceElement ?mainPlanEntity; ep-plan:hasTraceElement ?subPlanExecutionTrace.      ?subPlanExecutionTrace a ep-plan:ExecutionTraceBundle; ep-plan:hasTraceElement ?subPlanEntity; prov:wasDerivedFrom ?subPlan.       ?mainPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable.      ?subPlanEntity a ep-plan:Entity; ep-plan:correspondsToVariable ?variable; prov:mentionOf ?mainPlanEntity.  } 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+| mainPlanEntity                                                          | subPlanEntity                                                                    |
+==============================================================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#BudgetEntityForCreateBudgetPlan> | <http://trustlens.org/wf_test_dataset1#BudgetEntityForEstimatePumpingBudgetPlan> |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+WHICH  WHICH GENERATED WHICH EXECUTION TRACE OF THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?agent ?executionTrace  WHERE  {      <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan.      ?executionTrace a ep-plan:ExecutionTraceBundle; prov:wasGeneratedBy ?executionActivity.      ?executionActivity prov:wasAssociatedWith ?agent; a ep-plan:MultiActivity.       ?executionTrace prov:wasDerivedFrom <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan>.       } 
+
+--------------------------------------------------------------------------------------------------------------
+| agent                                         | executionTrace                                             |
+==============================================================================================================
+| <http://trustlens.org/wf_test_dataset1#Wings> | <http://trustlens.org/wf_test_dataset1#TraceCreateBudget2> |
+| <http://trustlens.org/wf_test_dataset1#Wings> | <http://trustlens.org/wf_test_dataset1#TraceCreateBudget1> |
+--------------------------------------------------------------------------------------------------------------
+
+WHICH AGENTS ARE ALLOWED TO PARTICIPATE IN THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?agent             WHERE {           <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.      } 
+
+-------------------------------------------------
+| agent                                         |
+=================================================
+| <http://trustlens.org/wf_test_dataset1#Wings> |
+-------------------------------------------------
+
+WHICH AGENTS ARE ALLOWED TO PARTICIPATE IN THIS PLAN (SEARCH ALL ABSTRACTION LAYERS)?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?agent             WHERE {      {           <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.      }      UNION {           ?subPlan ep-plan:isSubPlanOfPlan* <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan>; ep-plan:includesResponsibleAgent ?agent.      }      } 
+
+---------------------------------------------------
+| agent                                           |
+===================================================
+| <http://trustlens.org/wf_test_dataset1#Wings>   |
+| <http://trustlens.org/wf_test_dataset1#Pegasus> |
+---------------------------------------------------
+
+WHICH AGENTS ARE ALLOWED TO PARTICIPATE IN EXECUTION OF THIS STEP?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?agent             WHERE {                 <http://trustlens.org/wf_test_dataset1#ExecuteHydrologyModel> a ep-plan:Step; ep-plan:hasPermittedAgent ?agent.      } 
+
+---------------------------------------------------
+| agent                                           |
+===================================================
+| <http://trustlens.org/wf_test_dataset1#Pegasus> |
+---------------------------------------------------
+
+WHICH AGENTS ARE ALLOWED TO PARTICIPATE IN EXECUTION OF THIS COMPOSITE STEP (SEARCH ALL ABSTRACTION LAYERS)?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?agent        WHERE {      {           <http://trustlens.org/wf_test_dataset1#ExecuteHydrologyModel> a ep-plan:MultiStep; ep-plan:hasPermittedAgent ?agent.      }      UNION      {           <http://trustlens.org/wf_test_dataset1#ExecuteHydrologyModel> ep-plan:isDecomposedAsPlan ?plan.           {           ?plan a ep-plan:Plan; ep-plan:includesResponsibleAgent ?agent.           }           Union           {           ?subPlan ep-plan:isSubPlanOfPlan* ?plan; ep-plan:includesResponsibleAgent ?agent.           }      }      } 
+
+---------------------------------------------------
+| agent                                           |
+===================================================
+| <http://trustlens.org/wf_test_dataset1#Pegasus> |
+---------------------------------------------------
+
+WHICH AGENTS THAT WERE ALLOWED TO PARTICIPATE IN EXECUTION OF THIS STEP WERE RECORDED AS PART OF THE EXECUTION TRACE?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT  ?agent ?activity            WHERE {                 <http://trustlens.org/wf_test_dataset1#ExecuteHydrologyModel> a ep-plan:Step; ep-plan:hasPermittedAgent ?agent.           ?agent a ep-plan:ResponsibleAgent; a ep-plan:Agent.           ?activity a ep-plan:Activity; ep-plan:correspondsToStep  <http://trustlens.org/wf_test_dataset1#ExecuteHydrologyModel> ; prov:wasAssociatedWith ?agent.      } 
+
+-------------------------------------------------------------------------------------------------------------------------
+| agent                                           | activity                                                            |
+=========================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#Pegasus> | <http://trustlens.org/wf_test_dataset1#ExecHydrologyModelActivity2> |
+| <http://trustlens.org/wf_test_dataset1#Pegasus> | <http://trustlens.org/wf_test_dataset1#ExecHydrologyModelActivity1> |
+-------------------------------------------------------------------------------------------------------------------------
+
+WHAT CONSTRAINTS ARE ASSOCIATED WITH WHICH STEPS OF THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?constraint ?step        WHERE       {           <http://trustlens.org/wf_test_dataset1#EstimatePumpingBudgetPlan> a ep-plan:Plan; ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.           ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.           ?constraint a ep-plan:Constraint.      } 
+
+---------------------------------------------------------------------------------------------------------------------------
+| constraint                                                      | step                                                  |
+===========================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#UseDataFromSameLocation> | <http://trustlens.org/wf_test_dataset1#PumpingBudget> |
+---------------------------------------------------------------------------------------------------------------------------
+
+WHICH EXECUTIONS OF THIS STEP SATISFIED WHICH CONSTRAINTS?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?constraint ?activity        WHERE       {           <http://trustlens.org/wf_test_dataset1#EstimatePumpingBudgetPlan> ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.           ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.           ?constraint a ep-plan:Constraint.           ?activity ep-plan:correspondsToStep ?step; a ep-plan:Activity.           ?activity ep-plan:satisfied ?constraint.           ?execTraceBundle prov:wasDerivedFrom  <http://trustlens.org/wf_test_dataset1#EstimatePumpingBudgetPlan>; ep-plan:hasTraceElement ?activity.      } 
+
+------------------------------------------------------------------------------------------------------------------------------------
+| constraint                                                      | activity                                                       |
+====================================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#UseDataFromSameLocation> | <http://trustlens.org/wf_test_dataset1#PumpingBudgetActivity2> |
+------------------------------------------------------------------------------------------------------------------------------------
+
+WHICH EXECUTIONS OF WHICH STEP VIOLATED WHICH CONSTRAINTS?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?constraint ?activity        WHERE       {           <http://trustlens.org/wf_test_dataset1#EstimatePumpingBudgetPlan> ep-plan:includesConstraint ?constraint; ep-plan:includesStep ?step.           ?step ep-plan:hasConstraint ?constraint; a ep-plan:Step.           ?constraint a ep-plan:Constraint.           ?activity ep-plan:correspondsToStep ?step; a ep-plan:Activity.           ?activity ep-plan:violated ?constraint.           ?execTraceBundle prov:wasDerivedFrom  <http://trustlens.org/wf_test_dataset1#EstimatePumpingBudgetPlan>; ep-plan:hasTraceElement ?activity.      } 
+
+------------------------------------------------------------------------------------------------------------------------------------
+| constraint                                                      | activity                                                       |
+====================================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#UseDataFromSameLocation> | <http://trustlens.org/wf_test_dataset1#PumpingBudgetActivity1> |
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+WHAT IS THE RATIONALE FOR INCLUDING WHICH PLAN ELEMENTS?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?rationale ?planElement WHERE { <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesPlanElement ?planElement. ?planElement ep-plan:hasRationale ?rationale. ?rationale a ep-plan:Rationale. }
+
+--------------------------------------------------------------------------------------------------------------------------
+| rationale                                                  | planElement                                               |
+==========================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#2019_Budget_Review> | <http://trustlens.org/wf_test_dataset1#California_Budget> |
+--------------------------------------------------------------------------------------------------------------------------
+
+WHAT ARE THE OBJECTIVES OF THIS PLAN AND WHAT IS THEIR RATIONALE ?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?objective ?rationale ?objectiveDescription WHERE { <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesObjective ?objective. ?objective a ep-plan:Objective; rdfs:comment ?objectiveDescription; ep-plan:hasRationale ?rationale. }
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| objective                                                 | rationale                                                  | objectiveDescription                                                             |
+=============================================================================================================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#California_Budget> | <http://trustlens.org/wf_test_dataset1#2019_Budget_Review> | "Calculate pumping budget for wells in California based on the Hydrology Model." |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+WHICH PLAN ELEMENTS ARE EXPECTED TO ACHIEVE WHICH OBJECTIVE OF THIS PLAN?
+
+PREFIX ep-plan:<https://w3id.org/ep-plan#> PREFIX prov:<http://www.w3.org/ns/prov#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>SELECT DISTINCT ?objective ?objectiveDescription ?achievedBy WHERE { <http://trustlens.org/wf_test_dataset1#CreateBudgetHighLevelPlan> a ep-plan:Plan; ep-plan:includesObjective ?objective. ?objective a ep-plan:Objective; rdfs:comment ?objectiveDescription; ep-plan:isAchievedBy ?achievedBy. }
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| objective                                                 | objectiveDescription                                                             | achievedBy                                     |
+=================================================================================================================================================================================================
+| <http://trustlens.org/wf_test_dataset1#California_Budget> | "Calculate pumping budget for wells in California based on the Hydrology Model." | <http://trustlens.org/wf_test_dataset1#Budget> |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
